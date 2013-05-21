@@ -1,4 +1,4 @@
-(referaatti)[http://jamo.fi/kandi/referaatti/template-fi.pdf] 
+[referaatti](http://jamo.fi/kandi/referaatti/template-fi.pdf)
 
 tktltiki2 LaTeX class
 ======================
