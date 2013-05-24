@@ -1,5 +1,11 @@
 [referaatti](http://jamo.fi/kandi/referaatti/template-fi.pdf)
 
+GET http://citeseerx.ist.psu.edu/viewdoc/summary;jsessionid=4334B6CECFA719EEE72833A88D1CA284?doi=10.1.1.10.76
+print [Survey of Research on Software clones](http://drops.dagstuhl.de/opus/volltexte/2007/962/pdf/06301.KoschkeRainer.962.pdf)
+print [Clone detection using abstract syntax trees](https://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=738528&tag=1)
+print [Experiment on the Automatic Detection of Function Clones in a Software System Using Metrics](https://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=565012)
+
+
 tktltiki2 LaTeX class
 ======================
 
