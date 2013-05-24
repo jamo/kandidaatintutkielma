@@ -4,7 +4,7 @@ GET http://citeseerx.ist.psu.edu/viewdoc/summary;jsessionid=4334B6CECFA719EEE728
 print [Survey of Research on Software clones](http://drops.dagstuhl.de/opus/volltexte/2007/962/pdf/06301.KoschkeRainer.962.pdf)  
 print [Clone detection using abstract syntax trees](https://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=738528&tag=1)  
 print [Experiment on the Automatic Detection of Function Clones in a Software System Using Metrics](https://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=565012)  
-
+print [Comparison and evaluation of code clone detection techniques and tools: A qualitative approach](http://ac.els-cdn.com/S0167642309000367/1-s2.0-S0167642309000367-main.pdf?_tid=386ffb8a-c465-11e2-8136-00000aacb362&acdnat=1369395159_5133fed0d519c01d8a96b0376f03b67e)  
 
 tktltiki2 LaTeX class
 ======================
