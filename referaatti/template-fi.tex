@@ -153,9 +153,11 @@ n-grams:ia voidaan käyttää myös tunnistamaan koodien samankaltaisuus.
 Ohjelman jakamaan tietoon perustuvassa vertailussa hyödynnetään Shannonin informaatio teorian metodeja. Ajatellaan 2 ohjelmaa tekstiviesteinä. Jos ohjelmat ovat itsenäisiä, on niissä enemmän informaatiota pituuteen verrattuna. Kun jos taas ne ovat hyvin sanankaltaisia, ei niiden yhdistäminen lisää juuri informaatiota viestiin.
 
 
+Atrikkelin mukaan semanttisia samankaltaisuuksia on hyvin vaikea havaita, ja siten usein niitä mitataankin kiertoteitse. Muun muassa suoritus trace(miten suormentuu, tunnen termin...). Joita voidaan sitten helpommin vertailla. Myös input/oputput tyyliset vertailut auttavat semanttisesti samankaltaisen koodin tunnistamisessa. Semanttista etäisyys mitataan laskemalla kustannus koodin muuttamiseksi toiseksi, levenshtein distaincea avuksi käyttämällä.
 
-\subsection{Semanttinen ja toiminnallinen samankaltaisuus}
-äh väsyttää... :)
+Semanttista samankaltaisuutta voidaan mitata myös abstraktoimalla kahta koodia poistamalla epäoleellisia ominaisuuksia kunnes koodit ovat identtiset. Artikkelin mukaan tällaista vertailua käytetään todellisuudessa tekiänoikeusrikkomusten tutkinnassa.
+
+Samankaltaisuutta mitataan siis niin koodin pakkaustarkoituksissa, refaktorointia ja copypasten tunnistamista varten. Eri tarkoituksiin erilaisten samankaltaisuuksien vertailu sopii paraiten. 
 
 
 \section{end}
