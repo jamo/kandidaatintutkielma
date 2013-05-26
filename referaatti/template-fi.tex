@@ -128,12 +128,12 @@ Samankaltaisuuden tunnistusta käytetään monissa ei konteksteissa, tunnistamaa
 
 Samankaltaisuudella voidaan tarkoittaa useita eri asioita. Samankaltaisuus riippuu tavasta jolla vertailemme asioita. Kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä, tai koska molemmat ovat kolmioita. Samankaltaisuudessa on siis monia eri muotoja.
 
-Kun puhutaan ohjelmkoodin samankaltaisuudesta, jaottelee artikkeli[viittaus] ne seuraaviin alikohtiin: Represetional, semanttinen ja toiminnallinen. Näitä jaotellaan sitten yhä omiin alikohtiinsa.
-(Todellisuudessa on myös muita alikohtia, mutta artikkelissa keskityttyyi noihin onks tää ihan turha)
-Represetional samankaltaisuus ajattelee koodin koostuvan yksittäisistä kirjaimista, jotka muodostavat monimutkaisempia rakenteita. Näitä samankaltaisuuksia tarkasteltaessa keskitytään tekstiaaliseen ulkoasuun, syntaxiin ja koodin struktuuriin eli rakenteisiin.
-Näitä samankaltaisuuksia tutkitaan yleensä yksittäisen komennon, lohkon tai atkkitehtuurisella tasolla.
+Kun puhutaan ohjelmakoodin samankaltaisuudesta, jaottelee artikkeli[viittaus] ne seuraaviin alikohtiin: Represetional, semanttinen ja toiminnallinen. Näitä jaotellaan sitten yhä omiin alikohtiinsa.
+(Todellisuudessa on myös muita alikohtia, mutta artikkelissa keskittyy noihin onks tää ihan turha)
+Represetional samankaltaisuus ajattelee koodin koostuvan yksittäisistä kirjaimista, jotka muodostavat monimutkaisempia rakenteita. Näitä samankaltaisuuksia tarkasteltaessa keskitytään tekstuaaliseen ulkoasuun, syntaksiin ja koodin struktuuriin eli rakenteisiin.
+Näitä samankaltaisuuksia tutkitaan yleensä yksittäisen komennon, lohkon tai arkkitehtuurisella tasolla.
 
-Semanttisessa samankaltaisuuksissa samalkaltaisuus määräytyy koodin semantiikan mukaan. Mikäli kaksi funktiota omat toiminnaltaan samanlaiset voidaan niitä pitää myös semanttisesti samankaltaisina.
+Semanttisessa samankaltaisuuksissa samankaltaisuus määräytyy koodin semantiikan mukaan. Mikäli kaksi funktiota omat toiminnaltaan samanlaiset voidaan niitä pitää myös semanttisesti samankaltaisina.
 
 Toiminnallisessa samankaltaisuudessa verrataan vain kokonaisia lohkoja, sillä ne muodostavat, sillä vasta kokonaiset lohkot muodostavat järkevän semantiikan. Lohkojen osien semanttinen vertailu ei niinkään ole kannattavaa. 
 
@@ -142,15 +142,16 @@ Funktionaalisesti samankaltaisiksi kahta ohjelmaa voidaan sanoa, mikäli ne tote
 Suorituksellisesti samankaltaisiksi ohjelmia voidaan sanoa, kun niiden suoritusaikainen toiminta assemblyn tai esim. javan bytecoden tasolla on tarpeeksi samankaltaista. Tässä oletetaan, että saman kaltainen suoritus viittaa samankaltaiseen toteutukseen.
 
 
-Samankaltaisuutta voidaan mitata muutamalla eri tavalla. Syntaxin ja tekstin samankaltaisuuten, koodin "metrics" samankaltaisuuden, ominaisuuksien  sekä käyttäjän kaman tiedon mukaan.
-Syntaxtista sekä tekstuaalista samankaltaisuutta mitetaan muunmuassa Levenshtein distance, longest common sequence algoritmeilla. (oma kommentti: tämä lienee myös paras tapa mitata koodin plaguoimista?)
+Samankaltaisuutta voidaan mitata muutamalla eri tavalla. Syntaksin ja tekstin samankaltaisuuden, koodin "metrics" samankaltaisuuden, ominaisuuksien  sekä käyttäjän kaman tiedon mukaan.
+Syntakstista sekä tekstuaalista samankaltaisuutta mitataan muun muassa Levenshtein distance, longest common sequence algoritmeilla. (oma kommentti: tämä lienee myös paras tapa mitata koodin plagioimista?)
 
-"Metrics" (miten suomentuu kivasti) pohjaisesti samankaltaisuutta verrattaessa koodi muutetaan numeroiksia joiden avulla vertailu on helppoa
+"Metrics" (miten suomentuu kivasti) pohjaisesti samankaltaisuutta verrattaessa koodi muutetaan numeroiksi joiden avulla vertailu on helppoa
 
 Ominaisuusperusteinen vertailu vertailee koodien ominaisuuksien eroja. Näihin lasketaan niin muuttujien nimeäminen kuin muutkin koodin ominaispiirteet.
 
 n-grams:ia voidaan käyttää myös tunnistamaan koodien samankaltaisuus.
 Ohjelman jakamaan tietoon perustuvassa vertailussa hyödynnetään Shannonin informaatio teorian metodeja. Ajatellaan 2 ohjelmaa tekstiviesteinä. Jos ohjelmat ovat itsenäisiä, on niissä enemmän informaatiota pituuteen verrattuna. Kun jos taas ne ovat hyvin sanankaltaisia, ei niiden yhdistäminen lisää juuri informaatiota viestiin.
+
 
 
 \subsection{Semanttinen ja toiminnallinen samankaltaisuus}
