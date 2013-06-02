@@ -1,29 +1,4 @@
-% --- Template for thesis / report with tktltiki2 class ---
-% 
-% last updated 2013/02/15 for tkltiki2 v1.02
-
 \documentclass[finnish]{tktltiki2}
-
-% tktltiki2 automatically loads babel, so you can simply
-% give the language parameter (e.g. finnish, swedish, english, british) as
-% a parameter for the class: \documentclass[finnish]{tktltiki2}.
-% The information on title and abstract is generated automatically depending on
-% the language, see below if you need to change any of these manually.
-% 
-% Class options:
-% - grading                 -- Print labels for grading information on the front page.
-% - disablelastpagecounter  -- Disables the automatic generation of page number information
-%                              in the abstract. See also \numberofpagesinformation{} command below.
-%
-% The class also respects the following options of article class:
-%   10pt, 11pt, 12pt, final, draft, oneside, twoside,
-%   openright, openany, onecolumn, twocolumn, leqno, fleqn
-%
-% The default font size is 11pt. The paper size used is A4, other sizes are not supported.
-%
-% rubber: module pdftex
-
-% --- General packages ---
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -67,10 +42,6 @@
 
 
 % --- tktltiki2 options ---
-%
-% The following commands define the information used to generate title and
-% abstract pages. The following entries should be always specified:
-
 \title{Tiivistelmä}
 \author{Jarmo Isotalo}
 \date{\today}
@@ -81,32 +52,6 @@
 
 %\keywords{avainsana 1, avainsana 2, avainsana 3}
 
-% classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
-% This is probably mostly relevant for computer scientists
-% uncomment the following; contents of \classification will be printed under the abstract with a title
-% "ACM Computing Classification System (CCS):"
-% \classification{}
-
-% If the automatic page number counting is not working as desired in your case,
-% uncomment the following to manually set the number of pages displayed in the abstract page:
-%
-% \numberofpagesinformation{16 sivua + 10 sivua liitteissä}
-%
-% If you are not a computer scientist, you will want to uncomment the following by hand and specify
-% your department, faculty and subject by hand:
-%
-% \faculty{Matemaattis-luonnontieteellinen}
-% \department{Tietojenkäsittelytieteen laitos}
-% \subject{Tietojenkäsittelytiede}
-%
-% If you are not from the University of Helsinki, then you will most likely want to set these also:
-%
-% \university{Helsingin Yliopisto}
-% \universitylong{HELSINGIN YLIOPISTO --- HELSINGFORS UNIVERSITET --- UNIVERSITY OF HELSINKI} % displayed on the top of the abstract page
-% \city{Helsinki}
-%
-
-
 \begin{document}
 
 % --- Front matter ---
@@ -114,44 +59,41 @@
 \frontmatter      % roman page numbering for front matter
 
 \maketitle        % title page
-%\makeabstract     % abstract page
-
-%\tableofcontents  % table of contents
 
 % --- Main matter ---
 
-\mainmatter       % clear page, start arabic page numbering
-\section{Tiivistelmä}
-Samankaltaisuus ohjelmissa
+\mainmatter
+\section{Tiivistelmä - Samankaltaisuus ohjelmissa}
 
-Koodia verrattaessa samankaltaisuus jaetaan kahteen eri luokkaan; ulkoasulliseen(representational) ja semanttiseen(semantic). Nämä luokat jaetaan eri mittaustapojen perusteella omiin alaluokkiinsa.
+Koodia verrattaessa samankaltaisuus jaetaan kahteen eri luokkaan; ulkoasulliseen(representational) sekä semanttiseen(semantic) ja toiminnalliseen(behavioral). Nämä luokat jaetaan mittaustapojen perusteella omiin alaluokkiinsa.
 
-Samankaltaisuuden määritelmä on epätarkka. Samankaltaisuus tarkoittaa niin sitä, että verrattavat asiat ovat samat, kuin että varrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi on tärkeää voida määrittää, millaista samankaltaisuutta halutaan verrata.
+Samankaltaisuuden määritelmä on moniselitteinen. Samankaltaisuus tarkoittaa niin sitä, että verrattavat asiat ovat samat, kuin että varrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi on tärkeää määrittää, millaista samankaltaisuutta halutaan verrata.
 
 \begin{itemize}
 \item{Ulkoasullinen samankaltaisuus}
 
-Ulkoasullisessa (representational) samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Ulkoasulliseen samankaltaisuuteen liittyy tekstintekstuaalinen muoro, koodin syntaksi sekä koodin rakenne, ulkoasullisesti.
+Ulkoasullisessa (representational) samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Ulkoasullisessa samankaltaisuudessa on oleellista koodin tekstintekstuaalinen ulkoasu, koodin syntaksi sekä rakenne ulkoasullisesti.
 
-Tekstuaalisessa vertailussa verrataan mittaamalla kahdelle koodille eri metriikoilla samankaltaisuusarvo. Sopivia metriikoita ovat Levenshtein distance, jossa lasketaan paljonko toista koodia tulee muuttaa, jotta kahdesta koodista tulee samat, longest common sequence, jossa verrattavista koodeista haetaan pisin yhteinen suoritusjakso(sequence). 
+Tekstuaalisessa vertailussa samankaltaisuutta verrataan mittaamalla eri metriikoilla samankaltaisuusarvo. Sopivia metriikoita ovat Levenshtein distance, jossa lasketaan paljonko toista koodia tulee muuttaa, jotta kahdesta koodista tulee samat, longest common sequence, jossa verrattavista koodeista haetaan pisin yhteinen suoritusjakso(sequence).
 
-Metriikkapohjaiasessa vertailussa muunnetaan koodi eri metriikoilla helpommin verrattaviksi luvuiksi, joiden vertaaminen keskenään on helpompaa. 
+% Metriikkapohjaiasessa vertailussa muunnetaan koodi eri metriikoilla helpommin verrattaviksi luvuiksi, joiden vertaaminen keskenään on helpompaa.
+% ^kai ihan turhaa
 
-Ominaisuuspohjaisessa vertailussa verrataan kaikkia koodien ominaisuuksia. Ominaisuuksia ovat muunmuassa  nimet kuin koodista sekä lasketut metriikat. Vertailussa yhdistetään kaikki koodin ominaisuudet, ja samankaltaisuus määritetään laskemalla koodien yhteiset ominaisuudet.
+Ominaisuuspohjaisessa vertailussa verrataan kaikkia koodien ominaisuuksia. Ominaisuuksia ovat muunmuassa nimet sekä lasketut metriikat. Vertailussa yhdistetään kaikki koodin ominaisuudet ja samankaltaisuus määritetään laskemalla koodien yhteiset ominaisuudet.
 
-Samankaltaisuutta mitataan myös Shannonin informaatioteorian mukaan. Siinä verrataan, paljonko kahden koodin välillä tulee jakaa tietoa, jotta koodit olisivat täysin samankaltaiset. Mitä vähemmän muutoksia tarvitaan, sitä samankaltaisempia koodit ovat.
+Samankaltaisuutta mitataan myös Shannonin informaatioteorian mukaan, jossa verrataan, paljonko kahden koodin välillä tulee jakaa tietoa, jotta koodit olisivat täysin samankaltaiset. Mitä vähemmän muutoksia tarvitaan, sitä samankaltaisempia ne ovat.
 
 \item{Semanttinen ja toiminnallinen samankaltaisuus}
 
-Semanttinen (semantic) ja toiminnallinen(behavioral) samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen nimiä yms. vaan ne keskittyvt koodin rakenteeseen ja toimintaan.
+Semanttinen(semantic) ja toiminnallinen(behavioral) samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen nimiä yms. vaan ne keskittyvät koodin rakenteeseen ja toimintaan.
 
 Semanttisessa ja toiminnallisessa samankaltaisuudessa koodia verrataan komennon, lohkon tai luokan tasolla. Näiden osien vertailu ei kannata, sillä tällöin koodi ei sisällä järkevää semantiikkaa.
 
 Funktionaalista(functional) samankaltaisuutta tutkittaessa tutkitaan ohjelman toteuttamia funktioita. Mikäli verrattavat koodit toteuttavat saman funktion, ovat ne funktionaalisesti samankaltaisia. Funktionaalista samankaltaisuutta määritettäessä tulee vastata kysymykseen, mikä tehkee kahdesta funktionaalisesti samankaltaisen. Tässä päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
 
-Semanttista ja toiminnallista samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella(execution curve similarity), syöte paluuarvo(input/output) yhtäläisyydellä, semanttisella etäisyydellä(semantic distance) sekä abstraktioetäisyydellä(abstraction equivalence distance)
+Semanttista ja toiminnallista samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella(execution curve similarity), syöte paluuarvo(input/output) yhtäläisyydellä, semanttisella etäisyydellä(semantic distance) sekä abstraktioetäisyydellä(abstraction equivalence distance).
 
-Suorituksen(execution) samankaltaisuutta tutkittaessa vertaamalla ohjelman suoritusta matalalla tasolla, esimerkiksi javan bytecodea tai assemblyä vertaamalla. [tartteeko: java bytecode tai assembly selittää?] Suoritusaikainen toiminta on samankaltaisilla ohjelmilla hyvin samankaltainen, jolloin näiden vertailu on toimii.
+Suorituksen(execution) samankaltaisuutta mitataan vertaamalla ohjelman suoritusta matalalla tasolla, esimerkiksi javan bytecodea tai assemblyä vertaamalla. [tartteeko: java bytecode tai assembly selittää?] Suoritusaikainen toiminta on samankaltaisilla ohjelmilla hyvin samankaltainen, jolloin näiden vertailu on toimii.
 
 Syöte paluuarvo vertailissa verrataan funktion paluuarvojen samankaltaisuutta. Mikäli verrattavat funktiot palauttavat samoilla syötteillä saman tuloksen, ovat funktiot samankaltaisia.
 
@@ -160,12 +102,39 @@ Semanttista etäisyytta verrattaessa lasketaan kustannus, paljonko muutoksia ver
 Abstraktioetäisyydellä verrattaessa lasketaan kustannus, paljonko verrattavia koodeja tulee abstraktida, eli poistaa epäoleellisia piirteitä koodista, kunnes koodit ovat samat.
 \end{itemize}
 
-Samankaltaisuuden vertaamiselle on useita sovellutuksia. Samankaltaisten koodien osien löytäminen auttaa koodin pakkaamisessa koodia käännettäessä, sillä täysin samoille koodin osille, voidaan osa korvata toisella. Näin koodi saadaan pienempään tilaan. Samankaltaiset kohdat ilmaisevat myös usein tarpeen koodin refaktoroinnille, sillä koodin toisto ei ole usein kannattavaa.
+Samankaltaisuuden vertaamiselle on useita sovellutuksia. Samankaltaisten koodien osien löytäminen auttaa koodin pakkaamisessa koodia käännettäessä, sillä täysin samat koodin osat, voidaan osa korvata toisella. Siten koodi saadaan pienempään tilaan. Samankaltaiset kohdat ilmaisevat myös usein tarpeen koodin refaktoroinnille, sillä koodin toisto on harvoin kannattavaa.
 
 
 
 
 
+% --- References ---
+%
+% bibtex is used to generate the bibliography. The babplain style
+% will generate numeric references (e.g. [1]) appropriate for theoretical
+% computer science. If you need alphanumeric references (e.g [Tur90]), use
+%
+% \bibliographystyle{babalpha-lf}
+%
+% instead.
+
+\bibliographystyle{babplain-lf}
+\bibliography{references-fi}
+
+
+% --- Appendices ---
+
+% uncomment the following
+
+% \newpage
+% \appendix
+% 
+% \section{Esimerkkiliite}
+
+\end{document}
+
+\section{end}
+Esimerkkilause ja lähdeviite~\cite{esimerkki}.
 
 
 
@@ -221,31 +190,4 @@ Semanttista samankaltaisuutta voidaan mitata myös abstraktoimalla kahta koodia 
 Samankaltaisuutta mitataan siis niin koodin pakkaustarkoituksissa, refaktorointia ja copypasten tunnistamista varten. Eri tarkoituksiin erilaisten samankaltaisuuksien vertailu sopii paraiten. 
 
 
-\section{end}
-Esimerkkilause ja lähdeviite~\cite{esimerkki}.
 
-
-% --- References ---
-%
-% bibtex is used to generate the bibliography. The babplain style
-% will generate numeric references (e.g. [1]) appropriate for theoretical
-% computer science. If you need alphanumeric references (e.g [Tur90]), use
-%
-% \bibliographystyle{babalpha-lf}
-%
-% instead.
-
-\bibliographystyle{babplain-lf}
-\bibliography{references-fi}
-
-
-% --- Appendices ---
-
-% uncomment the following
-
-% \newpage
-% \appendix
-% 
-% \section{Esimerkkiliite}
-
-\end{document}
