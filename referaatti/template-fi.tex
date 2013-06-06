@@ -65,36 +65,37 @@
 \mainmatter
 \section{Tiivistelmä - Samankaltaisuus ohjelmissa}
 
-Koodia verrattaessa samankaltaisuus jaetaan kahteen eri luokkaan; ulkoasulliseen(representational) sekä semanttiseen(semantic) ja toiminnalliseen(behavioral). Nämä luokat jaetaan mittaustapojen perusteella omiin alaluokkiinsa.
+% miksi samankaltaisuutta halutaan verrata - konteksti
+Samankaltaisuutta mittaukselle on monia sovellutuksia. Koodia käännettäessä (compile) samankaltaisten kohtien havaitsemisella voidaan saavuttaa optimointeja pakkauksen ja käännetyn ohjelman nopeuden suhteen. % kiva lausehirviö
+Samankaltaisia kohtia tunnistamalla voidaan myös löytää koodista refaktoirointia, koodin rakenteen parantamista muuttamatta ohjelman toiminnallisuutta, kaipaavia kohtia. % taitaa olla kieliopillisesti oikein :)
+
+
+Koodia verrattaessa samankaltaisuus jaetaan kahteen eri luokkaan; ulkoasulliseen (representational) sekä semanttiseen (semantic) ja toiminnalliseen (behavioral). Nämä luokat jaetaan mittaustapojen perusteella omiin alaluokkiinsa.
 
 Samankaltaisuuden määritelmä on moniselitteinen. Samankaltaisuus tarkoittaa niin sitä, että verrattavat asiat ovat samat, kuin että varrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi on tärkeää määrittää, millaista samankaltaisuutta halutaan verrata.
 
 \begin{itemize}
-\item{Ulkoasullinen samankaltaisuus}
-
-Ulkoasullisessa (representational) samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Ulkoasullisessa samankaltaisuudessa on oleellista koodin tekstintekstuaalinen ulkoasu, koodin syntaksi sekä rakenne ulkoasullisesti.
+\item{Ulkoasullisessa (representational)}
+samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Ulkoasullisessa samankaltaisuudessa on oleellista koodin tekstintekstuaalinen ulkoasu, koodin syntaksi sekä rakenne ulkoasullisesti. % paljon ulkoasull.*
 
 Tekstuaalisessa vertailussa samankaltaisuutta verrataan mittaamalla eri metriikoilla samankaltaisuusarvo. Sopivia metriikoita ovat Levenshtein distance, jossa lasketaan paljonko toista koodia tulee muuttaa, jotta kahdesta koodista tulee samat, longest common sequence, jossa verrattavista koodeista haetaan pisin yhteinen suoritusjakso(sequence).
-
-% Metriikkapohjaiasessa vertailussa muunnetaan koodi eri metriikoilla helpommin verrattaviksi luvuiksi, joiden vertaaminen keskenään on helpompaa.
-% ^kai ihan turhaa
 
 Ominaisuuspohjaisessa vertailussa verrataan kaikkia koodien ominaisuuksia. Ominaisuuksia ovat muunmuassa nimet sekä lasketut metriikat. Vertailussa yhdistetään kaikki koodin ominaisuudet ja samankaltaisuus määritetään laskemalla koodien yhteiset ominaisuudet.
 
 Samankaltaisuutta mitataan myös Shannonin informaatioteorian mukaan, jossa verrataan, paljonko kahden koodin välillä tulee jakaa tietoa, jotta koodit olisivat täysin samankaltaiset. Mitä vähemmän muutoksia tarvitaan, sitä samankaltaisempia ne ovat.
 
-\item{Semanttinen ja toiminnallinen samankaltaisuus}
+\item{Semanttinen (semantic) ja toiminnallinen (behavioral) }
+samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen nimiä yms. vaan ne keskittyvät koodin rakenteeseen ja toimintaan.
+Semanttisessa ja toiminnallisessa samankaltaisuudessa koodia verrataan komennon, lohkon tai luokan tasolla. Näiden osien vertailu ei kannata, sillä tällöin koodi ei sisällä järkevää semantiikkaa ja siten niiden vertailu ei ole kannattavaa.
 
-Semanttinen(semantic) ja toiminnallinen(behavioral) samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen nimiä yms. vaan ne keskittyvät koodin rakenteeseen ja toimintaan.
+Semanttinen ja toiminnalinen samankaltaisuus jaetaan kahteen aliluokkaan
+\begin{itemize}
+\item{Funktionaalista (functional) samankaltaisuutta} tutkittaessa tutkitaan ohjelman toteuttamia funktioita. Mikäli verrattavat koodit toteuttavat saman funktion, ovat ne funktionaalisesti samankaltaisia. Funktionaalista samankaltaisuutta määritettäessä tulee vastata kysymykseen, mikä tehkee kahdesta funktionaalisesti samankaltaisen. Tässä päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
 
-Semanttisessa ja toiminnallisessa samankaltaisuudessa koodia verrataan komennon, lohkon tai luokan tasolla. Näiden osien vertailu ei kannata, sillä tällöin koodi ei sisällä järkevää semantiikkaa.
+\item{Suorituspolkujen (trace) } semanttista ja toiminnallista samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella (execution curve similarity), syöte paluuarvo (input/output) yhtäläisyydellä, semanttisella etäisyydellä (semantic distance) sekä abstraktioetäisyydellä(abstraction equivalence distance).
 
-Funktionaalista(functional) samankaltaisuutta tutkittaessa tutkitaan ohjelman toteuttamia funktioita. Mikäli verrattavat koodit toteuttavat saman funktion, ovat ne funktionaalisesti samankaltaisia. Funktionaalista samankaltaisuutta määritettäessä tulee vastata kysymykseen, mikä tehkee kahdesta funktionaalisesti samankaltaisen. Tässä päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
-
-Semanttista ja toiminnallista samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella(execution curve similarity), syöte paluuarvo(input/output) yhtäläisyydellä, semanttisella etäisyydellä(semantic distance) sekä abstraktioetäisyydellä(abstraction equivalence distance).
-
-Suorituksen(execution) samankaltaisuutta mitataan vertaamalla ohjelman suoritusta matalalla tasolla, esimerkiksi javan bytecodea tai assemblyä vertaamalla. [tartteeko: java bytecode tai assembly selittää?] Suoritusaikainen toiminta on samankaltaisilla ohjelmilla hyvin samankaltainen, jolloin näiden vertailu on toimii.
-
+Suorituksen (execution) samankaltaisuutta mitataan vertaamalla ohjelman suoritusta matalalla tasolla, esimerkiksi javan bytecodea tai assemblyä vertaamalla. [tartteeko: java bytecode tai assembly selittää?] Suoritusaikainen toiminta on samankaltaisilla ohjelmilla hyvin samankaltainen, jolloin näiden vertailu on toimii.
+\end{itemize}
 Syöte paluuarvo vertailissa verrataan funktion paluuarvojen samankaltaisuutta. Mikäli verrattavat funktiot palauttavat samoilla syötteillä saman tuloksen, ovat funktiot samankaltaisia.
 
 Semanttista etäisyytta verrattaessa lasketaan kustannus, paljonko muutoksia verrattavien koodien muuttaminen samoiksi vaatii. Tällainen vertailualgoritmi on Levenshtein distance.
