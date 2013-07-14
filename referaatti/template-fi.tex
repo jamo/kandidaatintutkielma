@@ -1,4 +1,4 @@
-\documentclass[finnish]{tktltiki2}
+\documentclass[finnish]{../tktltiki2}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -65,35 +65,49 @@
 \mainmatter
 \section{Tiivistelmä - Samankaltaisuus ohjelmissa}
 
-Samankaltaisuuden mittaamisella on useita käyttötarkoituksia. Sitä hyödynnetään niin koodia käännettäessä koodin pakkaukkaukseen, toistuvat kohdat koodista voidaan optimoida, refaktoroinnin tarpeen löytämiseen, voiko samankaltaisen koodin eriyttää omaan metodiinsa ja tunnistamaan luvatta kopioitu koodi, niin plagiarismi kuin käyttöoikeus epäilyissä.
+Samankaltaisuuden mittaamisella on useita käyttötarkoituksia. Sitä hyödynnetään niin koodia käännettäessä koodin pakkaukkaukseen, toistuvat kohdat koodista voidaan optimoida, refaktoroinnin tarpeen löytämiseen, voiko samankaltaisen koodin eriyttää omaan metodiin ja tunnistamaan luvatta kopioitu koodi, niin plagiarismi kuin käyttöoikeus epäilyissä.
+% ~\cite{Walenstein_similarityin}
+Artikkelissa samankaltaisuutta mitataan koodin ulkoasun ja toiminnallisuuden perusteella. Artikkelissa samankaltaisuuden vertailu jaetaan kahteen luokkaan~\cite{Walenstein_similarityin}: ulkoasulliseen (representational) sekä semanttiseen (semantic) ja toiminnalliseen (behavioral). 
 
-Koodin samankaltaisuutta verrattaessa jaetaan samankaltaisuus kahteen eri luokkaan; ulkoasulliseen (representational) sekä semanttiseen (semantic) ja toiminnalliseen (behavioral). Näitä luokkia jaotellaan mittaustapojen mukaan vielä omiin alikuokkiinsa.
-
-Samankaltaisuuden määritelmä on moniselitteinen. Samankaltaisuus tarkoittaa niin sitä, että verrattavat asiat ovat samat, kuin että varrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi on tärkeää määrittää, millaista samankaltaisuutta halutaan verrata.
+Artikkelin mukaan samankaltaisuuden määritelmä on moniselitteinen. Samankaltaisuus tarkoittaa niin sitä, että verrattavat asiat ovat samat, kuin että varrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi artikkelissa korostetaan samankaltaisuude tyypin määrittäistä.
 
 \begin{itemize}
 \item{Ulkoasullisessa (representational)}
-samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Tässä oleellista on koodin tekstintekstuaalinen ulkoasu, koodin syntaksi sekä rakenne visuaalisesti.
+samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Tässä oleellista on koodin tekstintekstuaalinen ulkoasu, koodin syntaksi sekä visuaalinen rakenne.
 
-Tekstuaalisessa vertailussa samankaltaisuutta verrataan mittaamalla eri metriikoilla samankaltaisuusarvo. Sopivia metriikoita ovat Levenshtein distance, jossa lasketaan paljonko toista koodia tulee muuttaa kahden samaksi saamisessa sekä longest common sequence, jossa verrattavista koodeista haetaan pisin yhteinen suoritusjakso.
+Ulkoasullisen samankaltaisuuden vertailuun artikkeli esittää kolme vertailutapaa: tekstuaalinen vertailu, ominaisuuspohjainen vertailu sekä Shannonin informaatioteoria.
 
-Ominaisuuspohjaisessa vertailussa verrataan kaikkia koodien ominaisuuksia, joita ovat muunmuassa nimet sekä lasketut metriikat. Vertalussa samankaltaisuus määritelleem laskemalla kaikki koodin ominaisuudet.
+Tekstuaalisessa vertailussa samankaltaisuutta verrataan laskemalla eri metriikoita käyttämällä koodille samankaltaisuusarvo. Artikkelin mukaan sopivia metriikoita ovat Levenshtein distance, jossa lasketaan paljonko toista koodia tulee muuttaa kahden samaksi saamisessa sekä longest common sequence, jossa verrattavista koodeista haetaan pisin yhteinen suoritusjakso.
 
-Ulkoasullisen samankaltaisuuden mittaamiseen käytetään myös Shannonin informaatioteoriaa, jossa verrataan paljonko kahden koodin välillä tulee jakaa tietoa, jotta koodit olisivat täysin samankaltaiset. Mitä vähemmän muutoksia tarvitaan, sitä samankaltaisempia ne ovat.
+Ominaisuuspohjaisessa vertailussa vertailussa huomioidaan kaikki aiemmin mainitut samankaltaisuuden vertailuun käytetyy keinot. Sekä huomioidaan kaikki koodin ominaisuudet, joita ovat muunmuassa muuttujien sekä metodien nimet.
+
+Shannonin informaatioteoriassa lasketaan, paljonko kahden koodin välillä tulee jakaa tietoa, jotta koodit olisivat täysin samankaltaiset. Mitä vähemmän muutoksia tarvitaan, sitä samankaltaisempia ne ovat.
 
 \item{Semanttinen (semantic) ja toiminnallinen (behavioral) }
-samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen ja metodien nimiä, sisennystä yms. vaan ne keskittyvät koodin rakenteeseen ja toimintaan.
-Tässä koodia verrataan yksittäisen komennon, lohkon tai luokan tasolla, sillä muun kokoisten osien vertailu ei kannata, sille tällöin koodi ei sisällä järkevää semantiikkaa.
+samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen ja metodien nimiä, sisennystä yms. vaan ne keskittyvät koodin rakenteeseen ja toimintaan. Koodia verrataan yksittäisen komennon, lohkon tai luokan tasolla, sillä muun kokoisten osien vertailu ei kannata, sillä silloin koodi ei sisällä järkevää semantiikkaa.
 
-Semanttinen ja toiminnalinen samankaltaisuus jaetaan kahteen aliluokkaan
-\begin{itemize}
-\item{Funktionaalista (functional) samankaltaisuus} tutkii ohjelman toteuttamia funktioita. Mikäli koodit toteuttavat saman funktion, ovat ne funktionaalisesti samankaltaisia. 
-Funktionaalista samankaltaisuutta määritettäessä tulee kuitenkin vastata kysymykseen; mikä tehkee kahdesta funktionaalisesti samankaltaisen. Artikkelissa päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
+Artikkelin mukaan intutitiivisiä tapoja verrata kahden koodin semanttista samankaltaisuutta ei ole, vaan se esittää, että semanttinen samankaltaisuus muutetaan ensin helpommin vertailtavaan muotoon.
 
-\item{Suorituspolkujen (trace) } semanttista ja toiminnallista samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella (execution curve similarity), syöte paluuarvo (input/output) yhtäläisyydellä, semanttisella etäisyydellä (semantic distance) sekä abstraktioetäisyydellä (abstraction equivalence distance).
+Artikkeli mainitsee kaksi esitysmuotoa semanttisen samankaltaisuuden vertaamiseen: funktionaalinen (functional) samankaltaisuuden sekä suorituspolkujen (trace) samankaltaisuuden.
 
-Suorituksen samankaltaisuutta mitataan vertaamalla ohjelman suoritusta matalalla tasolla, esimerkiksi javan bytecodea tai assemblyä vertaamalla.Suoritusaikainen toiminta on samankaltaisilla ohjelmilla hyvin samankaltainen, jolloin näiden vertailu on toimii.
-\end{itemize}
+%todo?
+Funktionaalinen samankaltaisuus mittaa koodin toteuttamia funktioita; jos koodit toteuttavat saman funktion, ovat ne silloin semanttisesti samankaltaisia.
+Funktionaalista samankaltaisuutta määritettäessä tulee kuitenkin vastata kysymykseen; mikä tekee kahdesta funktiosta samankaltaisen. Artikkelissa päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
+
+Suorituksen samankaltaisuus mittaa suoritusta matalalla tasolla, esimerkiksi javan bytecodena tai assemblynä. Samankaltaisuus ohjelman suorituksessa kuvaa artikkelin mukaan myös samankaltaisuutta ohjelman rakenteessa.
+
+Artikkeli esittelee myös muutaman tavan verrata semanttista ja toiminnallista samankaltaisuutta: suorituspolun (execution curve) samankaltaisuus, syöte paluuarvo (input/output), semanttinen etäisyys sekä abstraktio etäisyys (abstraction equivalence distance).
+
+Semanttinen etäisyys mittaa kustannusta muuttaa koodi toiseksi. Artikkeli käyttää tässä levenshteinin etäisyyttä (levenhstein distance) kustannuksen mittaamiseen.
+
+Abstraktioetäisyyden mittaamisessa lasketaan paljonko kahta koodia tulee abstraktoida, poistamalla vähiten merkitsevät osat koodista, kunnes kaksi koodia ovat samat. Artikkelin mukaan tätä menetelmää käytetään oikeasti oikeustapauksissa verrattaessa koodija tekijänoikeusrikkomusepäilyissä.
+
+
+%%kesken
+
+
+ %??????????????? samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella (execution curve similarity), syöte paluuarvo (input/output) yhtäläisyydellä, semanttisella etäisyydellä (semantic distance) sekä abstraktioetäisyydellä (abstraction equivalence distance).
+
 
 %wtf
 %Syöte paluuarvo vertailissa verrataan funktion paluuarvojen samankaltaisuutta. Mikäli verrattavat funktiot palauttavat samoilla syötteillä saman tuloksen, ovat funktiot samankaltaisia.
@@ -117,7 +131,7 @@ Suorituksen samankaltaisuutta mitataan vertaamalla ohjelman suoritusta matalalla
 % instead.
 
 \bibliographystyle{babplain-lf}
-\bibliography{references-fi}
+\bibliography{../lahteet}
 
 
 % --- Appendices ---
