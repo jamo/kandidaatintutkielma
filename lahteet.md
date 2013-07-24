@@ -45,6 +45,9 @@ Metodi perustuu "indexing the code database with a suffix array, which allows ra
 ## Computer-based plagiarism detection methods and tools: an overview, 2007
 > Lukashenko, Romans and Graudina, Vita and Grundspenkis, Janis
 
+Kuvailee syitä plagioinnin yleisyydelle, metodeja palgiarismin estoon ja tunnistamiseen. Korostaa, että tunnistaminen korjaa hetkeksi, mutta ehkäisy auttaisi enemmän ja pitempään. Kuvailee yleisiä plagioinnin tunnistuksia, sekä verailee niin vapaan tekstin kuin ohjelmakoodin samankaltaisuuden tuniistusta.
+Korostaa, että pelkkä automaattinen tunnistus ei riitä, vaan ihmisen tulee myös arvioida koodien samankaltaisuus ennen palgioinniksi julistamista.
+
 * * * * * *
 
 ## A comparison of plagiarism detection tools, 2010
