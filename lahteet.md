@@ -93,18 +93,14 @@ Esittelee järjestelmän, joka tunnistaa tietyt virheet, mutta se toimii vain k�
 
 * * * * * *
 
-## An automated learning system for Java programming, 2004
-> Daly, Charlie and Horgan, Jane M
-
-* * * * * *
-
 ## Fully automatic assessment of programming exercises, 2001
 > Saikkonen, Riku and Malmi, Lauri and Korhonen, Ari
 
 Esittelee palautusjärjestelmän scheme-robo kielelle, jossa tarkastus perustuu osin omaan kääntäjään. Sisälsi myös plagiasmintunnistusjärjestlemän
 Muodostivat abstraktin syntaksipuun. ei lopulta käsitellyt tätä juurikaan.
 
-@article{Ji:2007:SCL:1269900.1268807,
+* * * * * *
+
 ## A source code linearization technique for detecting plagiarized programs, 2007
 > Ji, Jeong-Hoon and Woo, Gyun and Cho, Hwan-Gue
 
