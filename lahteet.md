@@ -69,6 +69,7 @@ Metodi perustuu "indexing the code database with a suffix array, which allows ra
 
 ## A Plagiarism Detection Technique for Java Program Using Bytecode Analysis, 2008
 > Jeong-Hoon Ji and Gyun Woo and Hwan-Gue Cho
+
 Esittelee yleisimmät plagiarismin tyypit (TODO)
 Class filujen bytecodea tutkimalla ja sen triviaaleilla vertailuilla tunnistaa pitkälti samankaltaiset ohjelmakoodit.
 Hyötyjä, ei vaadi lähdekoodia, mutta toisaalta usein opiskelijatapauksissa saa lähdekoodinkin...
@@ -77,6 +78,7 @@ Hyötyjä, ei vaadi lähdekoodia, mutta toisaalta usein opiskelijatapauksissa sa
 
 ## Similarity and originality in code: plagiarism and normal variation in student assignments, 2006
 > Mann, Samuel and Frew, Zelda
+
 Keskustelee normaalista samankaltaisuudesta opiskelijoiden koodista - milloin koodit ovat samankaltaisia vain tiettyjen esimerkien ja saman materiaalin lukemisen takia, ja milloin plagiarismin takia. Raja ei selkeä, ja ei plagioidut voivat helposti olla hyvin samankaltaisia - myös pidemmät.
 Esittelee syitä tälle.
 Huomauttaa myös, että on tärkeää tunnistaa täysin erilaiset ratkaisut, sillä suurimmassa osassa ratkaisuista on paljon samankaltaisuutta, vaikka ei palgiaroismiä.
@@ -85,6 +87,7 @@ Huomauttaa myös, että on tärkeää tunnistaa täysin erilaiset ratkaisut, sil
 
 ## Static analysis of students' Java programs, 2004
 > Truong, Nghi and Roe, Paul and Bancroft, Peter
+
 Artikkeli enemmän koodin laadusta, ja kertoo, kuinka alussa opiskelijat kirjoittavat huonoa koodia, erittelee perus virheet sekä helpot huonon koodin piirteet.
 Esittelee järjestelmän, joka tunnistaa tietyt virheet, mutta se toimii vain kääntyvällä koodilla, sekä koodilla, jossa vain oleelliset kohdat täytetään (fill in the gap).
 
@@ -97,12 +100,14 @@ Esittelee järjestelmän, joka tunnistaa tietyt virheet, mutta se toimii vain k�
 
 ## Fully automatic assessment of programming exercises, 2001
 > Saikkonen, Riku and Malmi, Lauri and Korhonen, Ari
+
 Esittelee palautusjärjestelmän scheme-robo kielelle, jossa tarkastus perustuu osin omaan kääntäjään. Sisälsi myös plagiasmintunnistusjärjestlemän
 Muodostivat abstraktin syntaksipuun. ei lopulta käsitellyt tätä juurikaan.
 
 @article{Ji:2007:SCL:1269900.1268807,
 ## A source code linearization technique for detecting plagiarized programs, 2007
 > Ji, Jeong-Hoon and Woo, Gyun and Cho, Hwan-Gue
+
 Esittelevät järjestelmän, joka tunnistaa plagiarismin stic tracing -metodilla, jossa se staattisesti suorittaa ohjelmaan syntaksitasolla ja tunnistaa etukäteen määriteltyjä avainsanoja. Melko suppeasti selitetty
 
 * * * * * *
@@ -114,6 +119,7 @@ Esittelevät järjestelmän, joka tunnistaa plagiarismin stic tracing -metodilla
 
 ## Patterns of plagiarism, 2005
 > Daly, Charlie and Horgan, Jane
+
 RoboProf - Luo "watermarkin" ohjelman loppuun, ja sitä palautuksissa tutkimalla voidaan triviaalisti tunnistaa jaettu koodi, sekä jakaja ja hyötyjät..
 Käsittelee myös kattavasti plagioivien ja oikeasti tekevien koemenestystä.
 
@@ -121,6 +127,7 @@ Käsittelee myös kattavasti plagioivien ja oikeasti tekevien koemenestystä.
 
 ## Arwin, Christian and Tahaghoghi, S. M. M., 2006
 > Plagiarism detection across programming languages
+
 Esittelee järjestelmän XPlag, jolla ei tunnisteta vain kopioimista yhden ohjelmointikielen sisällä, vaan tunnistaa myös kielestä toiseen kopiot. Näissä on usein hyvin samankaltainen rakenne. Algoritmit yms kääntyvät melko triviaalisti C:stä javaan yms.
 Ainut rajoite on pakote GNU GCCn käyttö.
 Toimii heidän testien mukaan pitkälti JPlagin tehoisesti.
