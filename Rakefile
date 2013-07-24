@@ -1,6 +1,7 @@
 require 'fileutils'
 
 task :default => ["referaatti:build"]
+task :clean => %w[referaatti:clean aine:clean esitelma:clean kandi:clean]
 namespace :referaatti do
   desc "Build referaatti.tex with ../lahteet.bib"
   task :build do
