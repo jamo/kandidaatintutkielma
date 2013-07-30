@@ -13,16 +13,12 @@
 \makeatother
 
 % --- Language-related settings ---
-%
-% these should be modified according to your language
 
-% babelbib for non-english bibliography using bibtex
 \usepackage[fixlanguage]{babelbib}
 \selectbiblanguage{finnish}
 
-% add bibliography to the table of contents
 \usepackage[nottoc]{tocbibind}
-% tocbibind renames the bibliography, use the following to change it back
+
 \settocbibname{Lähteet}
 
 % --- Theorem environment definitions ---
@@ -48,10 +44,6 @@
 \level{Tiivistelmä}
 \abstract{Tiivistelmä}
 
-% The following can be used to specify keywords and classification of the paper:
-
-%\keywords{avainsana 1, avainsana 2, avainsana 3}
-
 \begin{document}
 
 % --- Front matter ---
@@ -63,17 +55,19 @@
 % --- Main matter ---
 
 \mainmatter
-\section{Tiivistelmä - Samankaltaisuus ohjelmissa}
+\section{Samankaltaisuus ohjelmissa}
 
-Samankaltaisuuden mittaamisella on useita käyttötarkoituksia. Sitä hyödynnetään niin koodia käännettäessä koodin pakkaukkaukseen, toistuvat kohdat koodista voidaan optimoida, refaktoroinnin tarpeen löytämiseen, voiko samankaltaisen koodin eriyttää omaan metodiin ja tunnistamaan luvatta kopioitu koodi, niin plagiarismi kuin käyttöoikeus epäilyissä.
-% ~\cite{Walenstein_similarityin}
-Artikkelissa samankaltaisuutta mitataan koodin ulkoasun ja toiminnallisuuden perusteella. Artikkelissa samankaltaisuuden vertailu jaetaan kahteen luokkaan~\cite{Walenstein_similarityin}: ulkoasulliseen (representational) sekä semanttiseen (semantic) ja toiminnalliseen (behavioral). 
+Samankaltaisuudella tarkoitetaan sitä, että verrattavat asiat ovat samat tai verrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi artikkelissa korostetaan samankaltaisuude tyypin määrittäistä.
 
-Artikkelin mukaan samankaltaisuuden määritelmä on moniselitteinen. Samankaltaisuus tarkoittaa niin sitä, että verrattavat asiat ovat samat, kuin että varrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi artikkelissa korostetaan samankaltaisuude tyypin määrittäistä.
+Samankaltaisuuden mittaamisella on useita käyttötarkoituksia. Samankaltaisuuden tunnistusta käytetään refaktorointitarpeen tunnistukseen: toistuvat koodit voidaan eriyttää metodiksi, tunnistaa luvatta kopioitu koodi plagiarismi epäilyissä.
+
+Artikkelissa samankaltaisuuden vertailu jaetaan kahteen luokkaan~\cite{Walenstein_similarityin}: ulkoasulliseen (representational) sekä semanttiseen (semantic) ja toiminnalliseen (behavioral). 
+
+% siis (Ulkoasullinen) ja (semanttinen ja toiminnallinen)
 
 \begin{itemize}
 \item{Ulkoasullisessa (representational)}
-samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Tässä oleellista on koodin tekstintekstuaalinen ulkoasu, koodin syntaksi sekä visuaalinen rakenne.
+samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Tässä oleellista on koodin syntaksi sekä visuaalinen rakenne.
 
 Ulkoasullisen samankaltaisuuden vertailuun artikkeli esittää kolme vertailutapaa: tekstuaalinen vertailu, ominaisuuspohjainen vertailu sekä Shannonin informaatioteoria.
 
@@ -94,53 +88,17 @@ Artikkeli mainitsee kaksi esitysmuotoa semanttisen samankaltaisuuden vertaamisee
 Funktionaalinen samankaltaisuus mittaa koodin toteuttamia funktioita; jos koodit toteuttavat saman funktion, ovat ne silloin semanttisesti samankaltaisia.
 Funktionaalista samankaltaisuutta määritettäessä tulee kuitenkin vastata kysymykseen; mikä tekee kahdesta funktiosta samankaltaisen. Artikkelissa päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
 
-Suorituksen samankaltaisuus mittaa suoritusta matalalla tasolla, esimerkiksi javan bytecodena tai assemblynä. Samankaltaisuus ohjelman suorituksessa kuvaa artikkelin mukaan myös samankaltaisuutta ohjelman rakenteessa.
+Suorituksen samankaltaisuus mittaa suoritusta matalalla tasolla, esimerkiksi javan tavukoodina tai symboolisena konekielenä. Samankaltaisuus ohjelman suorituksessa kuvaa artikkelin mukaan myös samankaltaisuutta ohjelman rakenteessa.
 
 Artikkeli esittelee myös muutaman tavan verrata semanttista ja toiminnallista samankaltaisuutta: suorituspolun (execution curve) samankaltaisuus, syöte paluuarvo (input/output), semanttinen etäisyys sekä abstraktio etäisyys (abstraction equivalence distance).
 
-Semanttinen etäisyys mittaa kustannusta muuttaa koodi toiseksi. Artikkeli käyttää tässä levenshteinin etäisyyttä (levenhstein distance) kustannuksen mittaamiseen.
+Semanttinen etäisyys mittaa kustannusta muuttaa koodi toiseksi. Artikkeli käyttää tässä levenshteinin etäisyyttä (levenshtein distance) kustannuksen mittaamiseen.
 
 Abstraktioetäisyyden mittaamisessa lasketaan paljonko kahta koodia tulee abstraktoida, poistamalla vähiten merkitsevät osat koodista, kunnes kaksi koodia ovat samat. Artikkelin mukaan tätä menetelmää käytetään oikeasti oikeustapauksissa verrattaessa koodija tekijänoikeusrikkomusepäilyissä.
-
-
-%%kesken
-
-
- %??????????????? samankaltaisuutta mitataan suorituspolkujen samankaltaisuudella (execution curve similarity), syöte paluuarvo (input/output) yhtäläisyydellä, semanttisella etäisyydellä (semantic distance) sekä abstraktioetäisyydellä (abstraction equivalence distance).
-
-
-%wtf
-%Syöte paluuarvo vertailissa verrataan funktion paluuarvojen samankaltaisuutta. Mikäli verrattavat funktiot palauttavat samoilla syötteillä saman tuloksen, ovat funktiot samankaltaisia.
-
-%Semanttista etäisyytta verrattaessa lasketaan kustannus, paljonko muutoksia verrattavien koodien muuttaminen samoiksi vaatii. Tällainen vertailualgoritmi on Levenshtein distance.
-
-%Abstraktioetäisyydellä verrattaessa lasketaan kustannus, paljonko verrattavia koodeja tulee abstraktida, eli poistaa epäoleellisia piirteitä koodista, kunnes koodit ovat samat.
 \end{itemize}
 
 
-
-
-% --- References ---
-%
-% bibtex is used to generate the bibliography. The babplain style
-% will generate numeric references (e.g. [1]) appropriate for theoretical
-% computer science. If you need alphanumeric references (e.g [Tur90]), use
-%
-% \bibliographystyle{babalpha-lf}
-%
-% instead.
-
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
-
-
-% --- Appendices ---
-
-% uncomment the following
-
-% \newpage
-% \appendix
-%
-% \section{Esimerkkiliite}
 
 \end{document}
