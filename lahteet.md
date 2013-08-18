@@ -53,6 +53,8 @@ Korostaa, että pelkkä automaattinen tunnistus ei riitä, vaan ihmisen tulee my
 ## A comparison of plagiarism detection tools, 2010
 > Hage, Jurriaan and Rademaker, Peter and van Vugt, Nike
 
+Esittelee lyhyesti plagioinnin tunnistusta, attribute counting ja tokenization. Vertailee useaa javan plagiointia tunnistavaa ohjelmaa.
+
 * * * * * *
 
 ## Finding plagiarisms among a set of programs with JPlag, 2002
@@ -140,3 +142,12 @@ Artikkelissa esittelevät järjestelmän, joka tunnistaa plagiaatin tallentamall
 Heikkouksia on mahdolliset vesileiman poistot sekä ei varsinaisessa plagiointimielessä jaetut tiedostot, joissa vesileima
 Tunnistaa suuretkin muutokset, mikäli tiedostoa jaetaan.
 Järjestelmä taustasofta ja java appletti. Taustasofta hoitaa myös pohjien jakelun ja palautusten tarkastuksen
+
+* * * * * *
+
+## Software for detecting suspected plagiarism: Comparing structure and attribute-counting systems, 1996
+> Verco, Kristina L and Wise, Michael J
+
+* * * * * *
+## Plagiarism in programming assignments, 1999
+> Joy, M. and Luck, M.

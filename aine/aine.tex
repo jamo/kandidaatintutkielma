@@ -1,29 +1,7 @@
-% --- Template for thesis / report with tktltiki2 class ---
-% 
 % last updated 2013/02/15 for tkltiki2 v1.02
 
 \documentclass[finnish]{../tktltiki2}
 
-% tktltiki2 automatically loads babel, so you can simply
-% give the language parameter (e.g. finnish, swedish, english, british) as
-% a parameter for the class: \documentclass[finnish]{tktltiki2}.
-% The information on title and abstract is generated automatically depending on
-% the language, see below if you need to change any of these manually.
-% 
-% Class options:
-% - grading                 -- Print labels for grading information on the front page.
-% - disablelastpagecounter  -- Disables the automatic generation of page number information
-%                              in the abstract. See also \numberofpagesinformation{} command below.
-%
-% The class also respects the following options of article class:
-%   10pt, 11pt, 12pt, final, draft, oneside, twoside,
-%   openright, openany, onecolumn, twocolumn, leqno, fleqn
-%
-% The default font size is 11pt. The paper size used is A4, other sizes are not supported.
-%
-% rubber: module pdftex
-
-% --- General packages ---
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -37,11 +15,6 @@
 \AtBeginDocument{\hypersetup{pdftitle = {\@title}, pdfauthor = {\@author}}}
 \makeatother
 
-% --- Language-related settings ---
-%
-% these should be modified according to your language
-
-% babelbib for non-english bibliography using bibtex
 \usepackage[fixlanguage]{babelbib}
 \selectbiblanguage{finnish}
 
@@ -81,31 +54,6 @@
 
 \keywords{avainsana 1, avainsana 2, avainsana 3}
 
-% classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
-% This is probably mostly relevant for computer scientists
-% uncomment the following; contents of \classification will be printed under the abstract with a title
-% "ACM Computing Classification System (CCS):"
-% \classification{}
-
-% If the automatic page number counting is not working as desired in your case,
-% uncomment the following to manually set the number of pages displayed in the abstract page:
-%
-% \numberofpagesinformation{16 sivua + 10 sivua liitteissä}
-%
-% If you are not a computer scientist, you will want to uncomment the following by hand and specify
-% your department, faculty and subject by hand:
-%
-% \faculty{Matemaattis-luonnontieteellinen}
-% \department{Tietojenkäsittelytieteen laitos}
-% \subject{Tietojenkäsittelytiede}
-%
-% If you are not from the University of Helsinki, then you will most likely want to set these also:
-%
-% \university{Helsingin Yliopisto}
-% \universitylong{HELSINGIN YLIOPISTO --- HELSINGFORS UNIVERSITET --- UNIVERSITY OF HELSINKI} % displayed on the top of the abstract page
-% \city{Helsinki}
-%
-
 
 \begin{document}
 
@@ -114,7 +62,7 @@
 \frontmatter      % roman page numbering for front matter
 
 \maketitle        % title page
-\makeabstract     % abstract page
+%\makeabstract     % abstract page
 
 \tableofcontents  % table of contents
 
@@ -122,16 +70,108 @@
 
 \mainmatter       % clear page, start arabic page numbering
 
+% Selosta plagioinnin syitä lyhyesti ja kerro että se on entistä suositumpaa kun palautetaan automaatteihin/kun ihminen ei tarkista sitä.
+
+% kerrotaan että joissain automaateissa se on sisäänrakennettu, mm. fast plag. system - vesileima
+% esitellään attribuuttien laskenta ja tokenisointi
+% mainitaan noi yleisimmät, SIM, JPLAG, MOSS, Plaggie, 
+% ehkä tarkemmin parin toimintaperjaatetta (sen mukaan mitä siitä on julkaistu)
+% perus "näin huijaan plagiointikoneistoa", miksi pelkkä Diffi ei siis hyvä
+% osa järjestelmistä ei osaa erottaa eroa opiskelijan koodin ja tehtäväpohjassa mukana tulleen koodin välillä
 \section{Johdanto}
+
+% turhan tiiviisti sanottu johdantoon => tiivistelmään/abstractiin
+Automaattisten ohjelmointitehtävien palautusjärjestelmien myötä plagiointi on tullut paljon helpommaksi, joten plagioinnin tunnistus on yhä tärkeämpää.
+
+
 Ohjelmointitehtävissä yms. plagioinnin tunnistus on sähköisten palautusjärjestelmien kehittymisen, opiskelijamassojen kasvun sekä sähköisen aineiston lisääntymisen myötä tullut yhä tärkeämmäksi. XXX mukaan jopa N \% kurssilaisista jakoi tai kopioi koodia. Edes asiasta kurssilaisille tiedottaminen ei heillä vaikuttanut plagiarismin määrään.
+
 
 Plagiarismin tunnistukseen on kehitetty useita järjestelmiä. Varhaiset järjestelmät perustuivat avainsanojen laskuun, mutta nykyisin tätä tekniikkaa pidetään varsin tehottomana.
 
+
+\section{Määritelmiä}
+
+~\cite{Daly:2005:PP:1047124.1047473} määrittelee plagioinnin "Opiskelija palauttaa toiselta opiskelijalta otettua koodia ja palauttaa sen, mahdollisesti muunneltuna, omana työnään"
+
+
+\section{Sekoilua}
+~\cite{4682179}
+Esimerkiksi yritystasolla plagioinnin/kopioinnin tunnistuksessa ei ole suotavaa vertailla suoraan lähdekoodia, sillä silloin lähdekoodin kopiointi on vielä entistä helpompaa, sillä vertaileva ohjelma saa sen käsiinsä. Siksi erityisesti yritysmailmaan tarpeisiin ~\cite{4682179} esittelee järjestelmän, joka mahdollistaa kahden javaohjelman samankaltaisuudentunnistuksen vertailemalla puhtaasti javan tavukoodia samankaltaisuuksien tunnistamiseen.
+
+Vaikka oppilaitos ympäristössa ei ole samanlaisia tekijänoikeusongelmia koodien samankaltaisuutta verrattaessa, voi opiskelijat helposti muokata koodia vaikeammin tunnistettavaksi, muuttamalla metodien nimiä ja järjestystä, lisäämällä kommentteja jne. Vertailemalla javan tavukoodia tulee suurimasta osasta hämäämiseen tarkoitetuista muutoksista turhia.
+
+
+
+~\cite{FPDS}
+Plagioinnintunnistusjärjestelmät kuten JPlag ja MOSS käyttävät tokenointi menetelmää plagioinnin tunnistuksessa. Aluksi ne poistavat whitespacen ja kommentit. Sitten ne korvaavat Identifierit $<IDT>$ ja luvut $<VALUE>$ ja loopit geneerisillä $<BEGIN-LOOP>$ ja $<END-LOOP>$. näillä onnistutaan välttämään kielelliset (lexical) muutokset algoritmiin.
+Esitteli paremmaksi ratkaisuksi algoritmia joka käyttää tokenisoituja versioita syötefiluista ja noi käyttää suffix arrays indeksointiin jotta vertailu olisi tehokkaampaa %wtf
+
+
+Vaikka tokenisointiin perustuvat plagioinnin tunnistus sovellukset käyttävät eri algoritmejä vertailuun, on kaikilla sama ydinidea
+many-to-any vertailu kaikkien tehtävään palautettujen tehtävien kesken tulisi tuottaa lista samankaltaisuusarvoja. Niistä voidaan sitten tulkita, mitkä tiedostos sisältävät todennkoisimmin plagiointia
+
+~\cite{Daly:2005:PP:1047124.1047473}
+Huomasi että plagioineet opiskelijat eivät pärjäneet huomattavasti heikommin kokeessa kuin palgioimattomat. Kuitenkin kun plagioijat luokiteltiin lähteisiin (supplier) ja vastaanottajiin (recepient) he huomasivat, että lähteet pärjäsivät kopioijia huomattavasti paremmin kokeissa.
+He käyttävät järjestelmää, joka palautuksen yhteydessä luo vesileiman whitespacella Main-metodin declaration -rivin loppuun. Yleensä editorit eivät korosta whtespacea eikä main metodin public static void main(String[] args) riviä normaalisti muuteta.
+
+
+ . Jos vesileima löytyy jo järjestelmästä, voidaan tunnistaa tiedoston lähde ja sen kopioineet. Aiemmin esillä olleet järjestelmät eivät lähdettä ja kopioijaa erottaa.
+Oma kommentti: tämä mainin perään laitto ei taida toimia jos monta filua...
+~\cite{Daly:2005:PP:1047124.1047473} esittelee järjestelmänsä muista eroaviksi hyviksi piirteiksi:
+\begin{itemize}
+\item Se tunnistaa palagioinnin myös lyhyissä ohjelmissa, jotka ovat tyypillisiä perus ohjelmointikursseilla
+\item Erottaa lähteen ja kopioijan
+\item Ei vaadi manuaalista tarkastusta
+\item Plagiointi tunnistetaan heti kun se tapahtuu, ei tarvitse odottaa suurta datamassaa ja prosessoida sitä erikseen.
+\end{itemize}
+
+
+Haitoiksi:
+\begin{itemize}
+\item Tunnistaa plagioinnin vain jos kopioija saa tehtävästä kopion palautuksen jälkeen
+\item Opiskelija voi rikkoa vesileiman vahingossa
+\item Kun järjestelmän toiminta selviää, on se helppoa ohitaa
+\end{itemize}
+
+ ~\cite{Mann:2006:SOC:1151869.1151888} Korostaa myös tunnistamaan "lack of similarity" -tapauksia, eli tapauksia, joissa samankaltaisuus on hyvin pientä.
+
+
+\section{Jo jotain järkeä}
 XX esitteli myös järjestelmän, jossa tiedoston loppuun tehtiin whitespacella vesileima, jonka perusteella pystytään tunnistamaan sekä koodin jakaja että kopioijat. Tällä pystytään tunnistamaan myös enemmän koodia muokanneet kopioijat. Myöskään virheellisiä havaintoja ei tehtävien samankaltaisuudnen vuoksi synny.
 
-\section{Vanha tunnistustekniikka}
 
-\section{Uusi tunnistustekniikka}
+Koodin plagiarismin tunnistusjärjestelmien toiminta jakautuu pääosin attribuuttien laskentaan sekä tokenisointiin.
+Attribuuttien laskenta on vanhempaa, tekniikkaa, kun taas uudet plagiarismin tunnistus sovellukset perustuvat tokenisaatioon (VIITE!)
+
+
+
+\section{Attribuuttien laskenta}
+
+
+\section{Tokenisointi ja tokenien vertailu} %Suomenna TOKEN!
+Tokenisoinnissa tokenit ovat kieliopillisia termejä, joista ohjelma muodostuu (identifiers, keywords jne.) Kommentit, muttujien nimet ja sisennykset poistetaan. Näitä token esityksiä ohjelmasta verrataan sitten erilaisilla algoritmeillä.
+
+
+\section{Plagioiduksi tunnistettu koodi ei olekkaan aina plagioitua}
+%muunna mm. lista kivaksi laajemmaksi esitykseksi
+Useat plagioinnin tunnistus järjestelmät eivät kerro, milloin verrattavien koodien samakaltaisuus on normaalia, vaan kuvaavat ainoastaan samankaltaisuudne määrää. XXX listaa artikkelissaan ~\cite{Mann:2006:SOC:1151869.1151888} yleisimpiä syitä samankaltaisuudelle, joka ei johdu plagioinnista.
+\begin{itemize}
+\item Opiskelija noudatta opetettuja konventioita ja tyyliä
+\item Opiskelijoiden ohjelmointitaito on samalla tasolla
+\item Opiskeilijoille on näytetty samat esimerkit
+\item Ratkaisu voi olla tarkasti määritelty
+\item Osittaisia ratkaisuja on voitu tehdä luennoilla
+\item Tehtävä voi olla jatkoa aiemmin tehdylle (luennolla tai aiempi tehtävä)
+\item Opiskelijoilla on sama materiaali
+\item Tehtävään voi olla annettu pohja, joka ohjaa samojen muuttuja/metodi nimien käyttöön
+\item Opiskelijat suunnittelivat ohjelmaa yhdessä
+\item työn jako usean opiskelijan kesken
+\item pari tai Xtreme ohjeilmoini
+\item Erikseen palautettu ryhmätyö
+\end{itemize}
+
+
 
 
 
@@ -139,16 +179,6 @@ XX esitteli myös järjestelmän, jossa tiedoston loppuun tehtiin whitespacella 
 
 Esimerkkilause ja lähdeviite~\cite{esimerkki}.
 
-
-% --- References ---
-%
-% bibtex is used to generate the bibliography. The babplain style
-% will generate numeric references (e.g. [1]) appropriate for theoretical
-% computer science. If you need alphanumeric references (e.g [Tur90]), use
-%
-% \bibliographystyle{babalpha-lf}
-%
-% instead.
 
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
