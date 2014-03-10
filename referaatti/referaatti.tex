@@ -7,6 +7,7 @@
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
 \usepackage[pdftex,hidelinks]{hyperref}
 
+\usepackage{setspace}
 % Automatically set the PDF metadata fields
 \makeatletter
 \AtBeginDocument{\hypersetup{pdftitle = {\@title}, pdfauthor = {\@author}}}
@@ -36,6 +37,7 @@
 \theoremstyle{remark}
 \newtheorem*{huom}{Huomautus}
 
+\doublespacing
 
 % --- tktltiki2 options ---
 \title{Tiivistelmä}
@@ -55,50 +57,98 @@
 % --- Main matter ---
 
 \mainmatter
-\section{Samankaltaisuus ohjelmissa}
+\section{Johdanto}
+Isompien ohjelmistojen kehityksen aikana tulee useasti tilanteita, joissa kehittäjä päätyy itse toteuttamaan
+tietorankenteen tai algoritmin, joka on jo toteutettu samassa projektissa. Andrian ja Jonathan esittävät artikkelissaan
+''Identification on High-Level Consept in Source Core''\cite{marcus2001identification}
+tavan tunnistaa ohjelmasta korkean tason konsepteja.
 
-Samankaltaisuudella tarkoitetaan sitä, että verrattavat asiat ovat samat tai verrattavissa asioissa on joitain yhteisiä piirteitä. Esimerkiksi kahta sinistä kolmiota voidaan pitää samankaltaisina, koska molemmat ovat sinisiä ja koska molemmat ovat kolmioita. Tämän vuoksi artikkelissa korostetaan samankaltaisuude tyypin määrittäistä.
+Andrian ja Jonathan tuovat esille metriikan, jolla nämä korkean tason konseptit voidaan tunnistaa koodista.
+Lähestymistavassaan he hyödyntävät tiedonhaun (information retieval) tekniikkaa ('latent semantic indexing')
+tunnistaakseen semanttisesen
+samankaltaisuuden koodista.
 
-Samankaltaisuuden mittaamisella on useita käyttötarkoituksia. Samankaltaisuuden tunnistusta käytetään refaktorointitarpeen tunnistukseen: toistuvat koodit voidaan eriyttää metodiksi, tunnistaa luvatta kopioitu koodi plagiarismi epäilyissä.
+Väittämiensä tueksi he suorittivat kokeen, jonka kohteena oli C-ohjelmointikielellä toteutettu ohjelmisto,
+Mosaic (v2.7). Siinä he osoittivat, että XXX avulla he voivattunnistaa useita tarkempaa tutkimusta vaatiaa
+samankaltaisuutta koodista.
 
-Artikkelissa samankaltaisuuden vertailu jaetaan kahteen luokkaan~\cite{Walenstein_similarityin}: ulkoasulliseen (representational) sekä semanttiseen (semantic) ja toiminnalliseen (behavioral). 
 
-% siis (Ulkoasullinen) ja (semanttinen ja toiminnallinen)
+\section{Paskaa?}
+% johdantoa?
+Ohjelmakoodin kopiointia taphtuu usien isommissa ohjelmointiprojekteissa. Osia lähdekoodista, funktioita ja
+tietorakenteita kopioidaan osin tai kokonaan useista sysitä.
 
-\begin{itemize}
-\item{Ulkoasullisessa (representational)}
-samankaltaisuudessa käsitellään koodia yksittäisinä merkkeinä, jotka muodostavat monimuotoisemman rakenteen. Tässä oleellista on koodin syntaksi sekä visuaalinen rakenne.
+Aikaisempi tutkimus cloonien tunnistamiseen on pääosin keskittynyt tunnistamaan koodista samoja tai lähes samanlaisia
+rakenteita. Artikkelissa esitetty lähestymistapa
+%ADT = abstract data type
 
-Ulkoasullisen samankaltaisuuden vertailuun artikkeli esittää kolme vertailutapaa: tekstuaalinen vertailu, ominaisuuspohjainen vertailu sekä Shannonin informaatioteoria.
+keskittyy tunnistamaan implemntaatiot High-level consepts; TODO: suomennos. esim. abstraktit tietorakenteet
+Andrian ja Markus käyttävät esittemässään tekniikassa erästä tiedonhaku menetelmää, ``latent semantic indexing``,
+jolla he staattisesti analysoivat järjestelmän, ja
+tunnistavat semanttisia samankaltaisuuksia.
 
-Tekstuaalisessa vertailussa samankaltaisuutta verrataan laskemalla eri metriikoita käyttämällä koodille samankaltaisuusarvo. Artikkelin mukaan sopivia metriikoita ovat Levenshtein distance, jossa lasketaan paljonko toista koodia tulee muuttaa kahden samaksi saamisessa sekä longest common sequence, jossa verrattavista koodeista haetaan pisin yhteinen suoritusjakso.
+Andrianin ja Markuksen tekniikan tavoitteena on parantaa ja kehittää nykyisiä koodin cloonauksen tunnistus metodeja,
+jotka perustuvat koodin rakenteelliseen analyysiin.
+Eri metodien yhteiskäyttö tulee auttamaan cloonien tunnistuksen laadussa.
 
-Ominaisuuspohjaisessa vertailussa vertailussa huomioidaan kaikki aiemmin mainitut samankaltaisuuden vertailuun käytetyy keinot. Sekä huomioidaan kaikki koodin ominaisuudet, joita ovat muunmuassa muuttujien sekä metodien nimet.
 
-Shannonin informaatioteoriassa lasketaan, paljonko kahden koodin välillä tulee jakaa tietoa, jotta koodit olisivat täysin samankaltaiset. Mitä vähemmän muutoksia tarvitaan, sitä samankaltaisempia ne ovat.
+Väittämiensä tueksi he suorittivat kokeita C kielellä toteutettuun NCSA Mosaic (v2.7) ja osoittivat että tekniikkansa
+avulla he voivat tunnistaaa useita tarkempaa
+tutkimusta vaativia kohteita (lue: klooneja) koodista.
 
-\item{Semanttinen (semantic) ja toiminnallinen (behavioral) }
-samankaltaisuus eivät huomioi koodin tekstuaalista sisältöä, muuttujen ja metodien nimiä, sisennystä yms. vaan ne keskittyvät koodin rakenteeseen ja toimintaan. Koodia verrataan yksittäisen komennon, lohkon tai luokan tasolla, sillä muun kokoisten osien vertailu ei kannata, sillä silloin koodi ei sisällä järkevää semantiikkaa.
+Andrian ja Markus korostavat, että kysinen tekniikka ei puhtaasti paljoasta kaikkia klooneja, vaan tarjoavat työkalun,
+joka auttaa koodin analysoijaa keskittymään oleellisiin tiedostoihin.
 
-Artikkelin mukaan intutitiivisiä tapoja verrata kahden koodin semanttista samankaltaisuutta ei ole, vaan se esittää, että semanttinen samankaltaisuus muutetaan ensin helpommin vertailtavaan muotoon.
 
-Artikkeli mainitsee kaksi esitysmuotoa semanttisen samankaltaisuuden vertaamiseen: funktionaalinen (functional) samankaltaisuuden sekä suorituspolkujen (trace) samankaltaisuuden.
+Andrian ja Markus mainitsevat yleisiä syitä, miksi koodia kopioidaan, yksi niistä on metodin kopiointi ja sopivaksi
+muokkaaminen. Tässä ohjelmoija kopioi lähes sopivan palan koodia, ja muokkaa sen tilanteeseen sopivaksi. Tässä
+vaiheessa ohjelmoijasta on halvempaa jättää toinen copypaste metodi sellaisenaan kuin alkaa refaktoiroimaan koodia,
+jotta copypaste metodi ei jäisi copypasteksi.
+% hitto mikä lause
 
-%todo?
-Funktionaalinen samankaltaisuus mittaa koodin toteuttamia funktioita; jos koodit toteuttavat saman funktion, ovat ne silloin semanttisesti samankaltaisia.
-Funktionaalista samankaltaisuutta määritettäessä tulee kuitenkin vastata kysymykseen; mikä tekee kahdesta funktiosta samankaltaisen. Artikkelissa päädyttiin vertailemaan funktion palautusarvoja eri syötteillä.
 
-Suorituksen samankaltaisuus mittaa suoritusta matalalla tasolla, esimerkiksi javan tavukoodina tai symboolisena konekielenä. Samankaltaisuus ohjelman suorituksessa kuvaa artikkelin mukaan myös samankaltaisuutta ohjelman rakenteessa.
+Andrian ja Markus esittelevät muutaman lähdekoodi kloonin tyypin
+- Täydellinen klooni, on pala ohjelmakoodia, joka on identtinen kopio toiseen ohjelmakoodin palaan verrattaessa.
+- Lähes täydellinen klooni (near miss clone) on pala joka on lähes täydllinen kopio. Tällaisia tulee kun ohjelmoija
+muokkaa kopioitua koodia sopimaan paremmin omaan tarpeeseensa.
+-
 
-Artikkeli esittelee myös muutaman tavan verrata semanttista ja toiminnallista samankaltaisuutta: suorituspolun (execution curve) samankaltaisuus, syöte paluuarvo (input/output), semanttinen etäisyys sekä abstraktio etäisyys (abstraction equivalence distance).
 
-Semanttinen etäisyys mittaa kustannusta muuttaa koodi toiseksi. Artikkeli käyttää tässä levenshteinin etäisyyttä (levenshtein distance) kustannuksen mittaamiseen.
+Andrian ja Markus esittelevät toisen syyn kloonien synnylle erityisesti isommissa ohjelmistoissa.
 
-Abstraktioetäisyyden mittaamisessa lasketaan paljonko kahta koodia tulee abstraktoida, poistamalla vähiten merkitsevät osat koodista, kunnes kaksi koodia ovat samat. Artikkelin mukaan tätä menetelmää käytetään oikeasti oikeustapauksissa verrattaessa koodija tekijänoikeusrikkomusepäilyissä.
-\end{itemize}
+``Re-inventing the wheel'' eli ohjelmoija toteuttaa itse jo projektissa aiemmin toteutetun algoritmin tai tietorakenteen
+, sen sijaan että käyttäisi projektissa aiemmin toteutettua. Syynä tähän voi olla puhtaasti tietämättömyys, että kysinen
+tietorakenne on jo toteutettu, tai ohjelmoijan on vain helpompi toteuttaa olemassa oleva tietorakenne uusiksi vrt.
+tutustua ja muokata olemassa olevaa tietorakennetta itselleen sopivaan tarkoitukseen.
+
+
+
+
+
+
+
+
+
+
+\section{Selitä Semanttinen samankaltaisuus}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \bibliographystyle{babplain-lf}
-\bibliography{../lahteet}
+\bibliography{../lahteet.bib}
 
 \end{document}
