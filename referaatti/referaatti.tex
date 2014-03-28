@@ -122,7 +122,59 @@ tietorakenne on jo toteutettu, tai ohjelmoijan on vain helpompi toteuttaa olemas
 tutustua ja muokata olemassa olevaa tietorakennetta itselleen sopivaan tarkoitukseen.
 
 
+Andrianin ja Markuksen mukaan nämä kloonit ovat useasti 'higher-level abstractations'. Yksinkertainen esimerki AST:sta
+on ADT lista. Heidän mukaan useasti kopioinnin kohteeksi on päätynyt lista-tietorakenne.
 
+Andrian ja Markus nimittävät näitä klooneja ``high-level copncept clones''.
+Osa aiemmista kloonin tunnistus ohjelmistoista kykenee tunnistamaan osan tällaisista klooneista, ei mitään järjestelmää
+ole tehty erityisesti näiden tunnistamiseen.
+
+\section{Latent semantic indexing (LSI)}
+On sanakirjaan perustuva tilastollinen menetelmä, jolla kuvataan sanojen ja lauseiden tarkoituksia.
+Metodi generoi verkoti kuvauksen tekstin osista. Tätä esitystä voidaan käyttää vertailemaan ja indeksoimaan dokumenttejä
+Menetelmän toimintatavan vuoksi se voi tunnistaa lähdekoogista merkitykselliset muuttujien nimet, vaikka ne eivät
+olisi käytetyssä sanakirjassa, (esim. avg engl.lyhenne keskiarvolle).
+% ei tää oikeesti kiinnosta ketään :DD
+
+
+
+\section{High level conseptsien tunnistus}
+Andrian ja Markus esittelevät tekniikan high-level kloonien tunnistamiseen; tämä tekniikka perustuu vertailtavien
+koodien semanttiseen samankaltaisuuteen. Samankaltaisuus osien välillä lasketaan vertailemalla osien rakenteellista
+informaatiota.
+
+Nykyisessä muodossa menetelmä helpottaa kloonien löytämistä, mutta vaatii kuitenkin kehittäjän osallistumisen
+duplikaattien  tunnistamiseen. Sillä, kun samankaltaisuudet koodista on laskettu, tulee käyttäjän valita valita
+lähtökohdaksi joukko dokumenttejä, joiden tiedetään toteuttavan ADT:n.
+Tässä käyttäjä voi hyödyntää olemassa olevia kloonin tunnistus sovellutuksia tai päätellä samankaltaisuudet tiedostojen
+nimistä
+Tässä käyttäjä voi hyödyntää olemassa olevia kloonin tunnistus sovellutuksia tai päätellä samankaltaisuudet tiedostojen
+nimistä.
+
+\begin{itemize}
+  \item Source code document (dokument, d)
+    on joukko lähdekoodin rivejä, useasti esim. functio, block of declarations tai luokan määäretelmä + siihen liittyvä
+    dokumentaatio.
+
+  \item A software system
+    on joukko dokumenteistä $S = \{d_1,d_2\dots d_n\}$ %rpkl latex math
+    kaikkien dokumenttien määrä $n = |S|$
+
+  \item cluster $c_k$
+  on joukko dokumenttejä $S$stä, siten että $c_k \subseteq S$ Klusterin koko on $|c_k|$
+
+  \item file $f_i$
+    koostuu useasta jatkuvasta doumentistä, ja on kaikkien tiedostojen yhdiste on $|S|$
+
+  \item Järjestelmä esitetään verkkona
+    $G=(S,E)$, missä nodet $S$ ovat dokumenttejä, $E$ on joukko painotettuja edgejä ja relaatio
+    $e: E \to \{(d_i,d_j) | d_i, d_j \in S; d_i \neq d_j  \}$
+
+% ei noita loppuja varmaan kannata kirjottaa\dots eikä varmaan näitäkään?
+\end{itemize}
+Kahta dokumenttiä pidetään samana, mikäli $\exists d_i \in f_i, d_j \in f_j $ siten että $sem(d_i, d_j) > \alpha$.
+$sem$ on semanttisen samankaltaisuuden laskeva funktio. (kosini vektoreista ja $\alpha$ on rajaarvo $0,7$ eli $45$
+asteen kulma)
 
 
 
