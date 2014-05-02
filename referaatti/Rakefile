@@ -1,7 +1,0 @@
-task :default => [:build]
-
-desc "Build referaatti"
-task :build do
-  sh "pdflatex template-fi && bibtex template-fi && pdflatex template-fi && pdflatex template-fi"
-end
-
