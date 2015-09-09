@@ -124,9 +124,11 @@
 
 \section{Johdanto}
 
-Projektien koon kasvaessa ja yhä kehittyneempien haku mahdollisuukien myötä koodin etsimisestä on muodostunut yhä oleellisempi vaihe sekä ohjelmoitaessa että koodia ylläpidetoaä. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code} , kuinka ohjelmoijat etsivät koodia, mitä kysymyksiä he koodia etsimällä koittavat ratkaista ja mistä syistä ohjelmoijat etsivät koodia käyttäen vain siihen tarkoitettuja työkaluja.
+Projektien koon kasvaessa ja yhä kehittyneempien haku mahdollisuuksien myötä koodin etsimisestä on muodostunut yhä oleellisempi vaihe sekä ohjelmoitaessa että koodia ylläpidettäessä. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code}, kuinka ohjelmoijat etsivät koodia.
+He keskittyvät tapaustutkimuksessaan erityisesti tarkastelemaan miksi, miten ja milloin ohjelmoija etsii koodia käyttäen siihen tarkoitettuja työkaluja.
 
-Käyttäen apuna logi analyysiä sekä kyselyitä he selvittivät, missä kontekstissa koodia haetaan.
+Käyttäen apuna logi analyysiä sekä juuri ennen koodin hakua tehtyjä kyselyitä he selvittivät vastauksia tutkimuskysymyksiinsä.
+
 
 %\section{random}
 
@@ -135,47 +137,53 @@ Käyttäen apuna logi analyysiä sekä kyselyitä he selvittivät, missä kontek
 
 \section{Tutkimusasetelma}
 
-Googlella lähes kaikki ohjelmakoodi on yhdessä isossa repossa, josta kaikki näkevät toistensa koodin ja voivat etsiä ja uudelleen käyttää koodia myös oman projektin ulkopuolelta. Googlella käytössä olevassa koodin hakutyökalussa voi rajoittaa haun tulosta esim. kielen ja sijainnin perusteella. Tulosten järjestämisessä se käyttää myös muuta metadataa..
+% Sadowski, Stolee ja Elbaum
+Sadowski, Stolee ja Elbaum kertovat artikkelissaan, että Googlella suurin osa ohjelmakoodista on yhdesä isossa repositoriossa, jossa kaikki pääsevät katsomaan ja halutessaan hyödyntämään toistensa koodia. Googlella on käytössä sisäinen koodin haku työkalu, jossa hakua voi rajata mm. kielen ja sijainnin perusteella. Hakutulosten näyttämisen lisäksi koodihaku mahdollistaa koodin läpi navigoinnin kansiorakenteen sekä viittausten perusteella. %viittaus siis kuten ctrl+click NBssä yms.
 
-Tutkimuksessa data kerättiin ennen koodin hakua aukeavalla kyselylä; tätä varten he loivat selain pluginin kyselyille, jonka he asennuttivat kaikkien tutkimukseen osallistuvien kaikille koneille. Plugin oli ohjelmoitu aukeamaan vain enintään 10krt/päivä ja vähintään 10min välein minimoidakseen kyselyn tuoman vaivan. Tällä he myös pyrkivät maksimoimaan hyödyllisten vastausten saannin.
+Tutkimuksdata kerättiin ennen koodin hakua aukeavalla kyselyllä sekä logi analyysillä.
+Kyselyä varten he loivat selain pluginin, joka tarjoaa tutkittaville kyselyn, kun he avasivat koodihaun. He kuitenkin rajoittivat sekä kyselyiden määrän enintään kymmeneen kyselyyn päivässä sekä kyselyiden väliajaksi vähintään 10 minuutin tauon. Tällä he pyrkivät vähentämään kyselyn tutkimuksen tuottamaa lisävaikaa tutkittaville, ja siten saamaan laadukkaampia vastauksia.
+
+Toinen tutkimuksen datalähteistä on hakutyökalun logit, minne kaikki interaktio koodihaun kanssa tallentuu. Logeista he saavat selville anonymisoidun käyttäjän, interaktion kellonajan, hakutermit ja jokaisen käytetyn selaimen välilehden idn, sekä mitä tuloksia on klikattu. He korreloivat kyselytulokset sekä logimerkinnät kellonaikojen perusteella. Logeista eritettiin haku sessioita, siten että joka session välissä on vähintään kuuden minuutin tauko. Jokainen sessio koostuu siis koodihaun avaamisesta, hakemisesta, tulosten katselmoinnista ja mahdollisista jatkohauista. %6min tauko koska aiemmat tutkimukset...
+
+
 
 %Ennen varsinaista tutkimusta he tarkistivat ja viimeistelivät kyselyt pienemmällä testiryhmällä.
 
-Toinen tutkimuksen data lähteistä on koodin hakutyökalun logit. Kaikki interaktio koodihaun kanssa logataan. Logeista heille selviää käyttäjä, kellonaika, hakutermit, jokaisen selain tabin uniikki id, ja katsotut/klikatut tulokset.
-
-Logien tutkinnassa he pilkkoivat haut sessioihin. Sessio on tapahtuma, jossa ohjelmoija menee koodihakuun, tekee yhden tai useamman haun, klikkailee/katselee tuloksia. Yksi sessio saattaa jakautua useaan tabiin. Eri sessiot he erottivat vähintään 6min tauolla hakutulosten välissä, kuten aiemmat tutkimukset ovat osoittaneet [pitäskö viitata ku noi on viiitannut tän jostain...]
 
 
+Sadowski, Stolee ja Elbaum esittelevät seuraavat tutkimuskysymykset:
 
-Sadowski, Stolee ja Elbaum esittelevät tutkimuskysymykset ja kertovat kuinka mitäkin tutkitaan ja mitaan.
+%\begin{description}
+\begin{enumerate}
 
-\begin{description}
+  \item Miksi ohjelmoijat etsivät koodia %He toteuttivat laadullisen tutkimuksen vapaamuotoisista kyselyiden vastauksista; he lajittelivat vapaamuotoiset seli
 
-  \item [Miksi ohjelmoijat etsivät?] He toteuttivat laadullisen tutkimuksen vapaamuotoisista kyselyiden vastauksista (this was done by open coding the resoinses to identify themes)
+  \item Missä kontekstissa haku suoritettiin %He tutkivat 1) mitä ohjelmoija oli tekemässä 2) mitä hän koittaa oppia 3) miten hyvin he tuntevat ko. koodin.
 
-  \item [Missä kontekstiss haku suoritettiin] He tutkivat 1) mitä ohjelmoija oli tekemässä 2) mitä hän koittaa oppia 3) miten hyvin he tuntevat ko. koodin.
+  \item Millaiset haku kyselyn ominaisuudet %sanojen määrä, user reserver operator words ja patternit kyselyn muokkaamiseen.
 
-  \item [Haku queryn ominaisuudet] sanojen määrä, user reserver operator words ja patternit kyselyn muokkaamiseen.
+  \item Mitä tyypillinen hakusessio tuottaa tuokseksi
 
-  \item [Mitä tyypillinen hakusessio tuottaa tuokseksi]
+  \item Miten eri konteksti vaikuttaa hakutuloksiin
 
-  \item [Miten eri konteksti johtaa erilaisiin hakutuloksiin]
+\end{enumerate}
+%\end{description}
 
-\end{description}
-
+Tapaustutkimusesta he saivat seuraavat tulokset ja näin he hakivat:
 \begin{enumerate}
 
   \item {\bf Miksi ohjelmoijat etsivät koodia}
 
-    He kartoittivat syitä koodin etsimiseen lajittelemalla kyselyiden vapaamuotoiset vastaukset omiin ryhmiinsä. tämä tehtiin siten, että vastaukset kirjoitettiin lapuille ja lajiteltiin omiin kategorioihinsa, kunnes kaikki 3 lajittelijaa olivat tyytyväisiä tuloskiin. Täten he tunnistivat yleistettyjä kategorioita.
+    He kartoittivat syitä koodin etsimiseen lajittelemalla kyselyiden vapaamuotoiset vastaukset omiin ryhmiinsä. Tämä tehtiin siten, että vapaamuotoiset kyselylomakkeen vastaukset kirjoitettiin lapuille ja lajiteltiin omiin kategorioihinsa, kunnes kaikki 3 lajittelijaa (artikkelin kirjoittajat) olivat tyytyväisiä lajitteluut. Näin he saivat aikaan korkean luokan kategorioita.
     tämä tuotti tuloksiksi seuraavat lajit: miten tehdä jotakin, mitä koodi tekee, miksi koodi toimii kuten toimii, koodin paikantamiseen ja kuka muutti ja milloin.
 
-    Miten tehdä jtn:
+  Lajittelun tuloksista kävi ilmi, että 33.5\% hauista oli vastaamaan kysymykseen, miten jokin asia tulisi tehdä. 26\% puolestaan vastasivat kysymykseen mitä, eli hakutapahtuma koostui pääosin koodin lukemistesta ja toteutuksen tarkastelusta sekä yleisen koodityylin selvittämisestä. 16\% hauista vastaa kysymykseen missä, eli mistä tiettyä koodia käytetään ja mitä koodia se käyttää sekä hauista missä tavoitteena oli selvittää tietyn koodin sijainti repositoriossa. 16\% hauista keskittyy vastaamaan kysymykseen miksi tämä koostuu pääosin selvityksitä, kuten miksi jokin toimii eritavalla kuin miten ohjelmoija ajatteli, sekä mahdollisen muutoksen sivuvaikutuksia. 8.5\% hauista keskittyy vastaamaan kysymykseen kuka ja milloin; pääosin selvittääkseen kuka muutti koodia ja milloin, sekä koodin omistajuutta, mikä halutaan selvittää mm. jotta oikea henkilö reviewaisi tulevat muutokset.
 
 
 
 
-  \item {\bf Miksi ohjelmoijat etsivät koodia}
+  \item {\bf Missä kontekstissa haku suoritetaan}
+    Koodia haetaan monista eri syistä Googlella; 39\% hauista tehdään silloin kun työskentelee muutoksen parissa. Myös sekä koodin katselmus vaiheessa että ongelman ratkaisussa koodia tyypillisesti haetaan. Kuitenkin suurin osa hauista tehdään jo osin tuttuun koodiin.
 \end{enumerate}
 
 
