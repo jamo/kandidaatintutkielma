@@ -189,12 +189,27 @@ Tapaustutkimusesta he saivat seuraavat tulokset ja näin he hakivat:
     He havaitsivat paljon tilanteita, jossa tehtiin kaksi peräkkäistä hakua siten, että hakujen välillä ei ollut muute interaktiota koodihaun kanssa. Tarkemmin tutkittuaan he havaitsivat että suuri osa näista oli joko kyselyn muokkaamista tai hakualalueen rajaamista tiettyyn kansioon. He myös havaitsivat että keskimäärin näiden kahden kyselyn välissä oli vain kahdeksan sekunnin ero; siinä ajassa ohjelmoija ehti tarkastelemaan alkuperäiset hakutulokset ja tarkentamaan hakuaan.
 
   \item {\bf Tyypillisen hakusession sisältää}
-    Logianalyysistä he havaitsivat, että hakusessio kestää keskimäärin 3 minuuttua ja 30 sekuntia ja sisältää 2 selaimen välilehteä. Ohjelmoijat tekivät keskimäärin 12 hakua päivän aikana (tutkimus kesti 15days, siirrä ylemmäs).
+    Logianalyysistä he havaitsivat, että hakusessio kestää keskimäärin 3 minuuttua ja 30 sekuntia ja sisältää 2 selaimen välilehteä. Ohjelmoijat tekivät keskimäärin 12 hakua päivän aikana (tutkimus kesti 15days, siirrä ylemmäs). He tunnistivat myös useita erilaisia patterneja TOOD: miten kivasti tähän.
+
+  \item {\bf Kontekstin vaikutus hakupatterneihin}
+    Kyselyistä ja logianalyysistä saamillaan tuloksia yhdistämälle he pystyivät tunnistamaan tarkempia patterneja. Mikäli ohjelmoija halusi oppia koodin attributesista TODO he harvoin klikkasivat yhtään tiedostoa, tämä luultavasti johtus joko siitä että vastaus näkyi hakutlosten esikatselussa, tai koska haku tuotti vain yhden tuloksen. He myös vahvistivat oletuksensa, että ohjelmoija joka ei tunne hakemaansa koodia kunnolla navigoi ja hakee siihen liittyen enemmän kuin koodin tunteva henkilö.
 
 \end{enumerate}
-asadsadasdasd
+
+\section{discussion}
+Tutkimuksessa yhdistelty data (sekä log että kyselyt mahdollistivat tarkemman insights miten ohjelmoijat etsivät koodia. He myös havaitsivat, että ohjelmoijat etsivät koodia useasti, he hakevat paljon esimerkkejä ja he etsivät pääosin jo itselleen tuttua koodia. He myös havaitsivat, että ohjelmoija useasti tarkentaa hakutermejään iteratiivisesti.
+
+Ajattele käyttäjän tarpeita, tarjoa esimerkkejä
+Tulosten pohjalta heillä on koodinhakutyökalujen luojille muutamia ehdoituksia:
+\begin{itemize}
+    \item Tarjoa tuloksien esikatselukka.
+    \item Tarjoa mahdollisuus filtteröidä tiedoston sijainnin ja/tai tekijöiden perusteella.
+    \item Tarjoa tulokset huomioiden monipuolisempi konteksti, mahdollisesti jopa seuraamalla käyttäjän toimia muualla.
+    \item Harkitse työkalun integraatiota kehytysympäristöön.
+\end{itemize}
 
 
+Sadowski, Stolee ja Elbaum mainitsevat vielä lopuksi, että tulokset eivät
 % Write some science here.
 
 % --- References ---
