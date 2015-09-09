@@ -124,22 +124,22 @@
 
 \section{Johdanto}
 
-Projektien koon kasvaessa ja yhä kehittyneempien haku mahdollisuukien myötä koodin etsimisestä on muodostunut yhä oleellisempi vaihe sekä ohjelmoitaessa että koodia ylläpidettäessä. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code} , kuinka ohjelmoijat etsivät koodia, mitä kysymyksiä he koodia etsimällä koittavat ratkaista. ja mistä syistä ohjelmoijat Googlella etsivät koodia käyttäen vain siihen tarkoitettuja työkaluja.
+Projektien koon kasvaessa ja yhä kehittyneempien haku mahdollisuukien myötä koodin etsimisestä on muodostunut yhä oleellisempi vaihe sekä ohjelmoitaessa että koodia ylläpidetoaä. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code} , kuinka ohjelmoijat etsivät koodia, mitä kysymyksiä he koodia etsimällä koittavat ratkaista ja mistä syistä ohjelmoijat etsivät koodia käyttäen vain siihen tarkoitettuja työkaluja.
 
-Käyttäen apuna logi analyysiä sekä kyselyitä he selvittivät, missä kontekstissa koodia haetaan. [toistetaan ylläolevaa, pilko lauseet]
+Käyttäen apuna logi analyysiä sekä kyselyitä he selvittivät, missä kontekstissa koodia haetaan.
 
-\section{random}
+%\section{random}
 
-Ohjelmoijat etsivät koodia vastatakseen kysymyksiin, mitä koodi tekee, missä muuttuja luodaan, miksi koodi käyttäytyy tietyllä tavalla, kuka muokkasi koodia viimeiksi (blame) ja milloin muutos tapahtui ja kuinka jokin asia toteutetaan.
-He havaitsivat myös, ettâ kehittyneemmissä järjestelmissä ohjelmoijat eivät vain etsi uutta koodia, vaan navigoivat jo tuntemaaansa koodia.
+%Ohjelmoijat etsivät koodia vastatakseen kysymyksiin, mitä koodi tekee, missä muuttuja luodaan, miksi koodi käyttäytyy tietyllä tavalla, kuka muokkasi koodia viimeiksi (blame) ja milloin muutos tapahtui ja kuinka jokin asia toteutetaan.
+%He havaitsivat myös, ettâ kehittyneemmissä järjestelmissä ohjelmoijat eivät vain etsi uutta koodia, vaan navigoivat jo tuntemaaansa koodia.
 
-Tutkimusasetelma:
+\section{Tutkimusasetelma}
 
-Googlella lähes kaikki ohjelmakoodi on yhdessä isossa repossa. Kaikki näkevät lähes kaiken koodin, ja voivat etsiä ja uudelleen käyttää koodia myös oman projektin ulkopuolelta. Googlella käytössä olevassa koodin hakutyökalussa voi rajoittaa haun tulosta esim. kielen ja sijainnin perusteella. Tulosten järjestämisessä se käyttää myös muuta metadataa..
+Googlella lähes kaikki ohjelmakoodi on yhdessä isossa repossa, josta kaikki näkevät toistensa koodin ja voivat etsiä ja uudelleen käyttää koodia myös oman projektin ulkopuolelta. Googlella käytössä olevassa koodin hakutyökalussa voi rajoittaa haun tulosta esim. kielen ja sijainnin perusteella. Tulosten järjestämisessä se käyttää myös muuta metadataa..
 
-Tutkimuksessa data kerättiin ennen koodin hakua aukeavalla kyselylä; tätä varten he loivat selain pluginin kyselyille. Plugin oli ohjelmoitu aukeamaan vain enintään 10krt/päivä ja vähintään 10min välein minimoidakseen kyselyn tuoman vaivan. Tällä he myös pyrkivät maksimoimaan hyödyllisten vastausten saannin.
+Tutkimuksessa data kerättiin ennen koodin hakua aukeavalla kyselylä; tätä varten he loivat selain pluginin kyselyille, jonka he asennuttivat kaikkien tutkimukseen osallistuvien kaikille koneille. Plugin oli ohjelmoitu aukeamaan vain enintään 10krt/päivä ja vähintään 10min välein minimoidakseen kyselyn tuoman vaivan. Tällä he myös pyrkivät maksimoimaan hyödyllisten vastausten saannin.
 
-Ennen varsinaista tutkimusta he tarkistivat ja viimeistelivät kyselyt pienemmällä testiryhmällä.
+%Ennen varsinaista tutkimusta he tarkistivat ja viimeistelivät kyselyt pienemmällä testiryhmällä.
 
 Toinen tutkimuksen data lähteistä on koodin hakutyökalun logit. Kaikki interaktio koodihaun kanssa logataan. Logeista heille selviää käyttäjä, kellonaika, hakutermit, jokaisen selain tabin uniikki id, ja katsotut/klikatut tulokset.
 
@@ -147,8 +147,7 @@ Logien tutkinnassa he pilkkoivat haut sessioihin. Sessio on tapahtuma, jossa ohj
 
 
 
-Sadowski, Stolee ja Elbaum esittelevät seuraavat tutkimuskysymykset ja vastausket niihin
-[here some nice structure like dd dt or subsections etc.]
+Sadowski, Stolee ja Elbaum esittelevät tutkimuskysymykset ja kertovat kuinka mitäkin tutkitaan ja mitaan.
 
 \begin{description}
 
