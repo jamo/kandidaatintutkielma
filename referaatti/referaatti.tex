@@ -136,47 +136,32 @@ Käyttäen apuna lokianalyysiä sekä juuri ennen koodin hakua tehtyjä kyselyit
 Kirjoittajat kertovat artikkelissaan, että Googlella suurin osa ohjelmakoodista on yhdesä isossa repositoriossa, josta kaikki pääsevät katsomaan ja halutessaan hyödyntämään toistensa koodia. Googlella on myös käytössä sisäinen koodin haku työkalu, jossa hakua voi rajata mm. kielen ja sijainnin perusteella. Hakutulosten näyttämisen lisäksi koodihaku mahdollistaa koodin läpi navigoinnin kansiorakenteen sekä koodiviittausten perusteella. %viittaus siis kuten ctrl+click NBssä keywordin kohdalla.
 
 Tutkimuksdata kerättiin ennen koodin hakua aukeavalla kyselyllä sekä lokianalyysillä.
-Kyselyä varten he loivat selain pluginin, joka tarjoaa tutkittaville kyselyn, kun he avasivat koodihaun. He kuitenkin rajoittivat sekä kyselyiden määrän enintään kymmeneen kyselyyn päivässä sekä kyselyiden väliajaksi vähintään 10 minuutin tauon. Tällä he pyrkivät vähentämään kyselyn tutkimuksen tuottamaa lisävaikaa tutkittaville, ja siten saamaan laadukkaampia vastauksia.
+Kyselyä varten he loivat selain pluginin, joka avaa tutkittaville kyselyn, kun he avaavat koodihaun. He kuitenkin rajoittivat sekä kyselyiden määrän siten, että ohjelmoijat saavat enintään kymmenen kyselyä vähintään kymmenen minuutin välein. Tällä he pyrkivät vähentämään kyselyn tutkimuksen tuottamaa lisävaivaa tutkittaville, ja siten saamaan laadukkaampia vastauksia.
 
-Toinen tutkimuksen datalähteistä on hakutyökalun lokit, minne kaikki interaktio koodihaun kanssa tallentuu. Logeista he saavat selville anonymisoidun käyttäjän, tapahtuman kellonajan, hakutermit ja jokaisen käytetyn selaimen välilehden idn, sekä mitä tuloksia on klikattu. He korreloivat kyselytulokset sekä lokimerkinnät kellonaikojen perusteella. Logeista pilkottiin hakusessioita, siten että joka session välissä on vähintään kuuden minuutin tauko. Jokainen sessio koostuu siis koodihaun avaamisesta, hakemisesta, tulosten katselmoinnista ja mahdollisista jatkohauista. %6min tauko koska aiemmat tutkimukset...
-
-
-
-%Ennen varsinaista tutkimusta he tarkistivat ja viimeistelivät kyselyt pienemmällä testiryhmällä.
-
-
+Toinen tutkimuksen datalähteistä on hakutyökalun lokit, jonne kaikki interaktio koodihaun kanssa tallentuu. Lokeista he saavat selville anonymisoidun käyttäjän, tapahtuman kellonajan, hakutermit ja jokaisen käytetyn selaimen välilehden tunnisteen, sekä mitä tuloksia on klikattu. He korreloivat kyselytulokset sekä lokimerkinnät kellonaikojen perusteella. Lokeista pilkottiin hakusessioita, siten että joka session välissä on vähintään kuuden minuutin tauko. Jokainen sessio koostuu siis koodihaun avaamisesta, hakemisesta, tulosten katselmoinnista ja mahdollisista toistuvista hauista.
 
 Sadowski, Stolee ja Elbaum esittelevät seuraavat tutkimuskysymykset:
 
 %\begin{description}
 \begin{enumerate}
-
-  \item Miksi ohjelmoijat etsivät koodia %He toteuttivat laadullisen tutkimuksen vapaamuotoisista kyselyiden vastauksista; he lajittelivat vapaamuotoiset seli
-
-  \item Missä kontekstissa haku suoritettiin %He tutkivat 1) mitä ohjelmoija oli tekemässä 2) mitä hän koittaa oppia 3) miten hyvin he tuntevat ko. koodin.
-
-  \item Millaiset haku kyselyn ominaisuudet %sanojen määrä, user reserver operator words ja patternit kyselyn muokkaamiseen.
-
+  \item Miksi ohjelmoijat etsivät koodia
+  \item Missä kontekstissa haku suoritettiin
+  \item Millaiset haku kyselyn ominaisuudet
   \item Mitä tyypillinen hakusessio tuottaa tuokseksi
-
   \item Miten eri konteksti vaikuttaa hakutuloksiin
-
 \end{enumerate}
 %\end{description}
 
 Tapaustutkimusesta he saivat seuraavat tulokset ja näin he hakivat:
 \begin{enumerate}
+  \item {\bf Miksi koodia etsitään}
+    He kartoittivat syitä koodin etsimiseen lajittelemalla kyselyiden vapaamuotoiset vastaukset omiin ryhmiinsä. Näistä ryhmistä he tunnistivat, että koodia hakemalla pyrittiin vastaamaan seuraaviin kysymyksiin: miten tehdä jotakin, mitä koodi tekee, miksi koodi toimii kuten toimii, missä koodi sijaitsee ja kuka muutti koodia ja milloin.
+  % stats, not sure if relevat here ...
+  %Lajittelun tuloksista kävi ilmi, että 33.5\% hauista oli vastaamaan kysymykseen, miten jokin asia tulisi tehdä. 26\% puolestaan vastasivat kysymykseen mitä, eli hakutapahtuma koostui pääosin koodin lukemistesta ja toteutuksen tarkastelusta sekä yleisen koodityylin selvittämisestä. 16\% hauista vastaa kysymykseen missä, eli mistä tiettyä koodia käytetään ja mitä koodia se käyttää sekä hauista missä tavoitteena oli selvittää tietyn koodin sijainti repositoriossa. 16\% hauista keskittyy vastaamaan kysymykseen miksi tämä koostuu pääosin selvityksitä, kuten miksi jokin toimii eritavalla kuin miten ohjelmoija ajatteli, sekä mahdollisen muutoksen sivuvaikutuksia. 8.5\% hauista keskittyy vastaamaan kysymykseen kuka ja milloin; pääosin selvittääkseen kuka muutti koodia ja milloin, sekä koodin omistajuutta, mikä halutaan selvittää mm. jotta oikea henkilö reviewaisi tulevat muutokset.
 
-  \item {\bf Miksi ohjelmoijat etsivät koodia}
+  \item {\bf Missä kontekstissa haku tehtiin}
 
-    He kartoittivat syitä koodin etsimiseen lajittelemalla kyselyiden vapaamuotoiset vastaukset omiin ryhmiinsä. Tämä tehtiin siten, että vapaamuotoiset kyselylomakkeen vastaukset kirjoitettiin lapuille ja lajiteltiin omiin kategorioihinsa, kunnes kaikki 3 lajittelijaa (artikkelin kirjoittajat) olivat tyytyväisiä lajitteluut. Näin he saivat aikaan korkean luokan kategorioita.
-    tämä tuotti tuloksiksi seuraavat lajit: miten tehdä jotakin, mitä koodi tekee, miksi koodi toimii kuten toimii, koodin paikantamiseen ja kuka muutti ja milloin.
-
-  Lajittelun tuloksista kävi ilmi, että 33.5\% hauista oli vastaamaan kysymykseen, miten jokin asia tulisi tehdä. 26\% puolestaan vastasivat kysymykseen mitä, eli hakutapahtuma koostui pääosin koodin lukemistesta ja toteutuksen tarkastelusta sekä yleisen koodityylin selvittämisestä. 16\% hauista vastaa kysymykseen missä, eli mistä tiettyä koodia käytetään ja mitä koodia se käyttää sekä hauista missä tavoitteena oli selvittää tietyn koodin sijainti repositoriossa. 16\% hauista keskittyy vastaamaan kysymykseen miksi tämä koostuu pääosin selvityksitä, kuten miksi jokin toimii eritavalla kuin miten ohjelmoija ajatteli, sekä mahdollisen muutoksen sivuvaikutuksia. 8.5\% hauista keskittyy vastaamaan kysymykseen kuka ja milloin; pääosin selvittääkseen kuka muutti koodia ja milloin, sekä koodin omistajuutta, mikä halutaan selvittää mm. jotta oikea henkilö reviewaisi tulevat muutokset.
-
-  \item {\bf Missä kontekstissa haku suoritetaan}
-
-    Koodia haetaan monista eri syistä Googlella; 39\% hauista tehdään silloin kun työskentelee muutoksen parissa. Myös sekä koodin katselmus vaiheessa että ongelman ratkaisussa koodia tyypillisesti haetaan. Kuitenkin suurin osa hauista tehdään jo osin tuttuun koodiin. Hakuja tehdään myös selvittääkseen miten koodi toimii, miten sitä käytetään.
+    Koodin hakuun on useita syitä. Tutkimustulosten perusteella Googlella; 39\% hauista tehdään silloin kun työskentelee muutoksen parissa. Myös sekä koodin katselmointivaiheessa että ongelman ratkaisussa koodia tyypillisesti haetaan. Suurin osa hauista tehdään jo osin tuttuun koodiin. Hakuja tehdään myös selvittääkseen miten koodi toimii, miten sitä käytetään (esimerkit yms).
 
   \item {\bf Hakukyselyn ominaisuudet}
 
@@ -192,7 +177,7 @@ Tapaustutkimusesta he saivat seuraavat tulokset ja näin he hakivat:
 \end{enumerate}
 
 \section{discussion}
-Tutkimuksessa yhdistelty data (sekä log että kyselyt mahdollistivat tarkemman insights miten ohjelmoijat etsivät koodia. He myös havaitsivat, että ohjelmoijat etsivät koodia useasti, he hakevat paljon esimerkkejä ja he etsivät pääosin jo itselleen tuttua koodia. He myös havaitsivat, että ohjelmoija useasti tarkentaa hakutermejään iteratiivisesti.
+Tutkimuksessa yhdistelty data (sekä lok että kyselyt mahdollistivat tarkemman insights miten ohjelmoijat etsivät koodia. He myös havaitsivat, että ohjelmoijat etsivät koodia useasti, he hakevat paljon esimerkkejä ja he etsivät pääosin jo itselleen tuttua koodia. He myös havaitsivat, että ohjelmoija useasti tarkentaa hakutermejään iteratiivisesti.
 
 Ajattele käyttäjän tarpeita, tarjoa esimerkkejä
 Tulosten pohjalta heillä on koodinhakutyökalujen luojille muutamia ehdoituksia:
