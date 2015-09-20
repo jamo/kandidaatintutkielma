@@ -130,26 +130,18 @@
 
 \section{Johdanto}
 
-Ohjelmistoprojektien koon kasvaessa ja kehittyneempien koodinhakumahdollisuuksien myötä ohjelmakoodi etsimisestä on muodostunut yhä oleellisempi osa sekä ohjelmistotuotannossa että ohjelmiston ylläpitovaiheessa. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code}, kuinka ohjelmistokehittäjät etsivät koodia Googlella. Tapaustutkimuksessaan he keskittyvät selvittämään, miksi, miten ja milloin koodihakutyökaluja käytetään. Tutkimuksensa lähteenä he käyttivät hakutyökalun logeja sekä haun yhteydessä pidettyjä kyselyitä.
+Ohjelmistoprojektien koon kasvaessa ja kehittyneempien koodinhakumahdollisuuksien myötä ohjelmakoodi etsimisestä on muodostunut yhä oleellisempi osa sekä ohjelmistotuotannossa että ohjelmiston ylläpitovaiheessa. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code}, kuinka ohjelmistokehittäjät etsivät koodia Googlella.
+Tutkimuksensa lähteenä he käyttivät hakutyökalun logeja sekä haun yhteydessä pidettyjä kyselyitä.
 
+%Tapaustutkimuksessaan he keskittyvät selvittämään, miksi, miten ja milloin koodihakutyökaluja käytetään.
 \section{Tutkimusasetelma}
 
 % Sadowski, Stolee ja Elbaum
-Kirjoittajat kertovat artikkelissaan, että Googlella suurin osa ohjelmakoodista on yhdessä isossa repositoriossa, josta kaikki pääsevät katsomaan ja halutessaan hyödyntämään toistensa koodia. Googlella on myös käytössä sisäinen koodinhakutyökalu (code search tool), jossa hakua voi rajata mm. kielen ja sijainnin perusteella. Hakutulosten näyttämisen lisäksi koodihaku mahdollistaa koodin läpi navigoinnin kansiorakenteen sekä koodiviittausten perusteella. %viittaus siis kuten ctrl+click NBssä keywordin kohdalla.
+Kirjoittajat kertovat artikkelissaan, että Googlella suurin osa ohjelmakoodista on yhdessä isossa avoimessa koodivarastossa. Googlella on myös käytössä sisäinen koodinhakutyökalu (code search tool), jossa hakua voi rajata mm. ohjelmointikielen ja tiedostopolun perusteella. Hakutulosten näyttämisen lisäksi koodihaku mahdollistaa koodin läpi navigoinnin perusteella.
 
-Tutkimuksdata kerättiin ennen koodin hakua aukeavalla kyselyllä sekä lokianalyysillä. Kyselyä varten he loivat selainlisäosan, joka avaa kyselyn, koodihakua avattaessa. He kuitenkin rajoittivat sekä kyselyiden määrän siten, että ohjelmoijat saavat enintään kymmenen kyselyä vähintään kymmenen minuutin välein. Tällä he pyrkivät vähentämään kyselyn tutkimuksen tuottamaa lisävaivaa tutkittaville, ja siten saamaan laadukkaampia vastauksia.  Hakutyökalun lokeista he saavat selville anonymisoidun käyttäjän, tapahtuman kellonajan, hakutermit ja jokaisen käytetyn selaimen välilehden tunnisteen, sekä mitä tuloksia on klikattu. He yhdistivät kyselytulokset sekä lokimerkinnät kellonaikojen perusteella saadakseen tarkemmat vastaukset osiin tutkimuskysymyksistään. Lokianalyysissä lokeista pilkottiin hakusessioita, siten että joka session välissä on vähintään kuuden minuutin tauko. Jokainen sessio koostuu siis koodihaun avaamisesta, hakemisesta, tulosten katselmoinnista ja mahdollisista toistuvista hauista.
-
-Sadowski, Stolee ja Elbaum esittelevät seuraavat tutkimuskysymykset:
-
-%\begin{description}
-\begin{enumerate}
-  \item Miksi ohjelmoijat etsivät koodia
-  \item Missä kontekstissa haku suoritettiin
-  \item Millainen tyypillinen hakukysely on
-  \item Mitä hakusessio tuottaa tulokseksi
-  \item Miten eri konteksti vaikuttaa hakutuloksiin
-\end{enumerate}
-%\end{description}
+Voidakseen tarjota kyselyn koodihakutyökalua avattaessa, he loivat selainlisäosan, joka avaa kyselylomakkeen. Selainlisäosa oli konfiguroitu siten, että jokaisen kyselyn välissä on vähintään kymmenen minuutin tauko. Tämän he tekivät, jottei kysely häiritsisi tutkittavia liikaa, ja siten tutkittavat tuottaisivat laadukaampia vastauksia. Hakutyökalun lokeista he saavat selville käyttäjän, tapahtuman kellonajan, hakutermit ja jokaisen käytetyn selaimen välilehden tunnisteen, sekä mitä tuloksia on klikattu. He yhdistivät kyselytulokset sekä lokimerkinnät kellonaikojen perusteella.
+Lokianalyysissä lokeista pilkottiin hakusessioita, siten että jokaisen hakusession välissä on vähintään kuuden minutin tauko.
+Tutkimusessa tarkennuttiin vastaamaan, miksi ohjelmoijat etsivät koodia, missä kontekstissa haettiin, millainen tyypillinen hakukysely on, mitä haku tuottaa tulokseksi ja miten haun konteksti vaikuttaa tuloksiin.
 
 \section{Johtopäätökset}
 Tapaustutkimuksesta saatu data sekä niiden yhdiste mahdollistivat tarkemman analyysin siihen, miten koodia etsitään. He myös havaitsivat, että koodia etsitään aktiivisesti, koodihakua käytetään paljon esimerkkien hakuun. Koodia etsitään pääosin jo tutusta koodista. Hakuja myös tarkennetaan userasti iteratiivisesti.
