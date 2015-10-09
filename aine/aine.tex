@@ -129,62 +129,15 @@
 \mainmatter       % clear page, start arabic page numbering
 
 \section{Johdanto}
+Ihmiset ovat aina hakeneet apua oppiakseen ja suoriutuakseen paremmin erilaisista tehtävistä. %lol
 
-Ohjelmistoprojektien koon kasvaessa ja kehittyneempien koodinhakumahdollisuuksien myötä ohjelmakoodi etsimisestä on muodostunut yhä oleellisempi osa sekä ohjelmistotuotannossa että ohjelmiston ylläpitovaiheessa. Sadowski, Stolee ja Elbaum esittelevä artikkelissaan ''How Developers Search for Code: A Case Study'' \cite{g_search_code}, kuinka ohjelmistokehittäjät etsivät koodia Googlella.
-Tutkimuksensa lähteenä he käyttivät hakutyökalun logeja sekä haun yhteydessä pidettyjä kyselyitä.
 
-%Tapaustutkimuksessaan he keskittyvät selvittämään, miksi, miten ja milloin koodihakutyökaluja käytetään.
-\section{Tutkimusasetelma}
 
-% Sadowski, Stolee ja Elbaum
-Kirjoittajat kertovat artikkelissaan, että Googlella suurin osa ohjelmakoodista on yhdessä isossa avoimessa koodivarastossa. Googlella on myös käytössä sisäinen koodinhakutyökalu (code search tool), jossa hakua voi rajata mm. ohjelmointikielen ja tiedostopolun perusteella. Hakutulosten näyttämisen lisäksi koodihaku mahdollistaa koodin läpi navigoinnin perusteella.
+koodin hakua. eli miksi, miten milloin ja mistä.
+Mitä aihioita on keksitty ja tullut.
 
-Voidakseen tarjota kyselyn koodihakutyökalua avattaessa, he loivat selainlisäosan, joka avaa kyselylomakkeen. Selainlisäosa oli konfiguroitu siten, että jokaisen kyselyn välissä on vähintään kymmenen minuutin tauko. Tämän he tekivät, jottei kysely häiritsisi tutkittavia liikaa, ja siten tutkittavat tuottaisivat laadukaampia vastauksia. Hakutyökalun lokeista he saavat selville käyttäjän, tapahtuman kellonajan, hakutermit ja jokaisen käytetyn selaimen välilehden tunnisteen, sekä mitä tuloksia on klikattu. He yhdistivät kyselytulokset sekä lokimerkinnät kellonaikojen perusteella.
-Lokianalyysissä lokeista pilkottiin hakusessioita, siten että jokaisen hakusession välissä on vähintään kuuden minutin tauko.
-Tutkimusessa tarkennuttiin vastaamaan, miksi ohjelmoijat etsivät koodia, missä kontekstissa haettiin, millainen tyypillinen hakukysely on, mitä haku tuottaa tulokseksi ja miten haun konteksti vaikuttaa tuloksiin.
+Miten tutkittu ja mitä työkaluja on (stackoverflow ja github) - eri tarkotukset.
 
-\section{Tulokset}
 
-Tapaustutkimuksesta saatujen tulosten perusteella kirjoittajille selvisi, että ohjelmoija käyttää koodihakua aktiivisesti ja että tyypillisessä hakusessiossa hakua tarkennetaan toistuvasti.
-
-Vapaamuotoiset kyselytutkimuksen vastaukset lajittelemalla he tunnistivat, että yleisimmät syyt koodin hakemiseen on selvittää, mitä ohjelmakoodi tekee ja miksi se toimii, kuten se toimii. Hakua käytetään myös aktiivisesti selvittämään missä koodi sijaitsee.
-
-Tapaustutkimuksen perusteella suurin osa hauista tehdään ohjelmakoodimuutoksen parissa työskenneltäessä sekä teknistä ongelmaa ratkaistaessa. Myös koodikatselmuksen yhteydessä koodihakutyökalun käyttö on tyypillistä.
-
-Lokianalyysistä kävi ilmi, että noin neljännes hauista rajoittaa tuloksia tiedostosijainnin perusteella, kun taas ohjelmointikielen perusteella hakuja rajoitettiin vaan noin viidessä prosentissa hauista.
-He tunnistivat useita tilanteista, jossa tehtiin kaksi tai useampia peräkkäisiä hakuja siten, että hakujen välissä ei ollut muuta interaktiota koodihaun kanssa. He arvelivat tämän johtuvan siitä, että suurin osa peräkkäisistä hauista on joko kyselyn muokkaamista tai hakualueen rajaamista. Näiden peräkkäisten hakujen välissä on keskimäärin vain kahdeksan sekunnin ero. Tässä ajassa koodihaun tuloksia ehdittiin tarkastelemaan ja sen pohjalta tarkentamaan hakukyselyä.
-
-Tyypillinen hakusessio kestää 3 minuuttia ja 30 sekuntia sekä siinä on avattu kaksi selaimen välilehteä. Tyypillisesti hakuja tehtiin 12 päivässä.
-
-Kyselyiden ja lokianalyysin perusteella ohjelmakoodin ominaisuuksia selvitettäessä hauku tuotti harvoin yhtään klikkausta. Tämän he arvioivat johtuvan siitä, että vastaus näkyi jo koodin esikatselussa, tai koska haku tuotti vain yhden tuloksen, jonka koodihakutyökalu näytti suoraan.
-Koodia heikommin tunteva tyypillisesti käyttää enemmän aikaa koodin selaamiseen.
-
-\section{Yhteenveto}
-
-Tulosten pohjalta he ehdottavat on koodinhakutyökalujen luojille, että haku tarjoaisi tulosten esikatselua, haun rajaamisen ohjelmointikielen ja tiedostosijainnin lisäksi huomioimalla käyttäjän konteksi tarkemmin sekä hakutyökalun integraatiota ohjelmointiympäristöön
-
-Sadowski, Stolee ja Elbaum muistuttavat vielä lopuksi, että Googlen uniikki toimintatapa saattaa vaikuttaa tulosten soveltuvuuteen ja toistettavuuteen.
-% Write some science here.
-
-% --- References ---
-%
-% will generate numeric references (e.g. [1]) appropriate for theoretical
-% computer science. If you need alphanumeric references (e.g [Tur90]), use
-%
-% \bibliographystyle{babalpha-lf}
-%
-% instead.
-
-\bibliographystyle{babplain-lf}
-\bibliography{../lahteet}
-
-% --- Appendices ---
-
-% uncomment the following
-
-% \newpage
-% \appendix
-%
-% \section{Esimerkkiliite}
 
 \end{document}
