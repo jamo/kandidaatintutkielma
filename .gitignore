@@ -10,9 +10,6 @@ test*
 *.synctex.gz
 *.toc
 
-referaatti/old_referaatti.tex
-old_lahteet.md
-old_lahteet.bin
 .DS_Store
 **/.DS_Store
 
