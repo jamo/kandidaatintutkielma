@@ -127,6 +127,9 @@
 % --- Main matter ---
 
 \mainmatter       % clear page, start arabic page numbering
+% miksi ohjelmoijat hakevat koodia
+% mistä ohjelmoijat hakevat koodia
+% milloin ohjelmoijat hakevat koodia
 
 \section{Johdanto}
 Ihmiset ovat aina hakeneet apua oppiakseen ja suoriutuakseen paremmin erilaisista tehtävistä. %lol
@@ -154,17 +157,18 @@ Foorumit
 -Github
 -blogs
 
+\section{What and why they ask?}
+Sillito, Murphy ja De Volder tutkivat artikkelissaan \cite{questions-during-software-evolution-tasks} millaisia kysymyksiä ohjelmistokehittäjät kysyvät työskennellessään ohjelmistokoodimuutosten parissa.
+He järjestivät kaksi tapaustutkimusta. Tutkimuksen, jossa ohjelmistokehittät työskentelivät pareina toteuttaenpyydetyn muutoksen heille aiemmin tuntemattomaan ohjelmakoodiin. Tähän heillä oli aikaa 45 minuuttia; tehtävässä tarkoituksena ei ollut saada pyydettyä tehtävää valmiiksi, vaan tehtävän odotettiin jäävän kesken. Pareista aina kokemattomampi oli ohjeistettu olemaan näppäimistöllä, ja kokeneempi tarkkailemaan vierestä. Näin he pyrkivät saamaan luonnollisempaa keskustelua aikaan.
+
+Toisessa tapaustutkimuksessaan ohjelmistokehittäjät työskentelivät itselleen tutun ohjelmistokoodin parissa. Tässä heitä pyydettiin tekemään heille tyypillinen ohjelmointitehtävä.
+
+Näistä tapaustutkimusista kertätystä datasta he tunnistivat neljä yleistä katogoriaa, mihin kaikki tutkimuksen aikana kysytyt kysymykset jakautuivat.
+Ensimmäisten tehtävänantoon liittyvien kohtien löytäminen ohjelmakoodista, missä tiettyä tyyppiä/metodia käytetään ja missä ne sijaitsevat koodissa, koodiin liittyvien konseptien ymmärtäminen, kokonaiskuvan saavuttaminen ohjelman suorituksesta (omaan tehtävään liittyvästä osasta ainakin).
+He havaitsivat, että useasti vastatakseen korkeamman tason kysymykseen, kysyjä kysyi useampia tukikysymyksiä saadakseen vastauksen korkean tason kysymykseen. Useasti tukikysymykset johtivat väärään vastaukseen, ja tutkittavien tuli palata kysymyksissään taaksepäin ja tarkentaa kysymyksiään eri suuntaan.
+
+Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
 
-\section{What and why they ask?}
-2 studies
-How does programmers comprehend systems, what information does he need when performing tasks on a code base.
-Not much is known how programmers use about specific questions asked by programmers when they are working on a task and how what tools and how they use to get the answer required.
-
-Erdos ans Sneed (todo uus lähde  K. Erdos and H. M. Sneed. Partial comprehension of complex programs (enough to perform maintenance). In Proceedings of 6th International Workshop on Program Comprehension, pages 98–105, 1998. ) proposed 7 questions programmes must answer whilst performing a change task on a code base.
-
-Sillito, Murphy and De Volder conducted two qualitive studies and in each of these they observed programmer s making source code changes to code bases varying in sice from 20k loc to 100k loc.
-The first of their studies was conducted in a laboratory setting, where the changes were done to an unfamiliar codebase. In the latter study they followed programmers working on a code they were already familiar with.
-They group questions arised in their studies in four distinct groups.
 \end{document}
