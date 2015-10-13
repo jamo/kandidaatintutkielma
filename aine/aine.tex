@@ -184,6 +184,25 @@ Useat ohjelmointiympäristöjen työkalut koodin täydennyksessä yms, eivät ta
 Myös tyyppien ja objektien relaatioita tulisi tarkentaa dokumentaatiossa, erityisesti niissä tapauksissa, missä tietty tyyppinen olio voidaankin luoda vain kokoaan toisessa luokassa, eikä sillä ole julkista konstruktoria. Monet kokivat sen hämääväksi.
 
 
+\section{Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks}
+Artikkelissa \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
+Vaikka työkalujen määrä ohjelmistokehityksessä on kasvanut, suuri osa työkaluista on tehty kehitys-, ei ylläpitovaiheeseen. Tapaustutkimuksessa he keskittyvät viiden eri ylläpitotehtävän tekemiseen, tekiöinä kokeineita java ohjelmistokehittäjiä.
+He jakavat ylläpito-operaation kolmeen vaiheeseen, relevanttien tiedostojen ja koodipalojen löytäminen, näiden välisten suhteiden mallintaminen ja toteutettavat muutokset.
+Tutkimuksessa tutkittaville annettiin 7 käyttäjien virheraporttia, joista mahdollisimman moni kuvattu ongelma heidän tuli korjata tutkimuksen aikana. Tutkimus kesti 70 minuuttia.
+Tutkimusessa käytetty koodivarasto koostui yhdeksästä java-tiedostusta.
+Muutostyön alussa he havaitsivat tutkittavan usein kysyvän, kuinka X toimii ja miksi X ei tapautunut. Näiden pohjalta tutkittavat alkoivat tyypillisesti rajaamaan relevantteja koodipaloja.
+Löydettyään tarpeellisen koodin he selvittivät sen suhteita toisiin luokkiin. He kysyivät tyypillisesti, mikä vaikuttaa muuttujan arvoon, mikä tämä muuttuja on.
+Tehtävään liittyvien koodipalojen etsinnässä moni valitsi epäolennaisia paloja, ja he käyttivät huomattavasti aikaa epäolennaisen koodin tarkasteluun.
+
+Aktiviteettejä tarkkailemalla, heille selvisi, että keskimäärin yhtä suuri osa ajasta menee koodin lukemiseen kuin koodin muokkaamiseen. kun taas koodin navigointiin ja esimerkkien hakuun käytettiin hieman vähemmän aikaa. Vähiten aikaa meni ohjelman testaukseen.
+He tunnistivat seuraavat tarpeet muutos töihin tarkoitettuihin työkaluigin.
+Workingset:in ylläpito, tehtävään oleellisten koodipalojen listaus, sekä näiden riippuvuuksien hallinta. Kopiointiin liittyvien virheiden korjaamiseksi he ehdoittivat kopionnin säilyvän koodin kontekstissa ja siten ohjelmointiympäristön korostavan, että kopioidussa koodissa voi olla vielä korjaamattomia virheitä.
+He ehdottivay myös koodipaloista koostuvaa editoria, jossa tiedostosta on esillä vain tarpeellinen osa. Näin saisi helpommin kaikki oleelliset osat koodista esille.
+Ympäristön tulisi visualisoida ohjelmakoodin riippuvuudet. Sen sijaan että ohjelmoija navigoi ja katsoo jokaista riippuvuutta erikseen, voisi ohjelmointiympäristö tarjota selkeämmän tavan nopeammin tarkastella riippuvuuksia.
+Vastatessaan alun kysymyksiinsä, miksi ja miten ohjelmistokehittäjät joutuvat tutkimuksen mukaan usein arvaamaan ja tekevät merkittäviä johtopäätöksiä ohjelmiston toiminnasta. Ohjelmistoympäristön pitäisi osata vastata kysymyksiin miksi ja miten. % helppoa :D
+
+
+
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
 
