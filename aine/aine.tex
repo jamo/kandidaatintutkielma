@@ -168,6 +168,24 @@ Ensimmäisten tehtävänantoon liittyvien kohtien löytäminen ohjelmakoodista, 
 He havaitsivat, että useasti vastatakseen korkeamman tason kysymykseen, kysyjä kysyi useampia tukikysymyksiä saadakseen vastauksen korkean tason kysymykseen. Useasti tukikysymykset johtivat väärään vastaukseen, ja tutkittavien tuli palata kysymyksissään taaksepäin ja tarkentaa kysymyksiään eri suuntaan.
 
 Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.
+\section{asking and answering questions about unfamiliar apis}
+AB ja C selvittivät artikkelissaan \cite{asking-and-answering-api-questions} millaisia kysymyksiä ohjelmistokehittäjät kysyvät kohdatessaan uuden ohjelmistorajapinnan (APIn).
+Tapaustutkimuksessaan he tunnistivat kaikenkaikkiaan kaksikymmentä kysymystä, joista he tunnistivat viisi vaikeinta
+
+Aluksi isoin kysymys uuden ohjelmistorajapinnan käytössä on, miten eri tyypit liittyvät toisiinsa.
+He havaitsivat, että ohjelmistokehittäjillä oli toive, miten ohjelmistorajapinta toimisi, ja he ärsyyntyivät, kun ohjelmistorajapinta ei toiminutkaan odotetusti.
+Usein kysymyksiin ei ollut helppoja vastauksia.
+He havainnoivat, että erityisiä haasteita tutkittaville tuotti kahden tai useamman tyypin suhde.
+Mitkä avainsanat kuvaavat ohjelmistorajapinnan toimintoja; erityisesti haettaessa lisätietoa ohjelmistorajapinnan käytöstä. Useilla oli vaikeuksia arvata aluksi avainsanoja oikein.
+Miten luoda esiintymä tyypistä, ilman että sille on tarjolla julkista konstruktoria, miten selvittää metodikutsun tulos; metodin paluuarvon lisäksi heittääkö metodi poikkeuksia, ilmaisten että metodin suoritus päättyi virhetilanteeseen. Tässä he havaitsivat ohjelmistokehittäjien oletuksen metodin toiminnasta versus siitä, miten se oli toteutettu vaikuttavan paljon. Esimerkkinä he nostivat esille xml tiedoston validaatiometodin. Ohjelmistokehittäjät odottivat validaatio metodin palauttavan arvon joka kuvaa validaation onnistumista, kun taas todellisuudessa metodi ei palauta mitään kun xml tiedosto on validi, ja heittää poikkeuksen xml tiedoston ollessa epävalidi. Myös onnistuminen ja virhe oli ohjelmistokehittäjien ja ohjelmistorajapinnan luojien mielestä erilainen. Kävi myös ilmi, että tutkittavat kuvittelivat poikkeusten liittyvän paljon vakavempiin ongelmiin, kuin tiedoston epävalidiuuteen, eivätkä he siten olleet sisäistäneet poikkeuksien käyttötapoja.
+He korostavat, että poikkeusten käyttäminen kaikkien virhetilanteiden esittämiseen vaikeuttaa ohjelmistorajapinnan sisäistämisen.
+Eri hakutapojen vaikutus, he havaitsivat noin puolen tutkittavista hakeneen esimerkkejä ja dokumentaatiota webistä, kun taas loput käyttivät vain paikallista dokumentaatiota. Kävi ilmi, että tällä hakutapaerolla ei ollut kummepaa vaikutusta tehtävästä selviämisessä. He havaitsivat, että tutkittavat aliarvioivat koodiesimerkkien haun vievän ajan. Tosin useat tutkittavat eivät onnistuneet löytämään sopivia esimerkkejä ja lopulta tyytyivät paikalliseen dokumentaatioon.
+Useat ohjelmointiympäristöjen työkalut koodin täydennyksessä yms, eivät tarjoa kunnollista tukea työhön liittyvien tyyppien tunnistamiseen, vaan olettavat, että ohjelmistokehittäjä tuntee jo tarvittavat tyypit.
+Myös tyyppien ja objektien relaatioita tulisi tarkentaa dokumentaatiossa, erityisesti niissä tapauksissa, missä tietty tyyppinen olio voidaankin luoda vain kokoaan toisessa luokassa, eikä sillä ole julkista konstruktoria. Monet kokivat sen hämääväksi.
+
+
+
+
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
 
