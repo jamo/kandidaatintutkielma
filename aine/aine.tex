@@ -136,43 +136,23 @@ Ihmiset ovat aina hakeneet apua oppiakseen ja suoriutuakseen paremmin erilaisist
 Ohjelmistoprojektien eri vaiheiden aikana tulee esille erilaisia kysymyksiä ohjelmakoodista \cite{g_search_code}, \cite{questions-during-software-evolution-tasks}, \cite{asking-and-answering-api-questions}.
 Kysymykset liittyvät niin vieraiden ohjelmistorajapintojenen (api) käyttöön \cite{jungloid-mining} kuin yleisemmin.
 
-\section{foobar}
-Mitä on koodin hakeminen
-miksi koodia haetaan
-
-S
-llito, Murphy ja De Volder esittelivät Kysymyksiä, mitä kehittäjät kysyvät artikkelissaan~\cite{questions-during-software-evolution-tasks}.
-
-- mitä ne koittaa selvittää
-  - lista syistä
-
-miten koodia haetaan
--työkalut, grep, kysyminen
-
-Mitä koodihakuja on
-- pari työkalua
-Foorumit
--IRC
--Stackoverflow
--Github
--blogs
-
-\section{Miksi ne kyselee ja mitä}
-\section{Tilanteita missä tulee ongelmia }
+\section{Tilanteita missä tulee ongelmia - miksi kyselee ja mitä}
 Ohjelmoitaessa tulee usein esiin erilaisia kysymyksiä, joihin vastaamiseen noin puolet ohjelmointiajasta kuluu~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}. Näiden ohjelmointitehtävään tutustuessa ja ohjelmointitehtävän aikana esiin tulleiden kysymysten avulla ohjelmoja pyrkii sisäistämään koodin toimintaa tarvittavissa määrin saadakseen tarvittavan tehtävän tehtyä. Tällaisia tehtäviä on esimerkiksi uuden ominaisuuden luominen olemassa olevaan ohjelmaan sekä ohjelmassa olevan ohjelman ohjelmointivirheen korjaaminen.
 
 Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä ja sitä tarkentavia kysymyksiä, joihin vastauksia hakemalla vastaus alkuperäiseen kysymykseen tarkkenee~\cite{questions-during-software-evolution-tasks}
 
 Alla tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksillä näitä on ratkottu. Myöhemmässä kappaleessa on esitelty erilaisten työkalujen soveltuvuutta ohjelmointiprosessin aikana tulleisiin kysymyksiin vastaamisesta.
+
 \subsection{Oikean aloituskohdan löytäminen}
 Ohjelmointitehtävän alussa tehtävään liittyvien kohtien paikantaminen on haastavaa. Sillito, Murphy sekä De Volder havaitsivat artikkelissaan \cite{questions-during-software-evolution-tasks} havaitsivat ohjelmoijien käyttävän runsaasti aikaa sopivan aloituskohdan löytämiseen. Osan he havaitsivat aloittavan oleellisten koodin kohtien etsimisen tekstipohjaisella haulla, kun taas toiset käyttivät ohjelmointiympäristön kehittyneempää tyyppi -pohjaista hakua. Myös luokka ja paketti selaimia käytetään sopivan aloituskohdan löytämiseen. Tämä olettaa kuitenkin luokkien ja pakettien nimien olevan kuvaavia. Löydettässä mahdollisesti oleellisia kohtia, tulee ohjelmoijan voida tunnistaa, liittyyko löydetty kohta oleellisesti työnalla olevaan tehtävään. Eräs tapa tunnistaa koodin oleellisuus on käyttää debuggeria, asettaen mahdollisesti oleelliseen kohtaan pysähdyskohta (breakpoint) ja suorittamalla ohjelmaa debuggerin kautta voi huomata pysähtyykö ohjelma odotetusti pysähdyskohtiin. Myös selvittämällä mahdollisesti oleellisen kohdan riippuvuuksia muihin tyyppeihin, saa paremman vaikutelman siitä, onko kyseinen kohta oleellinen työn aloitukseen.
 
 \subsection{Riippuvuuksien hahmottaminen}
 Sopivan aloituskohdan ollessa selvillä, usein \cite{questions-during-software-evolution-tasks} seuraava askel riippuvuuksien hahmoittaminen. Tässä ohjelmoija tarkastelee itse oleellisia luokkia, mitä ne perivät, mitä rajapintoja ne toteuttavat sekä mitä metodeja luokka toteuttaa. Tarkastelu etenee hitaasti laajemalle alueelle, mitä tyyppejä oleellisessa kodassa käytetään ja miten ne liittyvät tähän luokkaan. Näin he mallintavat selkeiden riippuvuuksien ja oleellisten kohtien välisiä suhteita hahmoittaakseen paremmin, kuinka ohjelman oleellinen osa toimii.
-Näihin kysymyksiin ohjelmoijat voivat helposti vastata käyttäen ohjelmointiympäristön perus työkaluja.
+Näihin kysymyksiin ohjelmoijat voivat helposti vastata käyttäen ohjelmointiympäristön perustyökaluja.
 
+Tehtävään liittyvien koodipalojen etsinnässä moni valitsi epäolennaisia paloja, ja he käyttivät huomattavasti aikaa epäolennaisen koodin tarkasteluun.  \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
 \subsection{Koodin konseptien selvittämnen}
-Alkupaikan sekä läheisten riippuvuuksien selvittäminen on hyvä alku; kuitenkin usein on tarpeen saada selville tarkempi kokonaiskuva ohjelmiton oleellisesta osasta ja siten parantaa yleiskuvaa ohjelmiston toiminnasta. Tämän selvittämiseksi haetaan usein vastauksia kysymyksiin, missä tämä olio luodaan, mitä parametrejä sille annetaan, miten oikeaoppisesti käytetään tiettyä tietorakennetta sekä miten ohjelma käsittelee tietyt tapaukset. Ohjelmoijat tarkastelevat löydetyn oleellisen kohdan suhdetta ohjelmistoon, mistä ja mitkä luokat käyttävät tätä, ja mitä tehdessä, mitkä luokat kapseloivat tämän ja miksi ne tekevät niin~\cite{questions-during-software-evolution-tasks}.
+Alkupaikan sekä läheisten riippuvuuksien selvittäminen on hyvä alku; kuitenkin usein on tarpeen saada selville tarkempi kokonaiskuva ohjelmiton oleellisesta osasta ja siten parantaa yleiskuvaa ohjelmiston toiminnasta. Tämän selvittämiseksi haetaan usein vastauksia kysymyksiin, missä tämä olio luodaan, mitä parametrejä sille annetaan, miten oikeaoppisesti käytetään tiettyä tietorakennetta sekä miten ohjelma käsittelee tietyt tapaukset. Ohjelmoijat tarkastelevat löydetyn oleellisen kohdan suhdetta ohjelmistoon, mistä ja mitkä luokat käyttävät tätä, ja mitä tehdessä, mitkä luokat kapseloivat tämän ja miksi ne tekevät niin~\cite{questions-during-software-evolution-tasks,eliciting-design-requirements-for-maintenance-oriented-ides}
 
 \subsection{Miten tätä käytetään - apit}
 Niin ohjelman toimintaa tarkastellessa, kuin uutta ominaisuutta luodessa tulee useasti vastaan tuntemattomia ohjelmointirajapintoja (API). Joskus ohjelmointirajapinnat ovat helppokäyttöisiä, mutta useasti, varsinkin isompien kirjastojen (Library) ohjelmistorajapinnat ovat monipuolisia ja siten vaikeammin sisäistettävissä. Aluksi, uuden ohjelmointirajapinnan kohdatessaan ohjelmoija tyypillisesti aloittaa selvittämällä, kuinka eri tyypit liittyvät toisiinsa. Tämä tapahtuu osin samoin, kuten yllä mainitussa riippuvuuksien hahmoittaminen osiossa, mutta painottuu pitkälti dokumentaatioon ja luokka kaavioihin. Dokumentaatiosta sopivien luokkien löytämisen yksi suurimmista haasteista on oikeiden avainsanojen arvaaminen. Myös haasteita ohjelmistorajapintoihin tutustuttaessa tuottaa eri luokista esiintymien luominen. Erityisesti silloin, kun luokka ei tarjoa julkista konstruktoria, vaan käytössä on rakentaja (builder) tai tehdas (factory) ohjelmointityylit. Myös luokkien dokumentoimattomat oletukset sekä ohjelmoijan mielestä epätyypillinen toteutus tuottaa haasteita \cite{asking-and-answering-api-questions}.
@@ -185,26 +165,12 @@ Useat ohjelmointiympäristöjen työkalut koodin täydennyksessä yms, eivät ta
 
 \section{What and why they ask?}
 
-Sillito, Murphy ja De Volder \cite{questions-during-software-evolution-tasks}
-
-Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.
+Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.  Sillito, Murphy ja De Volder \cite{questions-during-software-evolution-tasks}
 
 \section{Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks}
-Artikkelissa \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
-Vaikka työkalujen määrä ohjelmistokehityksessä on kasvanut, suuri osa työkaluista on tehty kehitys-, ei ylläpitovaiheeseen. Tapaustutkimuksessa he keskittyvät viiden eri ylläpitotehtävän tekemiseen, tekiöinä kokeineita java ohjelmistokehittäjiä.
-He jakavat ylläpito-operaation kolmeen vaiheeseen, relevanttien tiedostojen ja koodipalojen löytäminen, näiden välisten suhteiden mallintaminen ja toteutettavat muutokset.
-Tutkimuksessa tutkittaville annettiin 7 käyttäjien virheraporttia, joista mahdollisimman moni kuvattu ongelma heidän tuli korjata tutkimuksen aikana. Tutkimus kesti 70 minuuttia.
-Tutkimusessa käytetty koodivarasto koostui yhdeksästä java-tiedostusta.
-Muutostyön alussa he havaitsivat tutkittavan usein kysyvän, kuinka X toimii ja miksi X ei tapautunut. Näiden pohjalta tutkittavat alkoivat tyypillisesti rajaamaan relevantteja koodipaloja.
-Löydettyään tarpeellisen koodin he selvittivät sen suhteita toisiin luokkiin. He kysyivät tyypillisesti, mikä vaikuttaa muuttujan arvoon, mikä tämä muuttuja on.
-Tehtävään liittyvien koodipalojen etsinnässä moni valitsi epäolennaisia paloja, ja he käyttivät huomattavasti aikaa epäolennaisen koodin tarkasteluun.
+\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
+Vaikka työkalujen määrä ohjelmistokehityksessä on kasvanut, suuri osa työkaluista on tehty kehitys-, ei ylläpitovaiheeseen. Tapaustutkimuksessa he keskittyvät viiden eri ylläpitotehtävän tekemiseen, tekiöinä kokeineita java ohjelmistokehittäjiä.  \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
 
-Aktiviteettejä tarkkailemalla, heille selvisi, että keskimäärin yhtä suuri osa ajasta menee koodin lukemiseen kuin koodin muokkaamiseen. kun taas koodin navigointiin ja esimerkkien hakuun käytettiin hieman vähemmän aikaa. Vähiten aikaa meni ohjelman testaukseen.
-He tunnistivat seuraavat tarpeet muutos töihin tarkoitettuihin työkaluigin.
-Workingset:in ylläpito, tehtävään oleellisten koodipalojen listaus, sekä näiden riippuvuuksien hallinta. Kopiointiin liittyvien virheiden korjaamiseksi he ehdoittivat kopionnin säilyvän koodin kontekstissa ja siten ohjelmointiympäristön korostavan, että kopioidussa koodissa voi olla vielä korjaamattomia virheitä.
-He ehdottivay myös koodipaloista koostuvaa editoria, jossa tiedostosta on esillä vain tarpeellinen osa. Näin saisi helpommin kaikki oleelliset osat koodista esille.
-Ympäristön tulisi visualisoida ohjelmakoodin riippuvuudet. Sen sijaan että ohjelmoija navigoi ja katsoo jokaista riippuvuutta erikseen, voisi ohjelmointiympäristö tarjota selkeämmän tavan nopeammin tarkastella riippuvuuksia.
-Vastatessaan alun kysymyksiinsä, miksi ja miten ohjelmistokehittäjät joutuvat tutkimuksen mukaan usein arvaamaan ja tekevät merkittäviä johtopäätöksiä ohjelmiston toiminnasta. Ohjelmistoympäristön pitäisi osata vastata kysymyksiin miksi ja miten. % helppoa :D
 
 \section{Tyypillisiä ongelmia}
 Tiivistä ylhäältä
@@ -220,6 +186,14 @@ APIt on vaikeita
 \subsection{Javadoc}
 \subsection{OSS - Github}
 \subsection{Blogit}
+
+%ideoita ohjelmointypäristöjen tekijöille
+%\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
+%Workingset:in ylläpito, tehtävään oleellisten koodipalojen listaus, sekä näiden riippuvuuksien hallinta. Kopiointiin liittyvien virheiden korjaamiseksi he ehdoittivat kopionnin säilyvän koodin kontekstissa ja siten ohjelmointiympäristön korostavan, että kopioidussa koodissa voi olla vielä korjaamattomia virheitä.
+%He ehdottivay myös koodipaloista koostuvaa editoria, jossa tiedostosta on esillä vain tarpeellinen osa. Näin saisi helpommin kaikki oleelliset osat koodista esille.
+%Ympäristön tulisi visualisoida ohjelmakoodin riippuvuudet. Sen sijaan että ohjelmoija navigoi ja katsoo jokaista riippuvuutta erikseen, voisi ohjelmointiympäristö tarjota selkeämmän tavan nopeammin tarkastella riippuvuuksia.
+%Vastatessaan alun kysymyksiinsä, miksi ja miten ohjelmistokehittäjät joutuvat tutkimuksen mukaan usein arvaamaan ja tekevät merkittäviä johtopäätöksiä ohjelmiston toiminnasta. Ohjelmistoympäristön pitäisi osata vastata kysymyksiin miksi ja miten. % helppoa :D
+
 
 
 \bibliographystyle{babplain-lf}
