@@ -157,8 +157,35 @@ Foorumit
 -Github
 -blogs
 
+\section{Miksi ne kyselee ja mitä}
+\section{Tilanteita missä tulee ongelmia }
+Ohjelmoitaessa tulee usein esiin erilaisia kysymyksiä, joihin vastaamiseen noin puolet ohjelmointiajasta kuluu~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}. Näiden ohjelmointitehtävään tutustuessa ja ohjelmointitehtävän aikana esiin tulleiden kysymysten avulla ohjelmoja pyrkii sisäistämään koodin toimintaa tarvittavissa määrin saadakseen tarvittavan tehtävän tehtyä. Tällaisia tehtäviä on esimerkiksi uuden ominaisuuden luominen olemassa olevaan ohjelmaan sekä ohjelmassa olevan ohjelman ohjelmointivirheen korjaaminen.
+
+Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä ja sitä tarkentavia kysymyksiä, joihin vastauksia hakemalla vastaus alkuperäiseen kysymykseen tarkkenee TODO cite?
+
+Tässä tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksillä näitä on ratkottu. Myöhemmässä kappaleessa on esitelty erilaisten työkalujen soveltuvuutta kysymyksiin vastaamisesta.
+\subsection{Oikean aloituskohdan löytäminen}
+Ohjelmointitehtävän alussa tehtävään liittyvien kohtien paikantaminen on haastavaa. Sillito, Murphy sekä De Volder havaitsivat artikkelissaan \cite{questions-during-software-evolution-tasks} havaitsivat ohjelmoijien käyttävän runsaasti aikaa sopivan aloituskohdan löytämiseen. Osan he havaitsivat aloittavan oleellisten koodin kohtien etsimisen tekstipohjaisella haulla, kun taas toiset käyttivät ohjelmointiympäristön kehittyneempää tyyppi -pohjaista hakua. Myös luokka ja paketti selaimia käytetään sopivan aloituskohdan löytämiseen. Tämä olettaa kuitenkin luokkien ja pakettien nimien olevan kuvaavia. Löydettässä mahdollisesti oleellisia kohtia, tulee ohjelmoijan voida tunnistaa, liittyyko löydetty kohta oleellisesti työnalla olevaan tehtävään. Eräs tapa tunnistaa koodin oleellisuus on käyttää debuggeria, asettaen mahdollisesti oleelliseen kohtaan pysähdyskohta (breakpoint) ja suorittamalla ohjelmaa debuggerin kautta voi huomata pysähtyykö ohjelma odotetusti pysähdyskohtiin. Myös selvittämällä mahdollisesti oleellisen kohdan riippuvuuksia muihin tyyppeihin, saa paremman vaikutelman siitä, onko kyseinen kohta oleellinen työn aloitukseen.
+
+\subsection{Riippuvuuksien hahmottaminen}
+Sopivan aloituskohdan ollessa selvillä, usein \cite{questions-during-software-evolution-tasks} seuraava askel riippuvuuksien hahmoittaminen. Tässä ohjelmoija tarkastelee itse oleellisia luokkia, mitä ne perivät, mitä rajapintoja ne toteuttavat sekä mitä metodeja luokka toteuttaa. Tarkastelu etenee hitaasti laajemalle alueelle, mitä tyyppejä oleellisessa kodassa käytetään ja miten ne liittyvät tähän luokkaan. Näin he mallintavat selkeiden riippuvuuksien ja oleellisten kohtien välisiä suhteita hahmoittaakseen paremmin, kuinka ohjelman oleellinen osa toimii.
+Näihin kysymyksiin ohjelmoijat voivat helposti vastata käyttäen ohjelmointiympäristön perus työkaluja.
+
+\subsection{Koodin konseptien selvittämnen}
+Alkupaikan sekä läheisten riippuvuuksien selvittäminen on hyvä alku; kuitenkin usein on tarpeen saada selville tarkempi kokonaiskuva ohjelmiton oleellisesta osasta ja siten parantaa yleiskuvaa ohjelmiston toiminnasta. Tämän selvittämiseksi haetaan usein vastauksia kysymyksiin, missä tämä olio luodaan, mitä parametrejä sille annetaan, miten oikeaoppisesti käytetään tiettyä tietorakennetta sekä miten ohjelma käsittelee tietyt tapaukset \cite{questions-during-software-evolution-tasks}.
+
+
+He havaitsivat, että useasti vastatakseen korkeamman tason kysymykseen, kysyjä kysyi useampia tukikysymyksiä saadakseen vastauksen korkean tason kysymykseen. Useasti tukikysymykset johtivat väärään vastaukseen, ja tutkittavien tuli palata kysymyksissään taaksepäin ja tarkentaa kysymyksiään eri suuntaan.
+
+
+Sillito, Murphy ja De Volder selvittivät \cite{questions-during-software-evolution-tasks} millaisia kysymyksiä ohjelmakoodin muutostöis
+Niin uutta ohjelmaa luotaessa, uutta ominaisuutta ohjelmistoon lisättäessä, ohjelmakoodia refaktoroitaessa k
+Eli new dev
+uudet featuret
+security syyt
 \section{What and why they ask?}
-Sillito, Murphy ja De Volder tutkivat artikkelissaan \cite{questions-during-software-evolution-tasks} millaisia kysymyksiä ohjelmistokehittäjät kysyvät työskennellessään ohjelmistokoodimuutosten parissa.
+
+Sillito, Murphy ja De Volder selvittivät  \cite{questions-during-software-evolution-tasks} millaisia kysymyksiä ohjelmistokehittäjät kysyvät työskennellessään ohjelmistokoodimuutosten parissa.
 He järjestivät kaksi tapaustutkimusta. Tutkimuksen, jossa ohjelmistokehittät työskentelivät pareina toteuttaenpyydetyn muutoksen heille aiemmin tuntemattomaan ohjelmakoodiin. Tähän heillä oli aikaa 45 minuuttia; tehtävässä tarkoituksena ei ollut saada pyydettyä tehtävää valmiiksi, vaan tehtävän odotettiin jäävän kesken. Pareista aina kokemattomampi oli ohjeistettu olemaan näppäimistöllä, ja kokeneempi tarkkailemaan vierestä. Näin he pyrkivät saamaan luonnollisempaa keskustelua aikaan.
 
 Toisessa tapaustutkimuksessaan ohjelmistokehittäjät työskentelivät itselleen tutun ohjelmistokoodin parissa. Tässä heitä pyydettiin tekemään heille tyypillinen ohjelmointitehtävä.
@@ -201,13 +228,10 @@ He ehdottivay myös koodipaloista koostuvaa editoria, jossa tiedostosta on esill
 Ympäristön tulisi visualisoida ohjelmakoodin riippuvuudet. Sen sijaan että ohjelmoija navigoi ja katsoo jokaista riippuvuutta erikseen, voisi ohjelmointiympäristö tarjota selkeämmän tavan nopeammin tarkastella riippuvuuksia.
 Vastatessaan alun kysymyksiinsä, miksi ja miten ohjelmistokehittäjät joutuvat tutkimuksen mukaan usein arvaamaan ja tekevät merkittäviä johtopäätöksiä ohjelmiston toiminnasta. Ohjelmistoympäristön pitäisi osata vastata kysymyksiin miksi ja miten. % helppoa :D
 
-\section{Miksi ne hakee apua}
-\subsection{Tilanteita missä tulee ongelmia}
-Eli new dev
-uudet featuret
-security syyt
 \section{Tyypillisiä ongelmia}
 Tiivistä ylhäältä
+APIt on vaikeita
+  Jungloid mining
 
 \section{Työkaluja avun hakuun}
 \subsection{Grep}
