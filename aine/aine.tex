@@ -161,9 +161,9 @@ Foorumit
 \section{Tilanteita missä tulee ongelmia }
 Ohjelmoitaessa tulee usein esiin erilaisia kysymyksiä, joihin vastaamiseen noin puolet ohjelmointiajasta kuluu~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}. Näiden ohjelmointitehtävään tutustuessa ja ohjelmointitehtävän aikana esiin tulleiden kysymysten avulla ohjelmoja pyrkii sisäistämään koodin toimintaa tarvittavissa määrin saadakseen tarvittavan tehtävän tehtyä. Tällaisia tehtäviä on esimerkiksi uuden ominaisuuden luominen olemassa olevaan ohjelmaan sekä ohjelmassa olevan ohjelman ohjelmointivirheen korjaaminen.
 
-Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä ja sitä tarkentavia kysymyksiä, joihin vastauksia hakemalla vastaus alkuperäiseen kysymykseen tarkkenee TODO cite?
+Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä ja sitä tarkentavia kysymyksiä, joihin vastauksia hakemalla vastaus alkuperäiseen kysymykseen tarkkenee~\cite{questions-during-software-evolution-tasks}
 
-Tässä tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksillä näitä on ratkottu. Myöhemmässä kappaleessa on esitelty erilaisten työkalujen soveltuvuutta kysymyksiin vastaamisesta.
+Alla tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksillä näitä on ratkottu. Myöhemmässä kappaleessa on esitelty erilaisten työkalujen soveltuvuutta ohjelmointiprosessin aikana tulleisiin kysymyksiin vastaamisesta.
 \subsection{Oikean aloituskohdan löytäminen}
 Ohjelmointitehtävän alussa tehtävään liittyvien kohtien paikantaminen on haastavaa. Sillito, Murphy sekä De Volder havaitsivat artikkelissaan \cite{questions-during-software-evolution-tasks} havaitsivat ohjelmoijien käyttävän runsaasti aikaa sopivan aloituskohdan löytämiseen. Osan he havaitsivat aloittavan oleellisten koodin kohtien etsimisen tekstipohjaisella haulla, kun taas toiset käyttivät ohjelmointiympäristön kehittyneempää tyyppi -pohjaista hakua. Myös luokka ja paketti selaimia käytetään sopivan aloituskohdan löytämiseen. Tämä olettaa kuitenkin luokkien ja pakettien nimien olevan kuvaavia. Löydettässä mahdollisesti oleellisia kohtia, tulee ohjelmoijan voida tunnistaa, liittyyko löydetty kohta oleellisesti työnalla olevaan tehtävään. Eräs tapa tunnistaa koodin oleellisuus on käyttää debuggeria, asettaen mahdollisesti oleelliseen kohtaan pysähdyskohta (breakpoint) ja suorittamalla ohjelmaa debuggerin kautta voi huomata pysähtyykö ohjelma odotetusti pysähdyskohtiin. Myös selvittämällä mahdollisesti oleellisen kohdan riippuvuuksia muihin tyyppeihin, saa paremman vaikutelman siitä, onko kyseinen kohta oleellinen työn aloitukseen.
 
@@ -172,29 +172,8 @@ Sopivan aloituskohdan ollessa selvillä, usein \cite{questions-during-software-e
 Näihin kysymyksiin ohjelmoijat voivat helposti vastata käyttäen ohjelmointiympäristön perus työkaluja.
 
 \subsection{Koodin konseptien selvittämnen}
-Alkupaikan sekä läheisten riippuvuuksien selvittäminen on hyvä alku; kuitenkin usein on tarpeen saada selville tarkempi kokonaiskuva ohjelmiton oleellisesta osasta ja siten parantaa yleiskuvaa ohjelmiston toiminnasta. Tämän selvittämiseksi haetaan usein vastauksia kysymyksiin, missä tämä olio luodaan, mitä parametrejä sille annetaan, miten oikeaoppisesti käytetään tiettyä tietorakennetta sekä miten ohjelma käsittelee tietyt tapaukset \cite{questions-during-software-evolution-tasks}.
+Alkupaikan sekä läheisten riippuvuuksien selvittäminen on hyvä alku; kuitenkin usein on tarpeen saada selville tarkempi kokonaiskuva ohjelmiton oleellisesta osasta ja siten parantaa yleiskuvaa ohjelmiston toiminnasta. Tämän selvittämiseksi haetaan usein vastauksia kysymyksiin, missä tämä olio luodaan, mitä parametrejä sille annetaan, miten oikeaoppisesti käytetään tiettyä tietorakennetta sekä miten ohjelma käsittelee tietyt tapaukset. Ohjelmoijat tarkastelevat löydetyn oleellisen kohdan suhdetta ohjelmistoon, mistä ja mitkä luokat käyttävät tätä, ja mitä tehdessä, mitkä luokat kapseloivat tämän ja miksi ne tekevät niin~\cite{questions-during-software-evolution-tasks}.
 
-
-He havaitsivat, että useasti vastatakseen korkeamman tason kysymykseen, kysyjä kysyi useampia tukikysymyksiä saadakseen vastauksen korkean tason kysymykseen. Useasti tukikysymykset johtivat väärään vastaukseen, ja tutkittavien tuli palata kysymyksissään taaksepäin ja tarkentaa kysymyksiään eri suuntaan.
-
-
-Sillito, Murphy ja De Volder selvittivät \cite{questions-during-software-evolution-tasks} millaisia kysymyksiä ohjelmakoodin muutostöis
-Niin uutta ohjelmaa luotaessa, uutta ominaisuutta ohjelmistoon lisättäessä, ohjelmakoodia refaktoroitaessa k
-Eli new dev
-uudet featuret
-security syyt
-\section{What and why they ask?}
-
-Sillito, Murphy ja De Volder selvittivät  \cite{questions-during-software-evolution-tasks} millaisia kysymyksiä ohjelmistokehittäjät kysyvät työskennellessään ohjelmistokoodimuutosten parissa.
-He järjestivät kaksi tapaustutkimusta. Tutkimuksen, jossa ohjelmistokehittät työskentelivät pareina toteuttaenpyydetyn muutoksen heille aiemmin tuntemattomaan ohjelmakoodiin. Tähän heillä oli aikaa 45 minuuttia; tehtävässä tarkoituksena ei ollut saada pyydettyä tehtävää valmiiksi, vaan tehtävän odotettiin jäävän kesken. Pareista aina kokemattomampi oli ohjeistettu olemaan näppäimistöllä, ja kokeneempi tarkkailemaan vierestä. Näin he pyrkivät saamaan luonnollisempaa keskustelua aikaan.
-
-Toisessa tapaustutkimuksessaan ohjelmistokehittäjät työskentelivät itselleen tutun ohjelmistokoodin parissa. Tässä heitä pyydettiin tekemään heille tyypillinen ohjelmointitehtävä.
-
-Näistä tapaustutkimusista kertätystä datasta he tunnistivat neljä yleistä katogoriaa, mihin kaikki tutkimuksen aikana kysytyt kysymykset jakautuivat.
-Ensimmäisten tehtävänantoon liittyvien kohtien löytäminen ohjelmakoodista, missä tiettyä tyyppiä/metodia käytetään ja missä ne sijaitsevat koodissa, koodiin liittyvien konseptien ymmärtäminen, kokonaiskuvan saavuttaminen ohjelman suorituksesta (omaan tehtävään liittyvästä osasta ainakin).
-He havaitsivat, että useasti vastatakseen korkeamman tason kysymykseen, kysyjä kysyi useampia tukikysymyksiä saadakseen vastauksen korkean tason kysymykseen. Useasti tukikysymykset johtivat väärään vastaukseen, ja tutkittavien tuli palata kysymyksissään taaksepäin ja tarkentaa kysymyksiään eri suuntaan.
-
-Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.
 \section{asking and answering questions about unfamiliar apis}
 AB ja C selvittivät artikkelissaan \cite{asking-and-answering-api-questions} millaisia kysymyksiä ohjelmistokehittäjät kysyvät kohdatessaan uuden ohjelmistorajapinnan (APIn).
 Tapaustutkimuksessaan he tunnistivat kaikenkaikkiaan kaksikymmentä kysymystä, joista he tunnistivat viisi vaikeinta
@@ -210,6 +189,11 @@ Eri hakutapojen vaikutus, he havaitsivat noin puolen tutkittavista hakeneen esim
 Useat ohjelmointiympäristöjen työkalut koodin täydennyksessä yms, eivät tarjoa kunnollista tukea työhön liittyvien tyyppien tunnistamiseen, vaan olettavat, että ohjelmistokehittäjä tuntee jo tarvittavat tyypit.
 Myös tyyppien ja objektien relaatioita tulisi tarkentaa dokumentaatiossa, erityisesti niissä tapauksissa, missä tietty tyyppinen olio voidaankin luoda vain kokoaan toisessa luokassa, eikä sillä ole julkista konstruktoria. Monet kokivat sen hämääväksi.
 
+\section{What and why they ask?}
+
+Sillito, Murphy ja De Volder \cite{questions-during-software-evolution-tasks}
+
+Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.
 
 \section{Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks}
 Artikkelissa \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
