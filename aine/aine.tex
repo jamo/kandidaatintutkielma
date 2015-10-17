@@ -149,16 +149,25 @@ Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä
 
 Alla tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksiä silloin tyypillisesti esitetään. Myöhemmässä kappaleessa esittelen erilaisia työkaluja ja niiden soveltuvuuta ohjelmointiprosessin aikana tulleisiin kysymyksiin vastaamisessa.
 
-\subsection{Oikean aloituskohdan löytäminen}
-Ohjelmointitehtävän alussa tehtävään liittyvien kohtien paikantaminen on haastavaa. Sillito, Murphy sekä De Volder havaitsivat artikkelissaan \cite{questions-during-software-evolution-tasks} havaitsivat ohjelmoijien käyttävän runsaasti aikaa sopivan aloituskohdan löytämiseen. Osan he havaitsivat aloittavan oleellisten koodin kohtien etsimisen tekstipohjaisella haulla, kun taas toiset käyttivät ohjelmointiympäristön kehittyneempää tyyppi -pohjaista hakua. Tekstipohjasta hakua käyttäessä muodostuu haasteeksi sopivan avainsanan keksiminen, sekä suuri määrä epäoleellisia tuloksia \cite{what-to-search-for}. Myös luokka ja paketti selaimia käytetään sopivan aloituskohdan löytämiseen. Tämä olettaa kuitenkin luokkien ja pakettien nimien olevan kuvaavia. Löydettässä mahdollisesti oleellisia kohtia, tulee ohjelmoijan voida tunnistaa, liittyyko löydetty kohta oleellisesti työnalla olevaan tehtävään. Eräs tapa tunnistaa koodin oleellisuus on käyttää debuggeria, asettaen mahdollisesti oleelliseen kohtaan pysähdyskohta (breakpoint) ja suorittamalla ohjelmaa debuggerin kautta voi huomata pysähtyykö ohjelma odotetusti pysähdyskohtiin. Myös selvittämällä mahdollisesti oleellisen kohdan riippuvuuksia muihin tyyppeihin, saa paremman vaikutelman siitä, onko kyseinen kohta oleellinen työn aloitukseen.
+\subsection{Tehtävään oleelisten aloituskohtien löytäminen}
+Erityisesti uusissa projekteissa haasteeksi muodostuu koodin huono tuntemus; isommissa projekteissa koodin tuntemattomuuden vaikutus kasvaa entisestään.
+Aloittaessa ohjelmointitehtävää, ensimmäisenä osana niin tehtävän annon sisäistämistä, kuin projektiin tutustumista, on tehtävän oleellisen paikan löytäminen koodista.
 
-Avainsanahaut tuottavat usein paljon turhia tuloksia
-avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejä
+Oleellisen kohdan löytäminen vie usein paljon aikaa, eikä se ole helppoa. Eräs tapa aloituskohtan löytämiseen on arvata sopivia avainsajona, ja niiden perusteella hakea sopivia kohtia ohjelmakoodista. Tässä haasteena on kuitenkin niin oikeiden avainsanojen keksiminen sekä epäoleellisten tulosten suuri määrä~\cite{what-to-search-for}.
+
+Toinen tapa sopivan aloituskohdan löytämiseen on ohjelmistoympäristön (IDE) erilaisten luokka ja pakkaus kaavioiden tarkastelu työkalut. Nämä saattavat nopeuttaa hakua, muta edelleen haasteena on sopivien avainsanojen löytäminen.
+
+Myös debuggeria saatetaan käyttää sopivan kohdan löytämiseen, niin erikseen kuin myös edellä mainittujen tapojen tukena. Tällöin mahdollisesti sopiviin kohtiin asetetaan pysähdyspiste (break point) ja ohjelmaa ajettaessa katsotaan pysähtyykö ohjelman suoritus arvatuissa kohdissa.
+
+Mikään edellämainituista tavoista ei ole erityisen tehokas löytämään oleellista aloituskohtaa.
+Haasteeksi myös muodostuu se, että koska sopivan kohdan oleellisuuden varmistamiseen ei ole selkeää tapaa, valittiin aloituskohdaksi usein kokonaan epäoleellinen kohta, ja he käyttävät pitkän ajan epäoleellisen koodin parissa, ennen kuin koodin epäoleellisuus selviää \cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
+
+%Avainsanahaut tuottavat usein paljon turhia tuloksia
+%avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejtä
 \subsection{Riippuvuuksien hahmottaminen}
-Sopivan aloituskohdan ollessa selvillä, usein \cite{questions-during-software-evolution-tasks} seuraava askel riippuvuuksien hahmoittaminen. Tässä ohjelmoija tarkastelee itse oleellisia luokkia, mitä ne perivät, mitä rajapintoja ne toteuttavat sekä mitä metodeja luokka toteuttaa. Tarkastelu etenee hitaasti laajemalle alueelle, mitä tyyppejä oleellisessa kodassa käytetään ja miten ne liittyvät tähän luokkaan. Näin he mallintavat selkeiden riippuvuuksien ja oleellisten kohtien välisiä suhteita hahmoittaakseen paremmin, kuinka ohjelman oleellinen osa toimii.
-Näihin kysymyksiin ohjelmoijat voivat helposti vastata käyttäen ohjelmointiympäristön perustyökaluja.
+Kun sopivan aloituskohta on tiedossa, voi viimein tarkastella kyseistä kohtaa ohjelmakoodisa, sen suhdetta muuhun projektiin. Seuraava asken on siis aloituskohdan alueelta riippuvuuksien hahmoittaminen~\cite{questions-during-software-evolution-tasks}.
+Tässä ohjelmoija tarkastelee itse oleellisia luokkia selvittäen tarkemmin niiden suhdetta muuhun ohjelmakokonaisuuteen, keskittyen kuitenkin läheisiin luokkiin ja niissä oleviin rakenteisiin ja metodeihin. Tyypilisesti tässä selvitetään aluksi mitä metodeja kyseinen luokka toteuttaa, mitä tietorakenteita se käyttää sekä mihin luokkiin se viittaa. Myös mitä luokkia oleellinen luokka perii, mitä viitatut ja lähistön muut luokat perivät ja mitä rajapintoja ne toteutavat. Tarkastelu etenee hitaasti laajemalle alueelle, alkaen itse oleellisesta luokasta hitaasti laajentuen ohjelmoijan syventäessään käsitystään ohjelman rakenteesta. Näihin kysymyksiin vastaamiseen riitää ohjelmointiympäristöjen valmiit työkalut, jotka on tarkoitettu juuri koodin navigointiin.
 
-Tehtävään liittyvien koodipalojen etsinnässä moni valitsi epäolennaisia paloja, ja he käyttivät huomattavasti aikaa epäolennaisen koodin tarkasteluun.  \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
 \subsection{Koodin konseptien selvittämnen}
 Alkupaikan sekä läheisten riippuvuuksien selvittäminen on hyvä alku; kuitenkin usein on tarpeen saada selville tarkempi kokonaiskuva ohjelmiton oleellisesta osasta ja siten parantaa yleiskuvaa ohjelmiston toiminnasta. Tämän selvittämiseksi haetaan usein vastauksia kysymyksiin, missä tämä olio luodaan, mitä parametrejä sille annetaan, miten oikeaoppisesti käytetään tiettyä tietorakennetta sekä miten ohjelma käsittelee tietyt tapaukset. Ohjelmoijat tarkastelevat löydetyn oleellisen kohdan suhdetta ohjelmistoon, mistä ja mitkä luokat käyttävät tätä, ja mitä tehdessä, mitkä luokat kapseloivat tämän ja miksi ne tekevät niin~\cite{questions-during-software-evolution-tasks,eliciting-design-requirements-for-maintenance-oriented-ides}
 
