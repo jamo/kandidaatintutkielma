@@ -182,15 +182,18 @@ S\raise0.5ex\hbox{6} projekti pyrkii helpottamaan sopivan koodin hakemista ja si
 Suuri määrä mahdollisia ohjelmointirajapintoja tekee kaikkien tarpeellisten ohjelmointirajapintojen ulkoa opettelun mahdottomaksi sekä vaikeuttaa tarpeeseen sopivan ohjelmointirajapinnan löytämistä. Mahdollisesti sopivan ohjelmointirajapinnan löydettyään, haasteeksi saattaa muodostua se, että se tarvitsee eri tyypit, kuin mitä on tarjolla. Lähtötyypin muuntaminen sovivaan tyyppiin ei ole aina helppoa eikä suoraviivaista. Joskus tyyppi tulee kierrättää usean muun tyypin kautta, jotta kohdetyyppiin päästään. Se tuottaa ohjelmoijalle joskus paljon haasteita, eityisesti silloin jos tarjolla olevat tyypit eivät ole tuttuja. Tässä avuksi tulee Jungloid louhinta.
 Jungloidit määritellään seuraavasti: $ \lambda x.\, e\; :\; \tau_{in}\:\to\:\tau_{out}$. Jungloidhaku määritellään parina: $(\tau_{in}, \tau_{out})$ missä $\tau_{in}$ ja $\tau_{out}$ ovat tyyppejä, siis mistä tyypistä, mihin tyyppiin. Jungloid louhinnan taustalla on tietovarasto erilaisista tyypeistä ja niiden suhteista. Kun haussa tiedetään lähtö tyyppi $\tau_{in}$ sekä kohde tyyppi $\tau_{out}$ voidaan tyyppien suhde verkosta hakea mahdollisia reittejä näiden kahden tyypin väliltä, perus verkko algoritmeillä \cite{jungloid-mining}
 \subsection{Whyline}
-Ohjelmoijat kysyvät usein miksi jotain tapahtuu ja miksi jotain ei tapahtunut osana ongeman ratkaisu prosessia. Kuitenkin suuri osa tarjolla olevista ohjelmakoodin debuggaus työkaluista ei tarjoa helppoa mahdollisuutta näihin kysymyksiin vastaamiseen, vaan tarjoavat vain tapoja tarkastella ohjelmaa ja sen tilaa tietyssä kohtaa ohjelman suoritusta, jättäen suuren osan ohjelman suorituksen tarkastelusta ja ongelmien tunnistamisesta ohjelmoijan vastuulle.
-
-\cite{whyline}
-
+Ohjelmoijat kysyvät usein miksi jotain tapahtuu ja miksi jotain ei tapahtunut osana ongeman ratkaisu prosessia. Kuitenkin suuri osa tarjolla olevista ohjelmakoodin debuggaus työkaluista ei tarjoa helppoa mahdollisuutta näihin kysymyksiin vastaamiseen, vaan tarjoavat vain tapoja tarkastella ohjelmaa ja sen tilaa tietyssä kohtaa ohjelman suoritusta, jättäen suuren osan ohjelman suorituksen tarkastelusta ja ongelmien tunnistamisesta ohjelmoijan vastuulle. Whyline luotiin ohjaamaan tarkemmin ongelmanratkaisu prosessia, ohjaamaan oikeisiin kysymyksiin vastaamista ja siten vähentää debuggaamiseen käytettyä aikaa \cite{whyline}.
 \subsection{Stackoverflow}
 \subsection{Javadoc}
 \subsection{OSS - Github}
+\subsection{Wikit}
+Wikit ovat yhteisöllinen tapa luoda kattavia tietopankkeja, missä usean ihmisen tietotaito ja osaaminen yhdistyvät luoden asiasta kiinnostuneille laadukasta materiaalia. Wikejä käytetään myös avoimen lähdekoodin ohjelmien dokumentaatioon sekä parantamaan ohjelmistorajapintojen dokumentaatiota. Wikit koetaan myös sähköpostilistoja ja muita perinteisempiä keskustelu sekä dokumentaatiomuotoja helpommiksi ja selkeämmiksi käyttää \cite{using-wikis-in-sw}.
+% TODO: GitHub wikis
 \subsection{Blogit}
+Sosiaalisen median kasvun myötä on blogien käyttö kasvanut myös ohjelmistokehittäjien keskuudessa. Isoissa avoimen lähdekoodin projekteissa, kuten Postgresql, Gnome ja Python julkaistaan keskimäärin noin kahdeksan tunnin välein uusi blogi julkaisu. Julkaisut ovat keskimäärin 150-273 sanaa ja ne käsittelevät pääosin joko ohjelmiston vaatimuksia, ohjelmiston ympärille muodostunutta yhteisöä, ohjelmistosta lisätiedon kertomista, ohjelmiston käyttöönottoa ja jakelua, prosessin koordinointia ja hallintaa, lisätietoja siitä, miten asia on toteutettu ohjelmistossa, suunnitteluratkaisuista sekä ylläpidosta. Useimmiten aihe liittyy asiaan, jonka parissa kirjoittaja on äskettäin työskennellyt. \cite{how-dev-blog}.
 
+
+\cite{how-dev-blog}
 %\section{snippets}
 \subsection{specifying what to search for}
 Avainsanahaut tuottavat usein paljon turhia tuloksia
