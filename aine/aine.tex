@@ -144,8 +144,10 @@ Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä
 Alla tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksillä näitä on ratkottu. Myöhemmässä kappaleessa on esitelty erilaisten työkalujen soveltuvuutta ohjelmointiprosessin aikana tulleisiin kysymyksiin vastaamisesta.
 
 \subsection{Oikean aloituskohdan löytäminen}
-Ohjelmointitehtävän alussa tehtävään liittyvien kohtien paikantaminen on haastavaa. Sillito, Murphy sekä De Volder havaitsivat artikkelissaan \cite{questions-during-software-evolution-tasks} havaitsivat ohjelmoijien käyttävän runsaasti aikaa sopivan aloituskohdan löytämiseen. Osan he havaitsivat aloittavan oleellisten koodin kohtien etsimisen tekstipohjaisella haulla, kun taas toiset käyttivät ohjelmointiympäristön kehittyneempää tyyppi -pohjaista hakua. Myös luokka ja paketti selaimia käytetään sopivan aloituskohdan löytämiseen. Tämä olettaa kuitenkin luokkien ja pakettien nimien olevan kuvaavia. Löydettässä mahdollisesti oleellisia kohtia, tulee ohjelmoijan voida tunnistaa, liittyyko löydetty kohta oleellisesti työnalla olevaan tehtävään. Eräs tapa tunnistaa koodin oleellisuus on käyttää debuggeria, asettaen mahdollisesti oleelliseen kohtaan pysähdyskohta (breakpoint) ja suorittamalla ohjelmaa debuggerin kautta voi huomata pysähtyykö ohjelma odotetusti pysähdyskohtiin. Myös selvittämällä mahdollisesti oleellisen kohdan riippuvuuksia muihin tyyppeihin, saa paremman vaikutelman siitä, onko kyseinen kohta oleellinen työn aloitukseen.
+Ohjelmointitehtävän alussa tehtävään liittyvien kohtien paikantaminen on haastavaa. Sillito, Murphy sekä De Volder havaitsivat artikkelissaan \cite{questions-during-software-evolution-tasks} havaitsivat ohjelmoijien käyttävän runsaasti aikaa sopivan aloituskohdan löytämiseen. Osan he havaitsivat aloittavan oleellisten koodin kohtien etsimisen tekstipohjaisella haulla, kun taas toiset käyttivät ohjelmointiympäristön kehittyneempää tyyppi -pohjaista hakua. Tekstipohjasta hakua käyttäessä muodostuu haasteeksi sopivan avainsanan keksiminen, sekä suuri määrä epäoleellisia tuloksia \cite{what-to-search-for}. Myös luokka ja paketti selaimia käytetään sopivan aloituskohdan löytämiseen. Tämä olettaa kuitenkin luokkien ja pakettien nimien olevan kuvaavia. Löydettässä mahdollisesti oleellisia kohtia, tulee ohjelmoijan voida tunnistaa, liittyyko löydetty kohta oleellisesti työnalla olevaan tehtävään. Eräs tapa tunnistaa koodin oleellisuus on käyttää debuggeria, asettaen mahdollisesti oleelliseen kohtaan pysähdyskohta (breakpoint) ja suorittamalla ohjelmaa debuggerin kautta voi huomata pysähtyykö ohjelma odotetusti pysähdyskohtiin. Myös selvittämällä mahdollisesti oleellisen kohdan riippuvuuksia muihin tyyppeihin, saa paremman vaikutelman siitä, onko kyseinen kohta oleellinen työn aloitukseen.
 
+Avainsanahaut tuottavat usein paljon turhia tuloksia
+avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejä
 \subsection{Riippuvuuksien hahmottaminen}
 Sopivan aloituskohdan ollessa selvillä, usein \cite{questions-during-software-evolution-tasks} seuraava askel riippuvuuksien hahmoittaminen. Tässä ohjelmoija tarkastelee itse oleellisia luokkia, mitä ne perivät, mitä rajapintoja ne toteuttavat sekä mitä metodeja luokka toteuttaa. Tarkastelu etenee hitaasti laajemalle alueelle, mitä tyyppejä oleellisessa kodassa käytetään ja miten ne liittyvät tähän luokkaan. Näin he mallintavat selkeiden riippuvuuksien ja oleellisten kohtien välisiä suhteita hahmoittaakseen paremmin, kuinka ohjelman oleellinen osa toimii.
 Näihin kysymyksiin ohjelmoijat voivat helposti vastata käyttäen ohjelmointiympäristön perustyökaluja.
@@ -163,14 +165,6 @@ Eri hakutapojen vaikutus, he havaitsivat noin puolen tutkittavista hakeneen esim
 
 Useat ohjelmointiympäristöjen työkalut koodin täydennyksessä yms, eivät tarjoa kunnollista tukea työhön liittyvien tyyppien tunnistamiseen, vaan olettavat, että ohjelmistokehittäjä tuntee jo tarvittavat tyypit.  \cite{asking-and-answering-api-questions}
 
-\section{What and why they ask?}
-
-Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.  Sillito, Murphy ja De Volder \cite{questions-during-software-evolution-tasks}
-
-\section{Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks}
-\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
-Vaikka työkalujen määrä ohjelmistokehityksessä on kasvanut, suuri osa työkaluista on tehty kehitys-, ei ylläpitovaiheeseen. Tapaustutkimuksessa he keskittyvät viiden eri ylläpitotehtävän tekemiseen, tekiöinä kokeineita java ohjelmistokehittäjiä.  \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
-
 
 \section{Tyypillisiä ongelmia}
 Tiivistä ylhäältä
@@ -180,13 +174,40 @@ APIt on vaikeita
 \section{Työkaluja avun hakuun}
 \subsection{Grep}
 \subsection{IDE}
+Eclipsen tarjoama tuki koodin täydennykseen olettaa, että ohjelmoija tietää tarpeelliset luokat, eikä ohjelmointiympäristö tarjoa mahdollisesti sopivia luokkia ohjelmoijalle \cite{jungloid-mining}.
+\subsection{S\raise0.5ex\hbox{6} projekti}
+S\raise0.5ex\hbox{6} projekti pyrkii helpottamaan sopivan koodin hakemista ja siten koodin uudelleenkäyttöä. Projekti mahdollistaa sopivien luokkien ja metodien haun siten, että ohjelmoija tarjoaa testitapauksia, joiden rakennetta ja semantiikkaa automatisoidusti tarkastelemalla projekti pystyy tarkentamaan hakutuloksia. Projekti pyrkii myös automatisoimaan tarvittavat muunnokset, jotta valmiit, eri tyyppejä käyttävät metodit, toimisivat oikein ahjelmoijan tarpeisiin. He korostavat, että hausta ei tule tehdä liian tarkaa, sillä harva toteutusratkaisu on lopullinen, vaan toteutus ja sen rakenne voi tarvittaessa mukautua sopimaan tarjolla olevaan koodiin. Siis vain korkean tason tieto siitä, mikä haluttu lopputulos on tiedossa. \cite{what-to-search-for}
 
-%esimerkkejä
+\subsection{Jungloid louhinta}
+Suuri määrä mahdollisia ohjelmointirajapintoja tekee kaikkien tarpeellisten ohjelmointirajapintojen ulkoa opettelun mahdottomaksi sekä vaikeuttaa tarpeeseen sopivan ohjelmointirajapinnan löytämistä. Mahdollisesti sopivan ohjelmointirajapinnan löydettyään, haasteeksi saattaa muodostua se, että se tarvitsee eri tyypit, kuin mitä on tarjolla. Lähtötyypin muuntaminen sovivaan tyyppiin ei ole aina helppoa eikä suoraviivaista. Joskus tyyppi tulee kierrättää usean muun tyypin kautta, jotta kohdetyyppiin päästään. Se tuottaa ohjelmoijalle joskus paljon haasteita, eityisesti silloin jos tarjolla olevat tyypit eivät ole tuttuja. Tässä avuksi tulee Jungloid louhinta.
+Jungloidit määritellään seuraavasti: $ \lambda x.\, e\; :\; \tau_{in}\:\to\:\tau_{out}$. Jungloidhaku määritellään parina: $(\tau_{in}, \tau_{out})$ missä $\tau_{in}$ ja $\tau_{out}$ ovat tyyppejä, siis mistä tyypistä, mihin tyyppiin. Jungloid louhinnan taustalla on tietovarasto erilaisista tyypeistä ja niiden suhteista. Kun haussa tiedetään lähtö tyyppi $\tau_{in}$ sekä kohde tyyppi $\tau_{out}$ voidaan tyyppien suhde verkosta hakea mahdollisia reittejä näiden kahden tyypin väliltä, perus verkko algoritmeillä \cite{jungloid-mining}
+\subsection{Whyline}
+Ohjelmoijat kysyvät usein miksi jotain tapahtuu ja miksi jotain ei tapahtunut osana ongeman ratkaisu prosessia. Kuitenkin suuri osa tarjolla olevista ohjelmakoodin debuggaus työkaluista ei tarjoa helppoa mahdollisuutta näihin kysymyksiin vastaamiseen, vaan tarjoavat vain tapoja tarkastella ohjelmaa ja sen tilaa tietyssä kohtaa ohjelman suoritusta, jättäen suuren osan ohjelman suorituksen tarkastelusta ja ongelmien tunnistamisesta ohjelmoijan vastuulle.
+
+\cite{whyline}
+
 \subsection{Stackoverflow}
 \subsection{Javadoc}
 \subsection{OSS - Github}
 \subsection{Blogit}
 
+%\section{snippets}
+\subsection{specifying what to search for}
+Avainsanahaut tuottavat usein paljon turhia tuloksia
+avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejä
+But even if the programmer could be precise here, it would not be enough. As programmers become more precise as to what they want, the odds of identifying code that exactly matches their specifications approaches zero.
+
+% TODO: Miksi uudelleenkäyttö?
+
+
+%\subsection{What and why they ask?}
+%
+%Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.  Sillito, Murphy ja De Volder \cite{questions-during-software-evolution-tasks}
+%
+%\subsection{Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks}
+%\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
+%Vaikka työkalujen määrä ohjelmistokehityksessä on kasvanut, suuri osa työkaluista on tehty kehitys-, ei ylläpitovaiheeseen. Tapaustutkimuksessa he keskittyvät viiden eri ylläpitotehtävän tekemiseen, tekiöinä kokeineita java ohjelmistokehittäjiä.  \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
+%
 %ideoita ohjelmointypäristöjen tekijöille
 %\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
 %Workingset:in ylläpito, tehtävään oleellisten koodipalojen listaus, sekä näiden riippuvuuksien hallinta. Kopiointiin liittyvien virheiden korjaamiseksi he ehdoittivat kopionnin säilyvän koodin kontekstissa ja siten ohjelmointiympäristön korostavan, että kopioidussa koodissa voi olla vielä korjaamattomia virheitä.
