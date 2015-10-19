@@ -131,6 +131,7 @@
 
 \mainmatter       % clear page, start arabic page numbering
 % TODO: debugging, virheenentsintä
+% TODO: Miksi uudelleenkäyttö?
 
 \section{Johdanto}
 Ihmiset ovat aina hakeneet apua oppiakseen ja suoriutuakseen paremmin erilaisista tehtävistä. %lol
@@ -164,8 +165,6 @@ Debuggeria voi myös käyttää edellä mainituilla tavoilla saadun, mahdollises
 
 Kuitenkaan mikään edellämainituista tavoista ei ole erityisen tehokas löytämään oleellista aloituskohtaa. Haasteeksi kaikissa tavoissa muodostuu suhteellisen suuri määrä täysin epäolennnaisia tuloksia, jotka vievät ohjelmoian aikaa ja saattavat pahimmillaan johdatella ohjelmoija pitkäksi aikaa tarkastelemaan väärää aluetta ohjelmakoodista, ennen kuin kohdan epäolennaisuus selviää~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
 
-%Avainsanahaut tuottavat usein paljon turhia tuloksia
-%avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejtä
 \subsection{Riippuvuuksien hahmottaminen}
 Sopivan aloituskohdan ollessa tiedossa, voi viimein keskittyä kunnolla tarkastelemaan tarkastella kyseistä kohtaa ohjelmakoodista ja sen suhdetta muuhun projektin ohjelmakoodiin, sekä aloituskohdan ohjelmakoodissa olevien käytössä luokkien riippuvuuksien hahmoittaminen~\cite{questions-during-software-evolution-tasks}. % vaikeesti sanottu
 
@@ -238,32 +237,8 @@ Wikit ovat yhteisöllinen tapa luoda kattavia tietopankkeja, joissa usean ihmise
 Myös GitHub tarjoaa helppokäyttöisiä wikejä ohjelmistojen dokumentointiin. \cite{github-wiki}
 \subsection{Blogit}
 Sosiaalisen median kasvun myötä on blogien käyttö kasvanut myös ohjelmistokehittäjien keskuudessa. Isoissa avoimen lähdekoodin projekteissa, kuten Postgresql, Gnome ja Python julkaistaan keskimäärin noin kahdeksan tunnin välein uusi blogi julkaisu. Julkaisut ovat keskimäärin 150-273 sanaa ja ne käsittelevät pääosin joko ohjelmiston vaatimuksia, ohjelmiston ympärille muodostunutta yhteisöä, ohjelmistosta lisätiedon kertomista, ohjelmiston käyttöönottoa ja jakelua, prosessin koordinointia ja hallintaa, lisätietoja siitä, miten asia on toteutettu ohjelmistossa, suunnitteluratkaisuista sekä ylläpidosta. Useimmiten aihe liittyy asiaan, jonka parissa kirjoittaja on äskettäin työskennellyt. \cite{how-dev-blog}.
-
-%\section{snippets}
-\subsection{Kumiankkadebuggaus}
-\subsection{specifying what to search for}
-Avainsanahaut tuottavat usein paljon turhia tuloksia
-avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejä
-But even if the programmer could be precise here, it would not be enough. As programmers become more precise as to what they want, the odds of identifying code that exactly matches their specifications approaches zero.
-
-% TODO: Miksi uudelleenkäyttö?
-
-
-%\subsection{What and why they ask?}
-%
-%Tutkimuksessaan he selvittivät kysymysten lisäksi, mite erilaiset työkalut auttoivat vastaamaan kysymyksiin. He havainnoivat, että useasti kysymys oli liian avoin, jotta työkalut olisivat osanneet vastata niihin.  Sillito, Murphy ja De Volder \cite{questions-during-software-evolution-tasks}
-%
-%\subsection{Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks}
-%\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
-%Vaikka työkalujen määrä ohjelmistokehityksessä on kasvanut, suuri osa työkaluista on tehty kehitys-, ei ylläpitovaiheeseen. Tapaustutkimuksessa he keskittyvät viiden eri ylläpitotehtävän tekemiseen, tekiöinä kokeineita java ohjelmistokehittäjiä.  \cite{eliciting-design-requirements-for-maintenance-oriented-ides}
-%
-%ideoita ohjelmointypäristöjen tekijöille
-%\cite{eliciting-design-requirements-for-maintenance-oriented-ides}
-%Workingset:in ylläpito, tehtävään oleellisten koodipalojen listaus, sekä näiden riippuvuuksien hallinta. Kopiointiin liittyvien virheiden korjaamiseksi he ehdoittivat kopionnin säilyvän koodin kontekstissa ja siten ohjelmointiympäristön korostavan, että kopioidussa koodissa voi olla vielä korjaamattomia virheitä.
-%He ehdottivay myös koodipaloista koostuvaa editoria, jossa tiedostosta on esillä vain tarpeellinen osa. Näin saisi helpommin kaikki oleelliset osat koodista esille.
-%Ympäristön tulisi visualisoida ohjelmakoodin riippuvuudet. Sen sijaan että ohjelmoija navigoi ja katsoo jokaista riippuvuutta erikseen, voisi ohjelmointiympäristö tarjota selkeämmän tavan nopeammin tarkastella riippuvuuksia.
-%Vastatessaan alun kysymyksiinsä, miksi ja miten ohjelmistokehittäjät joutuvat tutkimuksen mukaan usein arvaamaan ja tekevät merkittäviä johtopäätöksiä ohjelmiston toiminnasta. Ohjelmistoympäristön pitäisi osata vastata kysymyksiin miksi ja miten. % helppoa :D
-
+Myös blogit toimivat paikkana löytää tietoa uusista ohjelmointirajapintojen ominaisuuksista sekä esimerkkejä niistä.
+%\subsection{Kumiankkadebuggaus}
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
 
