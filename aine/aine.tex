@@ -190,12 +190,16 @@ Toinen tapa tutustua ohjelmointirajapinnan käyttöön on etsiä omaan tarkoituk
 \section{Lainauksia ja tarinaa}
 %TODO: vaan lainauksia
 Sosiaalisesta media, kuten Facebook ja Imdb, tarjoavat paljon hyödyllisiä suosituksia, kuten mitä elokuvia katsoa ja mitä tuttavat ja lähipiiri tekee. Sivustot, kuten StackOverflow, ovat vastaavasti ohjelmistokehittäjille erityisesti suunnattuja sosiaalisia medioita.
-Haasteeksi kuitenkin tällaisten sivujen kohdalla tulee esimerkkien liiallinen määrä. Hyvänä esimerkkinä toimii myös Zagalskyn, Barzilayn ja Yehudain luoma sivusto ExampleOverflow, joka kerää StackOverflowsta koodiesimerkkejä ja pyrkii karsimaan sopimattomat ja turhat esimerkit pois, jolloin esimerkin hakija löytäisi nopeammin ja helpommim haluamansa vastauksen. He havaitsivat ExampleOverflown löytävän sopivia esimerkkejä useissa tapauksissa yhtä hyvin tai paremmin kuin StackOverflow \cite{example-overflow-social-media-for-code-recommendations}.
 
 
 Esimerkkien haku on oleellinen osa nykyaikaista ohjelmistokehitystä \cite{example-overflow-social-media-for-code-recommendations}
 
 Ohjelmointiympäristö auttaa useissa tyypillisissä tilanteissa, mutta sen tekstieditoirin automaattinen tekstin täydennys ei tyypillisesti osaa kuitenkaan ehdottaa, aiemmin ohjelmoijalle sopivia luokkia~\cite{jungloid-mining}.
+
+TODO tapa löytää sopiva työkalu sopivaan kysymykseen vastaamiseen on vaikeeta \cite{programmers-coach}
+
+A,b,c ehdoittavat ratkaisuksi kysymysiin vastaamiseen työkalua, joka tarkkailee ohjelmoijan toimintaa automaattisesti samalla tunnistaen kohdat, missä ohjelmoijalla on tyypillisesti vaikeuksia. Sillä on myös valmiiksi määritelty informaatio, auttamaan alkuun pääsyssä, joka auttaa löytämään sopivan työkalun vastaamaan yleisiin kysymyksiin. Työkalu myös ajanmittaa auttaisi ohjelmoijaa oppimaan yhä tehokkaammin käyttämään tarjolla olevia työkaluja ja ohjaa niiden käyttöön aktiivisesti.
+\cite{programmers-coach}
 
 \section{Työkaluja avun hakuun}
 Ohjelmistokehittäjä ei ole aina yksin tyhmän tekstieditoirin kanssa, ilman apuvälineitä hakemassa vastauksia kysymyksiin, joita ohjelmointiprosessin aikana tulee vastaan. Vaan ohjelmistokehittäjiä varten on luotu erilaisia ohjemistoja ja apuvälineitä ratkaisemaan juuri näitä ongelmia.
@@ -218,24 +222,17 @@ Jungloidit määritellään seuraavasti: $ \lambda x.\, e\; :\; \tau_{in}\:\to\:
 \subsection{Whyline}
 Ohjelmointiprosessin aikana ohjelmistokehittäjien kysymyksiin vastaamiseksi on luotu ohjelma Whyline, joka pyrkii auttamaan ohjelmistokehittäjiä vastaamaan kysymyksiin, kuten miksi jokin toimii tai ei toimi odotetusti, miksi jotain tapahtuu tai ei tapahdu. Juuri tämän tyyppisiin kysymyksiin harva työkalu tarjoaa vastausmahdollisuutta. Suurin osa työkaluista tarjoaa korkeintaan mahdollisuuden tarkastella ohjelman toimintaa suorituksen aikana, mutta jättää kokonaan kysymykseen vastauksen selvittämisen ohjelmoijan tehtäväksi.
 Whyline pyrkii helpoittamaan tämän tyyppisiin kysymyksiin vastaamista; ei suoraan oikeaa vastausta kertomalla, vaan ohjaamalla ja opastamlla ongelmanratkaisu prosesissa ja siinä käytettyjen työkalujen tekohhaassa käytössä - ja siten vähentämällä siinä käytettyä aikaa ~\cite{whyline}.
-\subsection{Stack Exchange}
+\subsection{Kysymys ja vastaus palstat}
 % TODO: cont here
-Stack Exchange on joukko kysymys ja vastaus sivustoja, jotka kattavat useita eri aihealueita, niin ruoanlaitosta, tee-se-itse projekteista kuin ohjelmoinnista. Sivustolla voi esittää kysymyksiä ja niihin saa useasti nopeasti käyttäjiltä vastaukset. Sivusto kokoaa laadukkaista kysymyksistä ja vastauksista tietopankkia, josta on helpooa hakea itselleen sopivaa kysymystä ja siihen valmista vastausta. Yksi sivustojen tärkeimmistä perjaitteista on keskittyä vain aiheeseen, ja tarjota selkeästi laadukkaimmat vastaukset, merkaten niidne uskottavuuden selkeästi.
-StackOverflow on osa Stack Exchangea. \cite{social-networking-meets-se}.
-\subsection{Stackoverflow}
-16 minjoonaa uniikkia vierailiaa \cite{social-networking-meets-se}
-\cite{social-networking-meets-se}
+Kysymys ja vastaus (Q\&A) palstat ovat yleinen tapa hakea vastauksia ongelmiin kaikilla elämän osaalueilla. Sama pätee ohjelmointikehityksessä, kysymys ja vastaus palstoja käytetään paljon etsittäessä sopivia ratkaisuja ongelmiin sekä haettaessa esimerkkejä tietyn ohjelmointirajapinnan käytöön. StackExchangen StackOverflow on erityisen suosittu ohjelmistokehittäjien keskuudessa. Sivusto keskittyy tarkasti pysymään vain siinä olennaisessa, oli ohjelmistokehitys aiheisissa kysymyksissä. Sivuston toimintaperjaate on yksinkertainen. Se kerää ison osan aiheen asiantuntioita käyttäjikseen, jotka vastaavat toistensa kysymyksiin. StackOverflowlla on olu 16 miljoonaa eri käyttäjää kuukaudessa. Käyttäjät saavat pisteitä hyvistä vastauksista, käyttäjät äänestävät jokaiseen kysymykseen tulleet vastaukset, ja ne näytetään paremmuus järjestyksessä. Näin sivulta omaa kysymystä vastaavan kysymyksen löytäjä löytää nopeasti aiheeseen sopivimman kunnollisen vastauksen~\cite{social-networking-meets-se}.
 
- %TODO:
-Havaittiin, että aktiivisimmat GitHubin käyttäjät ovat kokeneempia ja kysyvät hyvin vähän kysymyksiä StackOverflowssa mutta ovat aktiivisia vastaamaan kysymyksiin, kun taas vähemmän aktiiviset GitHubissa ovat aktiivisemmin kysymässä apua StackOverflowssa.  \cite{stackoverflow-and-github}
+StackOverflown ja muiden vastaavien sivustojen käyttäjien haasteeksi muodostuu valtava esimerkkien ja vastausten määrä. Zagalskyn, Barzilayn ja Yehudain sivusto ExampleOverflow kokoaa StackOverflowsta parhaiksi vastauksiksi merkityt koodiesimerkit, ja tarjoaa optimoidun haun niistä. ExampleOverflow tarjoaa koodihaussa aina viisi sopivinta vastausta, ja vastauksen sopimattomaksi merkitessään saa tilalle aina seuraavaksi sopivimman vaihtoehdon. Sivusto tarjoaa suoraan koodi esimerkkejä ja niiden alta linkit alkuperäisiin kysymyksiin ja vastauksiin. Sivuston tavoite on tehdä esimerkkien löytäminen vaivattomammaksi. Kirjoittajien havaintojen mukaan ExampleOverflow löytävän sopivia esimerkkejä useissa tapauksissa yhtä hyvin tai paremmin kuin StackOverflow \cite{example-overflow-social-media-for-code-recommendations}.
 
-TODO tapa löytää sopiva työkalu sopivaan kysymykseen vastaamiseen on vaikeeta \cite{programmers-coach}
+StackOverflown käyttäjiä tarkasteltaessa havaittiin, että GitHubissa aktiiviset ovat keskimääräistä aktiivisempia myös vastaamaan StackOverflowssa esitettyihin kysymyksiin. Vastaavasti GitHubissa vähemmän aktiiviset olivat aktiivisempia kysymään apua StackOverflowssa~\cite{stackoverflow-and-github}
 
-A,b,c ehdoittavat ratkaisuksi kysymysiin vastaamiseen työkalua, joka tarkkailee ohjelmoijan toimintaa automaattisesti samalla tunnistaen kohdat, missä ohjelmoijalla on tyypillisesti vaikeuksia. Sillä on myös valmiiksi määritelty informaatio, auttamaan alkuun pääsyssä, joka auttaa löytämään sopivan työkalun vastaamaan yleisiin kysymyksiin. Työkalu myös ajanmittaa auttaisi ohjelmoijaa oppimaan yhä tehokkaammin käyttämään tarjolla olevia työkaluja ja ohjaa niiden käyttöön aktiivisesti.
-\cite{programmers-coach}
-%TODO: juttua muualla
-\subsection{Javadoc}
+%\subsection{Javadoc}
 \subsection{OSS - Github}
+% TODO: continue here
 GitHub tarjoaa palveluita niin yksittäisille kuin organisaatioille hallita julkisia ja yksityisiä ohjelmistovarantoja (repo) Git versionhallintajärjestelmällä. Github hostaa yli 5 miljoonaa avoimen lähdekoodin koodivarastoa. Ison repositoriomäärän hallintaa helpoittamaan GitHubissa voi merkata itseään mahdollisesti kiinnostavia repoja tähdellä. Tähdet on tarkoitettu nimenomaakuvaamaan kiinnostusta ja merkkaamaan repoja itselleen myöhempää käyttöä varten. Ei niinkään osoittamaan että todella tykkää ja käyttää kyseisen repon ohjelmaa \cite{social-networking-meets-se}.
 GitHubissa voi myös seurata projekteja sekä GitHubiin rekisteröityneitä käyttäjiä.
 GitHub tarjoaa myös kielipohjaisen katselumahdollisuuden niin projekteihin, jotka ovat suosittuja, kuin projekteihin joiden suosio on äskettäin noussut huomattavasti.
