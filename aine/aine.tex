@@ -137,10 +137,10 @@
 \section{Johdanto}
 Ihmiset ovat aina hakeneet apua oppiakseen ja suoriutuakseen paremmin erilaisista tehtävistä. %lol
 Ohjelmistoprojekteissa ja niiden ylläpidossa tulee esille useita kysymyksiä ohjelmakoodin toiminnasta ja toimimattomuudesta. Näillä kysymyksillä pyritään usein luomaan kuvaa siitä, miten ohjelma toimii ja  mistä osista se rakentuu \cite{g_search_code, questions-during-software-evolution-tasks,asking-and-answering-api-questions}.
-Kysymykset liittyvät niin vieraiden ohjelmistorajapintojenen (api) käyttöön \cite{jungloid-mining} kuin yleisemmin.
+Kysymykset liittyvät niin vieraiden ohjelmointirajapintojenen (api) käyttöön \cite{jungloid-mining} kuin yleisemmin.
 
 Erityisesti aloittaessa tehtävää itselle tuntemattoman projektin parissa, on tehtävän laajuutta vaikea tiedostaa, saati sitä, mistä päin koodia sopiva aloituskohta löytyy. Erityisesti projektien koon kasvaessa sopivan kohdan löytäminen vaikeutuu.
-Myös uusien ohjelmointirajapintojen (API) kohdalla on useasti vaikea hahmoittaa ohjelmointirajapinnan rakenne, ja sen tarjoamien luokkien suhteet toisiin luokkiin. Isommissa ohjelmointirajapinnoissa käytön haasteeksi muodostuu usein koon tuomat haasteet löytää ohjelmointirajapinnasta oleelliset kohdat sekä saada tyypit muunnettua sopivasti ohjelmistorajapinnan tukemiin tyyppeihin.
+Myös uusien ohjelmointirajapintojen (API) kohdalla on useasti vaikea hahmoittaa ohjelmointirajapinnan rakenne, ja sen tarjoamien luokkien suhteet toisiin luokkiin. Isommissa ohjelmointirajapinnoissa käytön haasteeksi muodostuu usein koon tuomat haasteet löytää ohjelmointirajapinnasta oleelliset kohdat sekä saada tyypit muunnettua sopivasti ohjelmointirajapinnan tukemiin tyyppeihin.
 Näiden haasteiden ratkaisemiseen on useita erilaisia työkaluja sekä sosiaalisia medioita, mistä apua saattaa hakea.
 
 Tutkielman rakenne muodostuu seuraavasti. Alussa tarkastelemme tyypillisiä kysymyksiä sekä tilanteita, missä ohjelmoijat näitä kysymyksiä esittävät. Sen jälkeen tarkastelemme muutamia juuri näinin kysymyksiin vastaamiseen suunnattuja ohjelmistoja ja miten sosiaalisen media voi tarjota vastaukset näihin kysymyksiin.
@@ -179,26 +179,22 @@ Kun oleellisen aloituskohdan läheiset riippuvuudet ja rakenne on selvillä, on 
 
 Ohjelmointiympäristöistä on myös tässä apua. Useat ohjelmointiympäristöt tarjoavat mahdollisuuden hakea paikkoja, mistä metodia kutsutaa sekä paikkoja missä tiettyyn tyyppiin (Type) viitataan. Nämä auttavat selvittämään kyseisen kohdan käytön laajuutta ja paikkoja ohjelmakoodissa. Aloittelijoille tavanomainen tapa vastaavaan selvitykseen on esimerkiksi muuttaa metodin määrittelyä (signature) siten että metodia ei enää löydy. Tämän jälkeen kääntämällä ohjemakoodia voi nähdä kaikki kyseistä metodia käyttävät, sillä kääntäjä joka kodasta kertoo, että kyseistä metodia ei ole. Vastaavasti luokan nimeä muuttamalla ja sen jälkeen ohjelmankoodia kääntämäällä ja virheitä tarkastelemalla saa selville, missä luokkaa on käytetty. Tämä toki on poikkeuksellinen tapa, mutta aloittelijoiden keskuudessa tyypillinen.
 
-\subsection{Ohjelmistorajapinnan käyttäminen}
-Niin ohjelman toimintaa tarkastellessa, kuin uutta ominaisuutta luodessa tulee useasti vastaan ennalta tuntemattomia ohjelmointirajapintoja (API). Joskus ohjelmointirajapinnat ovat helppokäyttöisiä, mutta useasti, varsinkin isompien kirjastojen (Library) kohdalla ohjelmistorajapinnat ovat monipuolisia ja siten vaikeammin sisäistettävissä.
-Uuteen ohjelmistorajapintaan tutustuminen aloitetaan usesti ensin varmistamalla, että kyseinen ohjelmistorajapinta varmasti tarjoaa tarkoitukseen sopivan toiminnallisuuden. Tämän jälkeen voi aloittaa tarkemman tutustumisen ohjelmistorajapintaan.
-Vastaavasti, kuten uuteen ohjelmistoon tutustuttaessa, pyritään aluksi paikantaa ne luokat ja metodit, jotka ovat tarpeen. Ja sitten selvittämään niiden ja muiden ohjelmistorajapinnan tyyppien välisiä suhteita. Myös dokumentaation lukeminen auttaa, mutta se harvoin tarjoaa yleiskuvaa siitä, mihin luokka yleiskuvassa asettuu, sekä minkä muiden luokkien kanssa tätä tyypillisesti käytetään~\cite{asking-and-answering-api-questions}.
+\subsection{ohjelmointirajapinnan käyttäminen}
+Niin ohjelman toimintaa tarkastellessa, kuin uutta ominaisuutta luodessa tulee useasti vastaan ennalta tuntemattomia ohjelmointirajapintoja (API). Joskus ohjelmointirajapinnat ovat helppokäyttöisiä, mutta useasti, varsinkin isompien kirjastojen (Library) kohdalla ohjelmointirajapinnat ovat monipuolisia ja siten vaikeammin sisäistettävissä.
+Uuteen ohjelmointirajapintaan tutustuminen aloitetaan usesti ensin varmistamalla, että kyseinen ohjelmointirajapinta varmasti tarjoaa tarkoitukseen sopivan toiminnallisuuden. Tämän jälkeen voi aloittaa tarkemman tutustumisen ohjelmointirajapintaan.
+Vastaavasti, kuten uuteen ohjelmistoon tutustuttaessa, pyritään aluksi paikantaa ne luokat ja metodit, jotka ovat tarpeen. Ja sitten selvittämään niiden ja muiden ohjelmointirajapinnan tyyppien välisiä suhteita. Myös dokumentaation lukeminen auttaa, mutta se harvoin tarjoaa yleiskuvaa siitä, mihin luokka yleiskuvassa asettuu, sekä minkä muiden luokkien kanssa tätä tyypillisesti käytetään~\cite{asking-and-answering-api-questions}.
 
-Ohjelmointiympäristöt tarjoavat usein heikosti apua uusien ohjelmistoraapintojen käytössä~\cite{jungloid-mining}. Usein ohjelmistoympäristöt tarjoavat automaattista täydennystä vasta silloin kun ohjelmoija tietää mitä luokkia ja rajapintoja tarvitaan. Siten useimmiten ohjelmistorajapinnan käyttön sisäistämiseen käytetään vain ohjelmistorajapinnan tarjoamaa sisäistä dokumentaatiota, mikä harvoin auttaa yleiskuvan luomisessa. Myös tästä dokumentaatiosta oleellisien kohtien löytäminen on vaikeaa, sillä sopivan avainsanan keksiminen on usesti haastavaa~\cite{what-to-search-for} .
-Toinen tapa tutustua ohjelmistorajapinnan käyttöön on etsiä omaan tarkoitukseen sopivia esimerkkejä kyseisen ohjelmointirajapinnan käytöstä
-~\cite{asking-and-answering-api-questions}
-\cite{example-overflow-social-media-for-code-recommendations}
+Ohjelmointiympäristöt tarjoavat usein heikosti apua uusien ohjelmistoraapintojen käytössä~\cite{jungloid-mining}. Usein ohjelmistoympäristöt tarjoavat automaattista täydennystä vasta silloin kun ohjelmoija tietää mitä luokkia ja rajapintoja tarvitaan. Siten useimmiten ohjelmointirajapinnan käyttön sisäistämiseen käytetään vain ohjelmointirajapinnan tarjoamaa sisäistä dokumentaatiota, mikä harvoin auttaa yleiskuvan luomisessa. Myös tästä dokumentaatiosta oleellisien kohtien löytäminen on vaikeaa, sillä sopivan avainsanan keksiminen on usesti haastavaa~\cite{what-to-search-for} .
+Toinen tapa tutustua ohjelmointirajapinnan käyttöön on etsiä omaan tarkoitukseen sopivia esimerkkejä kyseisen ohjelmointirajapinnan käytöstä. Tällöin haasteeksi muodostuu esimerkkien suuri määrä sekä esimerkkien vaihteleva laatu~\cite{example-overflow-social-media-for-code-recommendations}.
 
-Dokumentaatiosta sopivien luokkien löytämisen yksi suurimmista haasteista on oikeiden avainsanojen arvaaminen. Myös haasteita ohjelmistorajapintoihin tutustuttaessa tuottaa eri luokista esiintymien luominen. Erityisesti silloin, kun luokka ei tarjoa julkista konstruktoria, vaan käytössä on rakentaja (builder) tai tehdas (factory) ohjelmointityylit. Myös luokkien dokumentoimattomat oletukset sekä ohjelmoijan mielestä epätyypillinen toteutus tuottaa haasteita \cite{asking-and-answering-api-questions}.
-
-%TODO: continue here
 \subsection{hakemisen haasteet}
-He havaitsivat, että ohjelmistokehittäjillä oli toive, miten ohjelmistorajapinta toimisi, ja he ärsyyntyivät, kun ohjelmistorajapinta ei toiminutkaan odotetusti \cite{asking-and-answering-api-questions}
+He havaitsivat, että ohjelmistokehittäjillä oli toive, miten ohjelmointirajapinta toimisi, ja he ärsyyntyivät, kun ohjelmointirajapinta ei toiminutkaan odotetusti \cite{asking-and-answering-api-questions}
 Eri hakutapojen vaikutus, he havaitsivat noin puolen tutkittavista hakeneen esimerkkejä ja dokumentaatiota webistä, kun taas loput käyttivät vain paikallista dokumentaatiota. Kävi ilmi, että tällä hakutapaerolla ei ollut kummepaa vaikutusta tehtävästä selviämisessä. He havaitsivat, että tutkittavat aliarvioivat koodiesimerkkien haun vievän ajan. Tosin useat tutkittavat eivät onnistuneet löytämään sopivia esimerkkejä ja lopulta tyytyivät paikalliseen dokumentaatioon.  \cite{asking-and-answering-api-questions}
 
 Useat ohjelmointiympäristöjen työkalut koodin täydennyksessä yms, eivät tarjoa kunnollista tukea työhön liittyvien tyyppien tunnistamiseen, vaan olettavat, että ohjelmistokehittäjä tuntee jo tarvittavat tyypit.  \cite{asking-and-answering-api-questions}
 
 
+%TODO: continue here
 \section{Tyypillisiä ongelmia}
 Sosiaalisesta media, kuten Facebook ja Imdb, tarjoavat paljon hyödyllisiä suosituksia, kuten mitä elokuvia katsoa ja mitä tuttavat ja lähipiiri tekee. Sivustot, kuten StackOverflow, ovat vastaavasti ohjelmistokehittäjille erityisesti suunnattuja sosiaalisia medioita.
 Esimerkkien haku on oleellinen osa nykyaikaista ohjelmistokehitystä \cite{example-overflow-social-media-for-code-recommendations}, siksi on erityisen tärkeää, että hakutyökalut tarjoavat mahdollisuuden esimerkkien paikantamiseen.
@@ -242,7 +238,7 @@ GitHubissa voi myös seurata projekteja sekä GitHubiin rekisteröityneitä käy
 GitHub tarjoaa myös kielipohjaisen katselumahdollisuuden niin projekteihin, jotka ovat suosittuja, kuin projekteihin joiden suosio on äskettäin noussut huomattavasti.
 \cite{social-networking-meets-se}
 \subsection{Wikit}
-Wikit ovat yhteisöllinen tapa luoda kattavia tietopankkeja, missä usean ihmisen tietotaito ja osaaminen yhdistyvät luoden asiasta kiinnostuneille laadukasta materiaalia. Wikejä käytetään myös avoimen lähdekoodin ohjelmien dokumentaatioon sekä parantamaan ohjelmistorajapintojen dokumentaatiota. Wikit koetaan myös sähköpostilistoja ja muita perinteisempiä keskustelu sekä dokumentaatiomuotoja helpommiksi ja selkeämmiksi käyttää \cite{using-wikis-in-sw}.
+Wikit ovat yhteisöllinen tapa luoda kattavia tietopankkeja, missä usean ihmisen tietotaito ja osaaminen yhdistyvät luoden asiasta kiinnostuneille laadukasta materiaalia. Wikejä käytetään myös avoimen lähdekoodin ohjelmien dokumentaatioon sekä parantamaan ohjelmointirajapintojen dokumentaatiota. Wikit koetaan myös sähköpostilistoja ja muita perinteisempiä keskustelu sekä dokumentaatiomuotoja helpommiksi ja selkeämmiksi käyttää \cite{using-wikis-in-sw}.
 GitHub pages mainuttu
 
 % TODO: GitHub wikis
