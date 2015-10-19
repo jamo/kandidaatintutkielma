@@ -216,9 +216,10 @@ Suuri määrä mahdollisia ohjelmointirajapintoja tekee kaikkien tarpeellisten o
 Jungloid louhinta pyrkii auttamaan ohjelmoijaa tällaisessa tilanteessa.
 Jungloidit määritellään seuraavasti: $ \lambda x.\, e\; :\; \tau_{in}\:\to\:\tau_{out}$ ja jungloidhaku määritellään parina: $(\tau_{in}, \tau_{out})$ missä $\tau_{in}$ ja $\tau_{out}$ ovat tyyppejä, siis mistä tyypistä, mihin tyyppiin. Jungloid louhinnan taustalla on tietovarasto erilaisista tyypeistä ja niiden suhteista. Haku toimii siten, että ku tiedetään lähtö tyyppi $\tau_{in}$ sekä kohde tyyppi $\tau_{out}$ voidaan tyyppien välille hakea erilaisia reittejä tyyppien suhde verkosta. Tämä haku onnistuu perus verkkoalgoritmeillä. Haun laadun parantamiseksi, tyyppejä voidaan muunnella ja yleistää ennen haun suorittamista. Esimerkiksi perintää tai rajapintoja käyttävä luokka voidaan tulkita jonnain yläluokan tyyppinä tai rajapinnan tyyppinä, kun jungloid haku suoritetaan~\cite{jungloid-mining}.
 \subsection{Whyline}
-% TODO: cont here
-Ohjelmoijat kysyvät usein miksi jotain tapahtuu ja miksi jotain ei tapahtunut osana ongeman ratkaisu prosessia. Kuitenkin suuri osa tarjolla olevista ohjelmakoodin debuggaus työkaluista ei tarjoa helppoa mahdollisuutta näihin kysymyksiin vastaamiseen, vaan tarjoavat vain tapoja tarkastella ohjelmaa ja sen tilaa tietyssä kohtaa ohjelman suoritusta, jättäen suuren osan ohjelman suorituksen tarkastelusta ja ongelmien tunnistamisesta ohjelmoijan vastuulle. Whyline luotiin ohjaamaan tarkemmin ongelmanratkaisu prosessia, ohjaamaan oikeisiin kysymyksiin vastaamista ja siten vähentää debuggaamiseen käytettyä aikaa \cite{whyline}.
+Ohjelmointiprosessin aikana ohjelmistokehittäjien kysymyksiin vastaamiseksi on luotu ohjelma Whyline, joka pyrkii auttamaan ohjelmistokehittäjiä vastaamaan kysymyksiin, kuten miksi jokin toimii tai ei toimi odotetusti, miksi jotain tapahtuu tai ei tapahdu. Juuri tämän tyyppisiin kysymyksiin harva työkalu tarjoaa vastausmahdollisuutta. Suurin osa työkaluista tarjoaa korkeintaan mahdollisuuden tarkastella ohjelman toimintaa suorituksen aikana, mutta jättää kokonaan kysymykseen vastauksen selvittämisen ohjelmoijan tehtäväksi.
+Whyline pyrkii helpoittamaan tämän tyyppisiin kysymyksiin vastaamista; ei suoraan oikeaa vastausta kertomalla, vaan ohjaamalla ja opastamlla ongelmanratkaisu prosesissa ja siinä käytettyjen työkalujen tekohhaassa käytössä - ja siten vähentämällä siinä käytettyä aikaa ~\cite{whyline}.
 \subsection{Stack Exchange}
+% TODO: cont here
 Stack Exchange on joukko kysymys ja vastaus sivustoja, jotka kattavat useita eri aihealueita, niin ruoanlaitosta, tee-se-itse projekteista kuin ohjelmoinnista. Sivustolla voi esittää kysymyksiä ja niihin saa useasti nopeasti käyttäjiltä vastaukset. Sivusto kokoaa laadukkaista kysymyksistä ja vastauksista tietopankkia, josta on helpooa hakea itselleen sopivaa kysymystä ja siihen valmista vastausta. Yksi sivustojen tärkeimmistä perjaitteista on keskittyä vain aiheeseen, ja tarjota selkeästi laadukkaimmat vastaukset, merkaten niidne uskottavuuden selkeästi.
 StackOverflow on osa Stack Exchangea. \cite{social-networking-meets-se}.
 \subsection{Stackoverflow}
@@ -244,10 +245,12 @@ Wikit ovat yhteisöllinen tapa luoda kattavia tietopankkeja, missä usean ihmise
 GitHub pages mainuttu
 
 % TODO: GitHub wikis
+% TODO: debugging, virheenentsintä
 \subsection{Blogit}
 Sosiaalisen median kasvun myötä on blogien käyttö kasvanut myös ohjelmistokehittäjien keskuudessa. Isoissa avoimen lähdekoodin projekteissa, kuten Postgresql, Gnome ja Python julkaistaan keskimäärin noin kahdeksan tunnin välein uusi blogi julkaisu. Julkaisut ovat keskimäärin 150-273 sanaa ja ne käsittelevät pääosin joko ohjelmiston vaatimuksia, ohjelmiston ympärille muodostunutta yhteisöä, ohjelmistosta lisätiedon kertomista, ohjelmiston käyttöönottoa ja jakelua, prosessin koordinointia ja hallintaa, lisätietoja siitä, miten asia on toteutettu ohjelmistossa, suunnitteluratkaisuista sekä ylläpidosta. Useimmiten aihe liittyy asiaan, jonka parissa kirjoittaja on äskettäin työskennellyt. \cite{how-dev-blog}.
 
 %\section{snippets}
+\subsection{Kumiankkadebuggaus}
 \subsection{specifying what to search for}
 Avainsanahaut tuottavat usein paljon turhia tuloksia
 avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejä
