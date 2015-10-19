@@ -187,20 +187,25 @@ Vastaavasti, kuten uuteen ohjelmistoon tutustuttaessa, pyritään aluksi paikant
 Ohjelmointiympäristöt tarjoavat usein heikosti apua uusien ohjelmistoraapintojen käytössä~\cite{jungloid-mining}. Usein ohjelmistoympäristöt tarjoavat automaattista täydennystä vasta silloin kun ohjelmoija tietää mitä luokkia ja rajapintoja tarvitaan. Siten useimmiten ohjelmointirajapinnan käyttön sisäistämiseen käytetään vain ohjelmointirajapinnan tarjoamaa sisäistä dokumentaatiota, mikä harvoin auttaa yleiskuvan luomisessa. Myös tästä dokumentaatiosta oleellisien kohtien löytäminen on vaikeaa, sillä sopivan avainsanan keksiminen on usesti haastavaa~\cite{what-to-search-for}.
 Toinen tapa tutustua ohjelmointirajapinnan käyttöön on etsiä omaan tarkoitukseen sopivia esimerkkejä kyseisen ohjelmointirajapinnan käytöstä. Tällöin haasteeksi muodostuu esimerkkien suuri määrä sekä esimerkkien vaihteleva laatu~\cite{example-overflow-social-media-for-code-recommendations}. Kuitenkin riippuen käytössä olevasta ohjelmointirajapinnasta, sopivien esimerkkien löytäminen on joskus hyvinkin haastavaa, ja ohjelmoijat, jotka hakevat esimerkkejä, useasti myös päätyvät palaamaan ohjelmointirajapinnan dokumentaatioon~\cite{asking-and-answering-api-questions}. Tämä kuitenkin riippuu pitkälti käytössä olevasta ohjelmointirajapinnasta sekä siitä, miten tyypillistä asiaa sillä on tekemässä.
 
-\section{Tyypillisiä ongelmia}
-%TODO: continue here
+\section{Lainauksia ja tarinaa}
+%TODO: vaan lainauksia
 Sosiaalisesta media, kuten Facebook ja Imdb, tarjoavat paljon hyödyllisiä suosituksia, kuten mitä elokuvia katsoa ja mitä tuttavat ja lähipiiri tekee. Sivustot, kuten StackOverflow, ovat vastaavasti ohjelmistokehittäjille erityisesti suunnattuja sosiaalisia medioita.
-Esimerkkien haku on oleellinen osa nykyaikaista ohjelmistokehitystä \cite{example-overflow-social-media-for-code-recommendations}, siksi on erityisen tärkeää, että hakutyökalut tarjoavat mahdollisuuden esimerkkien paikantamiseen.
 Haasteeksi kuitenkin tällaisten sivujen kohdalla tulee esimerkkien liiallinen määrä. Hyvänä esimerkkinä toimii myös Zagalskyn, Barzilayn ja Yehudain luoma sivusto ExampleOverflow, joka kerää StackOverflowsta koodiesimerkkejä ja pyrkii karsimaan sopimattomat ja turhat esimerkit pois, jolloin esimerkin hakija löytäisi nopeammin ja helpommim haluamansa vastauksen. He havaitsivat ExampleOverflown löytävän sopivia esimerkkejä useissa tapauksissa yhtä hyvin tai paremmin kuin StackOverflow \cite{example-overflow-social-media-for-code-recommendations}.
 
-\cite{social-networking-meets-se}
 
 Esimerkkien haku on oleellinen osa nykyaikaista ohjelmistokehitystä \cite{example-overflow-social-media-for-code-recommendations}
 
 \section{Työkaluja avun hakuun}
-\subsection{Grep}
-\subsection{IDE}
-Eclipsen tarjoama tuki koodin täydennykseen olettaa, että ohjelmoija tietää tarpeelliset luokat, eikä ohjelmointiympäristö tarjoa mahdollisesti sopivia luokkia ohjelmoijalle \cite{jungloid-mining}.
+Ohjelmistokehittäjä ei ole aina yksin tyhmän tekstieditoirin kanssa, ilman apuvälineitä hakemassa vastauksia kysymyksiin, joita ohjelmointiprosessin aikana tulee vastaan. Vaan ohjelmistokehittäjiä varten on luotu erilaisia ohjemistoja ja apuvälineitä ratkaisemaan juuri näitä ongelmia.
+Kuitenkin yksi haasteista on sopivan työkalun valinta oikeaan tehtävään. Kaikki ohjelmoijan auttamista varten tehdyt työkalut kun eivät kaikkiin kysymyksiin osaa vastata eikä lainkaan auttaa niissä. Toinen haaste on myös se, että vaikka ohjelmistokehittäjä valitsee sopivan työkalun, käyttää hän siitä vain osaa tarkoitukseen luoduista ominaisuuksista~\cite{whyline}.
+
+Alla esittelemmen tyylillisiä ohjelmistokehittäjän elämän helpottamiseksi luotuja työkaluja. Osa työkaluista on tarkoitettu auttamaan yleisellä tasolla, kun taas toiset auttavat vain pienessä, mutta sitäkin haastavammassa osassa.
+
+Ohjelmointiympäristö auttaa useissa tyypillisissä tilanteissa, mutta sen tekstieditoirin automaattinen tekstin täydennys ei tyypillisesti osaa kuitenkaan ehdottaa, aiemmin ohjelmoijalle sopivia luokkia~\cite{jungloid-mining}.
+%TODO: \subsection{Grep}
+\subsection{Ohjelmointiympäristö}
+Ohjelmointiympäristö on ohjelmisto, joka pyrkii tukemaan ohjelmistokehittäjän arkea, tarjoamalla kaikki olennaisimmat työkalut ohjelmiston kehittämiseen. Ohjelmointiympäristö koostuu tyypillisesti tekstiedotorista, joka tukee ohjelmakoodin kirjoittamista tarjoamalla automaattista tekstin täydennystä, tarjoamalla ohjelmakoodin väritystä. Ohjelmointiympäristö tarjoaa myös tyypillisesti myös sisäänrakennetun kääntäjän, joka kertoo ohjelmakoodin syntaksivirheistä samalla kun ohjelmakoodia kirjoitetaan. Useissa ohjelmointiympäristöissä on myös sisäänrakennettu debuggeri, joka avustaa ohjelmakoodin suorituksen tarkastelun ohjelmakoodin rivi riviltä. Ohjelmointiympäristöt tarjoavat myös tiedostoselaimen projektin tiedostoille, sekä erilaisia luokka ja pakettitason visualisointi sekä selaus työkaluja.
+
 \subsection{S\raise0.5ex\hbox{6} projekti}
 S\raise0.5ex\hbox{6} projekti pyrkii helpottamaan sopivan koodin hakemista ja siten koodin uudelleenkäyttöä. Projekti mahdollistaa sopivien luokkien ja metodien haun siten, että ohjelmoija tarjoaa testitapauksia, joiden rakennetta ja semantiikkaa automatisoidusti tarkastelemalla projekti pystyy tarkentamaan hakutuloksia. Projekti pyrkii myös automatisoimaan tarvittavat muunnokset, jotta valmiit, eri tyyppejä käyttävät metodit, toimisivat oikein ahjelmoijan tarpeisiin. He korostavat, että hausta ei tule tehdä liian tarkaa, sillä harva toteutusratkaisu on lopullinen, vaan toteutus ja sen rakenne voi tarvittaessa mukautua sopimaan tarjolla olevaan koodiin. Siis vain korkean tason tieto siitä, mikä haluttu lopputulos on tiedossa. \cite{what-to-search-for}
 
