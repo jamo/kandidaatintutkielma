@@ -38,6 +38,9 @@
 \usepackage{amsfonts,amsmath,amssymb,amsthm,booktabs,color,enumitem,graphicx}
 \usepackage[pdftex,hidelinks]{hyperref}
 
+\usepackage{setspace}
+\onehalfspacing
+
 % Automatically set the PDF metadata fields
 \makeatletter
 \AtBeginDocument{\hypersetup{pdftitle = {\@title}, pdfauthor = {\@author}}}
@@ -143,28 +146,30 @@ Näiden haasteiden ratkaisemiseen on useita erilaisia työkaluja sekä sosiaalis
 Tutkielman rakenne muodostuu seuraavasti. Alussa tarkastelemme tyypillisiä kysymyksiä sekä tilanteita, missä ohjelmoijat näitä kysymyksiä esittävät. Sen jälkeen tarkastelemme muutamia juuri näinin kysymyksiin vastaamiseen suunnattuja ohjelmistoja ja miten sosiaalisen media voi tarjota vastaukset näihin kysymyksiin.
 
 \section{Tilanteita missä tulee ongelmia - miksi kyselee ja mitä}
-Ohjelmoitaessa tulee usein esiin erilaisia kysymyksiä, joihin vastaamiseen noin puolet ohjelmointiajasta kuluu~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}. Näiden ohjelmistoprojektiin sekä työn alla olevaan tehtävään tutustuessa ja ohjelmointitehtävän aikana esiin tulleiden kysymysten avulla ohjelmoja pyrkii sisäistämään koodin toimintaa tarvittavissa määrin, saadakseen tehtävän tehtyä. Kysymyksiä esiintyy laajasti juuri erilaisten muutos- sekä jatkokehitystöiden yhteydessä. Esimerkiksi uutta ominaisuutta lisättäessä olemassaolevaan ohjelmistoprojektiin, olemassaolevaa projektia refaktoroitaessa sekä ohjelmointivirhettä korjattaessa.
+Ohjelmoitaessa tulee usein esiin erilaisia kysymyksiä, joilla ohjelmoja pyrkii paremmin sisäistämään koodin toimintaa. Kuitenkin näihin kysymyksiin vastaaminen ei ole aina helppoa saati nopeaa; tällaisiin kysymyksiin vastaamiseen saattaa kulua jopa puolet ohjelmointiin käytetystä ajasta~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}. Erityisesti tällaisia kysymyksiä tulee mieleen silloin, kun työskentelee uuden ominaisuuden tai muutostyön parissa. Sekä erityisesti silloin, kun työsetettävä ohjelmakoodi on ennalta tuntematonta.
+Näihin kysymyksiin vastatessaan, pyrkii ohjelmoija sisäistämään koodin toimintaa tarvittaessa määrin saadakseen tehtävän tehtyä kunnollisesti.
 
-Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä ja sitä tarkentavia kysymyksiä, joihin vastauksia hakemalla vastaus alkuperäiseen kysymykseen tarkkenee~\cite{questions-during-software-evolution-tasks}.
+Usein kysymykseen vastausta haettaessa tulee esiin useita kysymykseen liittyviä, alkuperäistä kysymystä tarkentavia kysymyksiä, joihin vastaaminen lopulta edesauttaa alkuperäiseen kysymykseen vastaamista~\cite{questions-during-software-evolution-tasks}.
 
-Alla tarkastellaan erilaisia tilanteita ohjelmointityön aikana, missä tyypillisesti tulee kysymyksiä esille, sekä millaisilla kysymyksiä silloin tyypillisesti esitetään. Myöhemmässä kappaleessa esittelen erilaisia työkaluja ja niiden soveltuvuuta ohjelmointiprosessin aikana tulleisiin kysymyksiin vastaamisessa.
+Alla tarkastelemme erilaisia tilanteita ohjelmointiprosessista, jossa tällaisia kysymyksiä  tyypillisesti ilmeee. Selvitämme myös millaisia kysymyksiä kussakin tilanteessa esitetään sekä tarkastelemme lyhyesti miten tällaisiin kysymyksiin haetaan vastauksia mahdollisesti erilaisia apuohjelmia käyttäen. Sen älkeen tarkastelemme muutamia näihin kysymyksiin vastaamiseen käytettyjä työkaluja tarkemmin sekä tutustumme muutamiin erityisesti näihin kysymyksiin vastaamiseen tarkotettuihin sovelluksiin.
 
 \subsection{Tehtävään oleelisten aloituskohtien löytäminen}
-Erityisesti uusissa projekteissa haasteeksi muodostuu koodin huono tuntemus; isommissa projekteissa koodin tuntemattomuuden vaikutus kasvaa entisestään.
-Aloittaessa ohjelmointitehtävää, ensimmäisenä osana niin tehtävän annon sisäistämistä, kuin projektiin tutustumista, on tehtävän oleellisen paikan löytäminen koodista.
+Uuden ohjelmointi tehtävän aloittaminen on usein haastavaa, vaikka tiedossa olisi suunnilleen, mitä on tarkoitus tehdä. Oli kyseessä sitten olemassa olevan ohjelmiston toimintavirheen korjaaminen tai uuden ominaisuuden tuominen ohjelmaan. Erityisen haastavaksi aloittamisen tekee se, jos ohjelman koodi ei ole ennalta tuttua. Tällöin ennen tehtävän aloittamista, tulee selvittää itselleen tarkemmin ohjelman rakennetta ja toimintaa sekä selvittää mitkä ovat oleellisia kohtia tehtävän kannalta.
 
-Oleellisen kohdan löytäminen vie usein paljon aikaa, eikä se ole helppoa. Eräs tapa aloituskohtan löytämiseen on arvata sopivia avainsajona, ja niiden perusteella hakea sopivia kohtia ohjelmakoodista. Tässä haasteena on kuitenkin niin oikeiden avainsanojen keksiminen sekä epäoleellisten tulosten suuri määrä~\cite{what-to-search-for}.
+Oleellisen kohdan löytäminen ohjelmakoodista vie erityisesti tuntemattomasta koodista paljon aikaa, eikä se ole helppoa.
+Eräs tapa aloituskohtan löytämiseen on arvata sopivia aiheeseen liittyviä avainsajona, ja niiden perusteella hakee kohtia ohjelmakoodista. Tässä haasteena on kuitenkin niin oikeiden avainsanojen keksiminen sekä epäoleellisten tulosten suuri määrä, mikä hidastaa prosessia entisestään~\cite{what-to-search-for}.
 
-Toinen tapa sopivan aloituskohdan löytämiseen on ohjelmistoympäristön (IDE) erilaisten luokka ja pakkaus kaavioiden tarkastelu työkalut. Nämä saattavat nopeuttaa hakua, muta edelleen haasteena on sopivien avainsanojen löytäminen.
+Toinen tapa sopivan aloituskohdan löytämiseen on ohjelmistoympäristön (IDE) erilaiset luokka ja pakkaus kaavioiden tarkasteluun tarkoitetut työkalut. Nämä saattavat nopeuttaa hakua, muta edelleen haasteena on sopivien avainsanojen löytäminen~\cite{what-to-search-for}.
 
-Myös debuggeria saatetaan käyttää sopivan kohdan löytämiseen, niin erikseen kuin myös edellä mainittujen tapojen tukena. Tällöin mahdollisesti sopiviin kohtiin asetetaan pysähdyspiste (break point) ja ohjelmaa ajettaessa katsotaan pysähtyykö ohjelman suoritus arvatuissa kohdissa.
+Myös debuggeria voi käyttää sopivan aloituskohdan kohdan löytämiseen, liittämällä ohjelmakoodiin pysähdyspisteitä (break point) ja tarkastelemalla ohjelmaa suorittaessa, pysähtyykö ohjelman suorittaminen näihin pysähdyspisteisiin. Tässä haasteena, kuten aiemmissakin tavoissa, on sopivien arvausten tekemisnen pysähdyspisteiden sijainnille.
+Debuggeria voi myös käyttää edellä mainituilla tavoilla saadun, mahdollisesti oleellisen kohdan, oleellisuuden varmistamiseen~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
 
-Mikään edellämainituista tavoista ei ole erityisen tehokas löytämään oleellista aloituskohtaa.
-Haasteeksi myös muodostuu se, että koska sopivan kohdan oleellisuuden varmistamiseen ei ole selkeää tapaa, valittiin aloituskohdaksi usein kokonaan epäoleellinen kohta, ja he käyttävät pitkän ajan epäoleellisen koodin parissa, ennen kuin koodin epäoleellisuus selviää \cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
+Kuitenkaan mikään edellämainituista tavoista ei ole erityisen tehokas löytämään oleellista aloituskohtaa. Haasteeksi kaikissa tavoissa muodostuu suhteellisen suuri määrä täysin epäolennnaisia tuloksia, jotka vievät ohjelmoian aikaa ja saattavat pahimmillaan johdatella ohjelmoija pitkäksi aikaa tarkastelemaan väärää aluetta ohjelmakoodista, ennen kuin kohdan epäolennaisuus selviää~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
 
 %Avainsanahaut tuottavat usein paljon turhia tuloksia
 %avainsanat, rakenne, metodisignaturet ja loopit yms (ast) tosin toi on turhaa infoa, tee testcaseja ja arvo keywordejtä
 \subsection{Riippuvuuksien hahmottaminen}
+%TODO: continue here
 Kun sopivan aloituskohta on tiedossa, voi viimein tarkastella kyseistä kohtaa ohjelmakoodisa, sen suhdetta muuhun projektiin. Seuraava asken on siis aloituskohdan alueelta riippuvuuksien hahmoittaminen~\cite{questions-during-software-evolution-tasks}.
 Tässä ohjelmoija tarkastelee itse oleellisia luokkia selvittäen tarkemmin niiden suhdetta muuhun ohjelmakokonaisuuteen, keskittyen kuitenkin läheisiin luokkiin ja niissä oleviin rakenteisiin ja metodeihin. Tyypilisesti tässä selvitetään aluksi mitä metodeja kyseinen luokka toteuttaa, mitä tietorakenteita se käyttää sekä mihin luokkiin se viittaa. Myös mitä luokkia oleellinen luokka perii, mitä viitatut ja lähistön muut luokat perivät ja mitä rajapintoja ne toteutavat. Tarkastelu etenee hitaasti laajemalle alueelle, alkaen itse oleellisesta luokasta hitaasti laajentuen ohjelmoijan syventäessään käsitystään ohjelman rakenteesta. Näihin kysymyksiin vastaamiseen riitää ohjelmointiympäristöjen valmiit työkalut, jotka on tarkoitettu juuri koodin navigointiin.
 
