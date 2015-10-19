@@ -83,18 +83,29 @@
 \title{Millaisia kysymyksiä ohjelmoijat esittävät ja miten he hakevat niihin vastauksia}
 \author{Jarmo Isotalo}
 \date{\today}
-\level{Referaatti}
-\abstract{Tiivistelmä.}
+\level{Aine}
+\abstract
+{Ohjelmistojen kehityksen ja jatkokehityksen aikana tulee ohjelmistokehittäjää vastaan useita erilaisia kysymyksiä, joiden avulla ohjelmistokehittäjä pyrkii selvittämään ohjelmiston toimintaa. Erityisesti tällaisia kysymyksiä tulee silloin, kun tutustutaan itselle ennalta tuntemattomaan ohjelmakoodiin. Tarve tuntemattomaan ohjelmakoodiin tutustumiseen tulee sekä ohjelmointivirhettä avoimen lähdekoodin sovelluksesta korjattaessa että uutta ominaisuutta avoimen lähdekoodin sovellukseen lisättäessä.
+
+Näihin kysymyksiin vastaamista varten on kehitetty useita erilaisia työkaluja, jotka ovat avoimesti kaikkien saatavilla ja kaikkien käytettävissä.
+Näitä työkaluja tehokkaasti käyttämällä, esille tulleisiin kysymyksiin vastaaminen helpottuu. Haastteeksi kuitenkin muodostuu, että ohjelmistokehittäjät eivät useasti tunne kaikkia ongelmanratkaisuun soveltuvia työkaluja. Vaikka ohjelmistokehittäjä tuntisi työkalun, osaavat he harvoin käyttää näitä työkaluja tehokkaasti osana omaa ohjelmointiprosessia. Erityisesti nuoret ohjelmistokehittäjät päätyvät useasti hyvin tehottomiin ratkaisuinin vastauksia etsiessään.
+
+Esittelen tässä tutkielmassa yleisiä tilanteita, joissa usin kysyttyjä kysymyksiä tulee vastaan ja näille tyypillisiä sekä tehokkaita että tehottomia ratkaisukeinoja. Lisäksi esittelen muutamia näihin kysymyksiin vastaamiseen soveltuvia työkaluja ja sitä varten tehtyjä työkaluja sekä toimivia tapoja, vaikka työkalua ei juuri siihen oltu tarkoitettu.
+}
 
 % The following can be used to specify keywords and classification of the paper:
 
-% \keywords{avainsana 1, avainsana 2, avainsana 3}
+\keywords{ohjelmistotuotanto, ohjelmointiprosessi, tiedonhaku, ohjelmointiprossin kysymykset}
 
 % classification according to ACM Computing Classification System (http://www.acm.org/about/class/)
 % This is probably mostly relevant for computer scientists
 % uncomment the following; contents of \classification will be printed under the abstract with a title
+
 % "ACM Computing Classification System (CCS):"
-% \classification{}
+% CCS →  Social and professional topics →  Professional topics →  Computing profession →  Assistive technologies
+
+\classification{D.2.1 [Software Engineering]: Tools
+\\D.2.2 [Software Engineering]: Programmer workbench }
 
 % If the automatic page number counting is not working as desired in your case,
 % uncomment the following to manually set the number of pages displayed in the abstract page:
@@ -104,16 +115,16 @@
 % If you are not a computer scientist, you will want to uncomment the following by hand and specify
 % your department, faculty and subject by hand:
 %
-% \faculty{Matemaattis-luonnontieteellinen}
-% \department{Tietojenkäsittelytieteen laitos}
-% \subject{Tietojenkäsittelytiede}
+%\faculty{Matemaattis-luonnontieteellinen}
+%\department{Tietojenkäsittelytieteen laitos}
+%\subject{Tietojenkäsittelytiede}
 %
 % If you are not from the University of Helsinki, then you will most likely want to set these also:
 %
-% \university{Helsingin Yliopisto}
-% \universitylong{HELSINGIN YLIOPISTO --- HELSINGFORS UNIVERSITET --- UNIVERSITY OF HELSINKI} % displayed on the top of the abstract page
-% \city{Helsinki}
-%
+%\university{Helsingin Yliopisto}
+%\universitylong{HELSINGIN YLIOPISTO --- HELSINGFORS UNIVERSITET --- UNIVERSITY OF HELSINKI} % displayed on the top of the abstract page
+%\city{Helsinki}
+
 
 
 \begin{document}
@@ -123,7 +134,7 @@
 \frontmatter      % roman page numbering for front matter
 
 \maketitle        % title page
-%\makeabstract     % abstract page
+\makeabstract     % abstract page
 
 \tableofcontents  % table of contents
 
@@ -239,6 +250,12 @@ Myös GitHub tarjoaa helppokäyttöisiä wikejä ohjelmistojen dokumentointiin. 
 Sosiaalisen median kasvun myötä on blogien käyttö kasvanut myös ohjelmistokehittäjien keskuudessa. Isoissa avoimen lähdekoodin projekteissa, kuten Postgresql, Gnome ja Python julkaistaan keskimäärin noin kahdeksan tunnin välein uusi blogi julkaisu. Julkaisut ovat keskimäärin 150-273 sanaa ja ne käsittelevät pääosin joko ohjelmiston vaatimuksia, ohjelmiston ympärille muodostunutta yhteisöä, ohjelmistosta lisätiedon kertomista, ohjelmiston käyttöönottoa ja jakelua, prosessin koordinointia ja hallintaa, lisätietoja siitä, miten asia on toteutettu ohjelmistossa, suunnitteluratkaisuista sekä ylläpidosta. Useimmiten aihe liittyy asiaan, jonka parissa kirjoittaja on äskettäin työskennellyt. \cite{how-dev-blog}.
 Myös blogit toimivat paikkana löytää tietoa uusista ohjelmointirajapintojen ominaisuuksista sekä esimerkkejä niistä.
 %\subsection{Kumiankkadebuggaus}
+
+\section{Yhteenveto}
+Ohjelmistotuotantoprosessin aikana ohjelmistokehittäjän kohtaamiin kysymyksiin vastaaminen ei ole aina yksinkertaista.
+Kysymyksiin vastaamiseen on luotu useita erilaisia työkaluja. Vaikka niitä käytettäisiin, harva osaa käyttää näitä työkaluja tehokkaasti.
+Suuren osan ohjelmointirajapintojen käytön ja ongelmat oikeisiin tyyppeihin päästäkseen ratkaisee Jungloid louhinta~\cite{jungloid-mining}. Kun taas ohjelmistokehitysprosessin aikana tulevien kysymysten vastaamiseen on kehitetty työkaluja, kuten Whyline, jonka tarkoitus on ohjata ohjelmistokehittäjä käyttämään tehtävään tarkoitettuja työkaluja ja opettaa niiden tehokkaampaa käyttöä~\cite{whyline}.
+
 \newpage
 \bibliographystyle{babplain-lf}
 \bibliography{../lahteet}
