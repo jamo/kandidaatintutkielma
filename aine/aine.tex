@@ -181,8 +181,15 @@ Ohjelmointiympäristöistä on myös tässä apua. Useat ohjelmointiympäristöt
 
 \subsection{Ohjelmistorajapinnan käyttäminen}
 Niin ohjelman toimintaa tarkastellessa, kuin uutta ominaisuutta luodessa tulee useasti vastaan ennalta tuntemattomia ohjelmointirajapintoja (API). Joskus ohjelmointirajapinnat ovat helppokäyttöisiä, mutta useasti, varsinkin isompien kirjastojen (Library) kohdalla ohjelmistorajapinnat ovat monipuolisia ja siten vaikeammin sisäistettävissä.
-Uuteen ohjelmistorajapintaan tutustuminen aloitetaan usesti ensin varmistamalla, että tarjolla
-Aluksi, uuden ohjelmointirajapinnan kohdatessaan ohjelmoija tyypillisesti aloittaa selvittämällä, kuinka eri tyypit liittyvät toisiinsa. Tämä tapahtuu osin samoin, kuten yllä mainitussa riippuvuuksien hahmoittaminen osiossa, mutta painottuu pitkälti dokumentaatioon ja luokka kaavioihin. Dokumentaatiosta sopivien luokkien löytämisen yksi suurimmista haasteista on oikeiden avainsanojen arvaaminen. Myös haasteita ohjelmistorajapintoihin tutustuttaessa tuottaa eri luokista esiintymien luominen. Erityisesti silloin, kun luokka ei tarjoa julkista konstruktoria, vaan käytössä on rakentaja (builder) tai tehdas (factory) ohjelmointityylit. Myös luokkien dokumentoimattomat oletukset sekä ohjelmoijan mielestä epätyypillinen toteutus tuottaa haasteita \cite{asking-and-answering-api-questions}.
+Uuteen ohjelmistorajapintaan tutustuminen aloitetaan usesti ensin varmistamalla, että kyseinen ohjelmistorajapinta varmasti tarjoaa tarkoitukseen sopivan toiminnallisuuden. Tämän jälkeen voi aloittaa tarkemman tutustumisen ohjelmistorajapintaan.
+Vastaavasti, kuten uuteen ohjelmistoon tutustuttaessa, pyritään aluksi paikantaa ne luokat ja metodit, jotka ovat tarpeen. Ja sitten selvittämään niiden ja muiden ohjelmistorajapinnan tyyppien välisiä suhteita. Myös dokumentaation lukeminen auttaa, mutta se harvoin tarjoaa yleiskuvaa siitä, mihin luokka yleiskuvassa asettuu, sekä minkä muiden luokkien kanssa tätä tyypillisesti käytetään~\cite{asking-and-answering-api-questions}.
+
+Ohjelmointiympäristöt tarjoavat usein heikosti apua uusien ohjelmistoraapintojen käytössä~\cite{jungloid-mining}. Usein ohjelmistoympäristöt tarjoavat automaattista täydennystä vasta silloin kun ohjelmoija tietää mitä luokkia ja rajapintoja tarvitaan. Siten useimmiten ohjelmistorajapinnan käyttön sisäistämiseen käytetään vain ohjelmistorajapinnan tarjoamaa sisäistä dokumentaatiota, mikä harvoin auttaa yleiskuvan luomisessa. Myös tästä dokumentaatiosta oleellisien kohtien löytäminen on vaikeaa, sillä sopivan avainsanan keksiminen on usesti haastavaa~\cite{what-to-search-for} .
+Toinen tapa tutustua ohjelmistorajapinnan käyttöön on etsiä omaan tarkoitukseen sopivia esimerkkejä kyseisen ohjelmointirajapinnan käytöstä
+~\cite{asking-and-answering-api-questions}
+\cite{example-overflow-social-media-for-code-recommendations}
+
+Dokumentaatiosta sopivien luokkien löytämisen yksi suurimmista haasteista on oikeiden avainsanojen arvaaminen. Myös haasteita ohjelmistorajapintoihin tutustuttaessa tuottaa eri luokista esiintymien luominen. Erityisesti silloin, kun luokka ei tarjoa julkista konstruktoria, vaan käytössä on rakentaja (builder) tai tehdas (factory) ohjelmointityylit. Myös luokkien dokumentoimattomat oletukset sekä ohjelmoijan mielestä epätyypillinen toteutus tuottaa haasteita \cite{asking-and-answering-api-questions}.
 
 %TODO: continue here
 \subsection{hakemisen haasteet}
