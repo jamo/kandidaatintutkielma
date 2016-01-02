@@ -85,13 +85,12 @@
 \date{\today}
 \level{Kandidaatin tutkielma}
 \abstract
-{Ohjelmistoihin joudutaan virhetilanteiden ja ominaisuuksien lisäysten takia tekemään muutoksia. Usein muutoksen tai korjauksen tekee ohjelmoija, joka ei alunperin ole ollut tuottamassa kyseistä ohjelmakoodia. Ohjelmoija pyrkii selvittämään järjestelmän toimintaa, jotta hän pääsisi nopeasti tekemään halutun muutoksen. Usein ohjelmoija esittää itselleen kysymyksiä selvittääkseen ohjelmiston logiikkaa ja toimintaa.
+{Ohjelmistoihin joudutaan virhetilanteiden ja uusien ominaisuuksien lisäysten takia tekemään muutoksia. Usein muutoksen tai korjauksen tekee ohjelmoija, joka ei alunperin ole ollut tuottamassa kyseistä ohjelmakoodia. Ohjelmoija pyrkii selvittämään järjestelmän toimintaa, jotta hän pääsisi nopeasti tekemään halutun muutoksen. Usein ohjelmoija esittää itselleen loogisia kysymyksiä selvittääkseen ohjelmiston logiikkaa ja toimintaa.
 
 Ohjelmoijan tueksi on kehitetty useita erilaisia työkaluja ja ohjelmistoja. Moni ei kuitenkaan osaa käyttää näitä työkaluja täysimääräisesti ja tehokkaasti osana omaa ohjelmointiprosessiaan.
-%Käyttämällä erilaisia työkaluja tehokkaasti ohjelmoija löytää vastauksia esille tulleisiin kysymyksiinsä helpommin ja nopeammin. Haasteena on se, etteivät ohjelmoijatt useinkaan tunne riittäästi ongelmanratkaisuun soveltuvia työkaluja tai he eivät osaa käyttää työkaluja täysimääräisesti ja tehokkaasti osana omaa ohjelmointiprosessiaan.
 % Erityisesti aloittelevat ohjelmoijat päätyvät valitettavan usein hyvin tehottomiin ratkaisuihin vastauksia etsiessään.
 
-Esittelen tässä tutkielmassa yleisiä ongelmatilanteita, joissa ohjelmoija selvittää ohjelman rakennetta ja toimintaa itselleen esittämiensä kysymysten avulla sekä erilaisia ratkaisukeinoja. Lisäksi esittelen joitakin vastausten etsimiseen tarkoitettuja työkaluja sekä työkaluja, joita voi käyttää vastausten etsimiseen, vaikkei niitä alunperin ole tarkoitettu siihen käyttöön.
+Esittelen tässä tutkielmassa yleisiä ongelmatilanteita, joissa ohjelmoija selvittää ohjelman rakennetta ja toimintaa itselleen esittämiensä loogisten kysymysten avulla. Lisäksi esittelen joitakin vastausten etsimiseen tarkoitettuja työkaluja sekä työkaluja, joita voi käyttää vastausten etsimiseen, vaikkei niitä alunperin ole tarkoitettu siihen käyttöön. Käyn läpi myös sosiaalisen median hyödyntämistä ohjelmointiprosessissa.
 }
 
 % The following can be used to specify keywords and classification of the paper:
@@ -153,28 +152,6 @@ Muiden käyttöön tarkoitettujen kirjastojen kohdalla mahdollisten sivuvaikutus
 Laajassa käytössä olevat kirjastot noudattavat usein semanttista versiointia~\cite{semver}. Tämä sallii pienissä päivityksissä vain pienet korjaukset, jotka eivät riko taikka muuta kirjaston toimintaa. Lisäksi semanttinen versiointi vaatii selkeän versionumeron päivityksen muutoksiin, jotka muuttavat kirjaston toimintaa siten, että kirjaston käyttäjien tulee varautua muutoksiin kirjastoa päivitettäessä.
 
 Kaikista toimista huolimatta sovelluksia ei kuitenkaan saada täysin virheettömiksi. Erityisesti monimutkaisissa ja laajoissa ohjelmistokokonaisuuksissa on mahdotonta tunnistaa kaikki virhetilanteet. Lisäksi kattavaan virheiden etsintään ei ole aina varaa.
-
-% Tylsä lähde, mutta oikeestaan en löytänyt mitään super luotettavaa lähdettä... vaikka moni sivu tuki tätä lajittelua
-Kaikki järjestelmissä olevat virheet eivät ole samanarvoisia. Lönnroth ja Törmälä luokittelevat virheet neljään luokkaan~\cite{testaus-kriittisyys}:
-\begin{enumerate}
-  \item Kriittinen virhe, joka estää järjestelmän käytön.
-  \item Virhe, joka vaikeuttaa järjestelmän käyttöä.
-  \item Virhe, joka voidaan ohittaa tekemällä toiminto tilapäisesti eri tavalla.
-  \item Kosmeettinen haitta, joka ei estä järjestelmän käyttöä.
-\end{enumerate}
-
-Virheen luokittelun lisäksi oleellista on määritellä virheen korjauksen kiireellisyys. Korjauksen kiireellisyyteen vaikuttavat virheen luokittelun lisäksi virheen laajuus sekä se, moneenko käyttäjään virhe vaikuttaa.
-
-%\begin{description}
-%  \item[Välitön] \hfill \\
-%  Vaatii välittömän korjauksen. Ohittaa kaikki muut jonossa olevat työt.
-%  \item[Kiireellinen] \hfill \\
-%  Korjaus on tehtävä viikon kuluessa.
-%  \item[Normaali] \hfill \\
-%  Korjaus voi odottaa seuraavaa versiota.
-%  \item[Alhainen] \hfill \\
-%  Korjauksella ei ole kiire.
-%\end{description}
 
 Virhekorjausten lisäksi ohjelmistoja muutetaan tekemällä niihin teknisiä parannuksia esim. suorituskyvyn tai ylläpidettävyyden parantamiseksi, käyttöliittymämuutoksia käyttäjäkokemuksen parantamiseksi tai ohjelmoimalla niihin uusia toiminnallisuuksia.
 
@@ -243,6 +220,30 @@ Ohjelmoitaessa on kuitenkin aina tärkeää uusiokäyttää mahdollisimman paljo
 Usein kysymykseen vastausta haettaessa tulee esiin useita uusia kysymykseen liittyviä, alkuperäistä kysymystä tarkentavia kysymyksiä, joihin vastaaminen lopulta edesauttaa alkuperäiseen kysymykseen vastaamista~\cite{questions-during-software-evolution-tasks}.
 
 Alla tarkastelen sellaisia tilanteita ohjelmointiprosessissa, jossa ongelmia tyypillisesti ilmenee. Kuvaan myös, millaisia kysymyksiä kussakin tilanteessa ongelmaa ratkaistaessa esitetään sekä miten näihin kysymyksiin haetaan vastauksia erilaisia apuohjelmia käyttäen. Sen jälkeen tarkastelen muutamia vastaamiseen käytettyjä työkaluja ja ohjelmistoja. Tarkastelussa mukailen artikkeleissa Eliciting Design Requirements for Maintenance-oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks~\cite{eliciting-design-requirements-for-maintenance-oriented-ides} ja Questions Programmers Ask During Software Evolution Tasks~\cite{questions-during-software-evolution-tasks} käytetyä hyväksi kokemaani rakennetta.
+
+\subsection{Ohjelmointitehtävien priorisointi}
+
+% Tylsä lähde, mutta oikeestaan en löytänyt mitään super luotettavaa lähdettä... vaikka moni sivu tuki tätä lajittelua
+Jos ohjelmoijalla on työlistalla useita virhekorjauksi, hänen täytyy ensin priorisoida korjausjärjestys, koska kaikki järjestelmissä olevat virheet eivät ole samanarvoisia. Lönnroth ja Törmälä luokittelevat virheet neljään luokkaan~\cite{testaus-kriittisyys}:
+\begin{enumerate}
+  \item Kriittinen virhe, joka estää järjestelmän käytön.
+  \item Virhe, joka vaikeuttaa järjestelmän käyttöä.
+  \item Virhe, joka voidaan ohittaa tekemällä toiminto tilapäisesti eri tavalla.
+  \item Kosmeettinen haitta, joka ei estä järjestelmän käyttöä.
+\end{enumerate}
+
+Virheen luokittelun lisäksi oleellista on määritellä virheen korjauksen kiireellisyys. Korjauksen kiireellisyyteen vaikuttavat virheen luokittelun lisäksi virheen laajuus sekä se, moneenko käyttäjään virhe vaikuttaa.
+
+%\begin{description}
+%  \item[Välitön] \hfill \\
+%  Vaatii välittömän korjauksen. Ohittaa kaikki muut jonossa olevat työt.
+%  \item[Kiireellinen] \hfill \\
+%  Korjaus on tehtävä viikon kuluessa.
+%  \item[Normaali] \hfill \\
+%  Korjaus voi odottaa seuraavaa versiota.
+%  \item[Alhainen] \hfill \\
+%  Korjauksella ei ole kiire.
+%\end{description}
 
 \subsection{Ohjelmointitehtävän aloituskohdan löytäminen}
 
@@ -359,7 +360,7 @@ Harva työkalu tarjoaa suoran vastauksen näihin kysymyksiin, vaan esimerkiksi a
 Whyline pyrkii helpottamaan tällaisiin kysymyksiin vastaamista; se ei kerro suoraan oikeaa vastausta, vaan ohjaa ja opastaa ongelmanratkaisuprosessissa ja siinä käytettyjen työkalujen tehokkaassa käytössä - ja siten vähentää ohjelmointiongelman ratkaisuun käytettyä aikaa~\cite{whyline}.
 
 \section{Sosiaalisen median hyödyntäminen}
-Sosiaalisesta mediasta on tullut arkipäivää kaikille internetin käyttäjille:  Facebookissa seurataan, mitä tuttavat ja lähipiiri tekevät parhaillaan ja Imdb:stä saa  suosituksia, mitä elokuvia kannattaisi katsoa. 
+Sosiaalisesta mediasta on tullut arkipäivää kaikille internetin käyttäjille:  Facebookissa seurataan, mitä tuttavat ja lähipiiri tekevät parhaillaan ja Imdb:stä saa  suosituksia, mitä elokuvia kannattaisi katsoa.
 
 Myös ammattilaisille on omia sosiaalisia medioita, kuten esimerkiksi StackOverflow ja GitHub, jotka ovat erityisesti ohjelmoijille suunnattuja sosiaalisia medioita. Niistä löytyy mm. esimerkkejä, joiden haku on oleellinen osa nykyaikaista ohjelmistokehitystä \cite{example-overflow-social-media-for-code-recommendations}.
 
@@ -388,7 +389,9 @@ StackOverflown ja muiden vastaavien sivustojen käyttäjien haasteeksi muodostuu
 Wikit ovat yhteisöllinen tapa luoda kattavia tietopankkeja, joissa usean ihmisen tietotaito ja osaaminen yhdistyvät luoden asiasta kiinnostuneille laadukasta materiaalia. Wikejä käytetään myös avoimen lähdekoodin ohjelmien dokumentointiin sekä parantamaan ohjelmointikirjastojen dokumentaatiota. Wikit koetaan sähköpostilistoja ja muita perinteisempiä keskustelu- sekä dokumentointimuotoja helpommiksi ja selkeämmiksi käyttää juuri yhteisöllisen muokkauksen ja tiedon ajantasaisuuden ansiosta~\cite{using-wikis-in-sw}.
 Myös GitHub tarjoaa helppokäyttöisiä wikejä ohjelmistojen dokumentointiin~\cite{github-wiki}.
 
-Wikipohjaisen dokumentaation muutokset tehdään suoraan internet-selaimella eikä ohjelmiston lähdekoodia tarvitse erikseen ladata muokatakseen dokumentaatiota. Näin wikien käyttö mahdollistaa sen, että myös ohjelmiston loppukäyttäjät voivat helposti muokata ja kehittää ohjelmiston dokumentaatiota. Tämä puolestaan lisää dokumentaation määrää ja laatua. TODO lähde
+Wikipohjaisen dokumentaation muutokset tehdään suoraan internet-selaimella eikä ohjelmiston lähdekoodivarastoa tarvitse erikseen ladata muokatakseen dokumentaatiota. Näin wikien käyttö mahdollistaa sen, että myös ohjelmiston loppukäyttäjät voivat helposti muokata ja kehittää ohjelmiston dokumentaatiota. Tämä puolestaan lisää dokumentaation määrää ja laatua~\cite{wiki-social-knowledge-construction}.
+
+% Huomatessaan et wikistä puuttuu jtn mitä ne osaa ja niistä se kuuluis sinne, niin porukka todennäköisesti lisää sen wikiin ja siten parantaa wikin laatua~\cite{wiki-social-knowledge-construction}.
 
 \subsection{Blogit}
 Sosiaalisen median kasvun myötä blogien käyttö on levinnyt myös ohjelmistokehittäjien keskuudessa. Isoissa avoimen lähdekoodin projekteissa, kuten PostgreSQL:ssä, Gnomessa ja Pythonissa, julkaistaan keskimäärin noin kahdeksan tunnin välein uusi blogijulkaisu. Julkaisut ovat keskimäärin 150-273 sanan pituisia ja niissä kerrotaan erilaisia lisätietoja ohjelmistoista. Julkaisuissa käsitellään mm. seuraavia aiheita:
@@ -407,9 +410,11 @@ Myös henkilökohtaiset ohjelmistokehittäjien blogit toimivat paikkana löytä�
 \section{Yhteenveto}
 Ohjelmoitaessa on aina tärkeää uusiokäyttää mahdollisimman paljon olemassaolevaa koodia ja kirjoittaa uutta koodia vain mikäli valmista toteutusta ei ole olemassa. Koodia uusiokäyttämällä säästyy jo olemassaolevan koodin uudelleen kirjoittamiselta ja samalla riski uusien bugien tuottamisesta pienenee.
 
-Oikean korjauspaikan löytäminen ei ole helppoa. Toisen tekemään koodiin tutustuminen (ja erityisesti tutustumisen aloittaminen!) on vaikeaa ja vie helposti turhaan aikaa, joten prosessin tehokkuuteen kannattaa panostaa. Ohjelmoijan ei kannata yrittää ratkoa ongelmiaan yksin, vaan hänen kannattaa hyödyntää avuksi ja työn tueksi tehtyjä työkaluja.
+Oikean korjauspaikan löytäminen ei ole helppoa. Toisen tekemään koodiin tutustuminen (ja erityisesti tutustumisen aloittaminen!) on vaikeaa ja vie helposti paljon aikaa, joten prosessin tehokkuuteen kannattaa panostaa. Ohjelmoijan ei kannata yrittää ratkoa ongelmiaan yksin, vaan hänen kannattaa hyödyntää avuksi ja työn tueksi tehtyjä työkaluja ja opetella käyttämään niitä täysimääräisesti.
 
-Ohjelmistotuotantoprosessin aikana ohjelmoijan kohtaamiin kysymyksiin vastaaminen ei ole aina yksinkertaista, mutta erilaiset työkalut tehostavat työtä. Työkaluja on tehty erilaiseen käyttötarkoitukseen. Yksi parhaista työkaluista on Jungloid-louhinta~\cite{jungloid-mining}, jonka avulla on mahdollista ratkaista suuri osa ohjelmointirajapintojen käyttöön ja tyyppeihin liittyvistä kysymyksistä. Ohjelmistokehitysprosessin aikana tulevien kysymysten vastaamiseen liittyvät työkalut, kuten Whyline, on tarkoitettu ohjaamaan ohjelmoija käyttämään tehtävään tarkoitettuja työkaluja ja opettaa niiden tehokkaampaa käyttöä~\cite{whyline}.
+Ohjelmistotuotantoprosessin aikana ohjelmoijan kohtaamiin kysymyksiin vastaaminen ei ole aina yksinkertaista, mutta erilaiset työkalut tehostavat työtä. Työkaluja on tehty erilaiseen käyttötarkoitukseen. Esimerkiksi Jungloid-louhinnan~\cite{jungloid-mining} avulla on mahdollista ratkaista suuri osa ohjelmointirajapintojen käyttöön ja tyyppeihin liittyvistä kysymyksistä. Ohjelmistokehitysprosessin aikana tulevien kysymysten vastaamiseen liittyvät työkalut, kuten Whyline, on tarkoitettu ohjaamaan ohjelmoija käyttämään tehtävään tarkoitettuja työkaluja ja opettaa niiden tehokkaampaa käyttöä~\cite{whyline}.
+
+Sosiaalisen median käyttö on viime vuosina laajentunut myös ohjelmoijien käyttöön. GitHubista voi hakea käytössä olevaa ohjelmakoodia, kun taas StackOverFlowsta löytyy esimerkkikäyttöön tehtyjä koodipaloja ja vastauksia ohjelmoijien kysymyksiin.
 
 Työkaluja on moneen käyttötarkoitukseen ja ne kehittyvät jatkuvasti. Ohjelmoijan on tarpeen tuntea eri työvälineet ja pyrkiä löytämään niistä itselleen sopivin/sopivimmat ja opetella niiden käyttöä, jotta ohjelmointityö olisi mahdollisimman tehokasta.
 
