@@ -88,9 +88,9 @@
 \abstract
 {Ohjelmistoihin joudutaan virhetilanteiden ja uusien ominaisuuksien lisäysten takia tekemään muutoksia. Usein muutoksen tai korjauksen tekee ohjelmoija, joka ei alunperin ole ollut tuottamassa kyseistä ohjelmakoodia. Ohjelmoijan tulee selvittää järjestelmän toimintaa, jotta hän pääsisi nopeasti tekemään halutun muutoksen.
 
-Ohjelmoijan tueksi on kehitetty useita erilaisia työkaluja ja ohjelmistoja, mutta moni ei osaa käyttää näitä työkaluja täysimääräisesti ja tehokkaasti osana omaa ohjelmointiprosessiaan.  Kaikki työkalut eivät sovi kaikkiin tilanteisiin, joten on tärkeää tuntea eri työkalujenn toiminnallisuudet. Tutustumalla välineisiin ja opettelemalla työkalujen käyttöä ohjelmoijan on mahdollista suorittaa ohjelmointitehtävät entistä tehokkaammin.
+Ohjelmoijan tueksi on kehitetty useita erilaisia työkaluja ja ohjelmistoja, mutta moni ei osaa käyttää näitä työkaluja täysimääräisesti eikä tehokkaasti osana omaa ohjelmointiprosessiaan. Kaikki työkalut eivät sovi kaikkiin tilanteisiin, joten on tärkeää tuntea eri työkalujen toiminnallisuudet. Tutustumalla välineisiin ja opettelemalla työkalujen käyttöä ohjelmoijan on mahdollista suorittaa ohjelmointitehtävät entistä tehokkaammin.
 
-Tässä tutkielmassa esittelen uusien ohjelmointitehtävien aloittamisen etenemistä, jossa ohjelmoija selvittää ohjelman rakennetta ja toimintaa itselleen. Ohjelmointitehtävän aloittamisessa ohjelmoijan tulee ensin priorisoida tehtävät, etsiä sopiva aloituskohta, hahmottaa ohjelman riippuvuudet, selvittää koodin rakenne ja tutustua käytettyihin ohjelmointirajapintoihin. Lisäksi esittelen työn tueksi tehtyjä työkaluja ja käyn läpi millaisia sosiaalisen median palveluita on ohjelmoijien avuksi.
+Tässä tutkielmassa esittelen uusien ohjelmointitehtävien aloittamisen etenemistä, jossa ohjelmoija selvittää ohjelman rakennetta ja toimintaa itselleen. Ohjelmointitehtävän aloittamisessa ohjelmoijan tulee priorisoida tehtävät, etsiä sopiva aloituskohta, hahmottaa ohjelman riippuvuudet, selvittää koodin rakenne ja tutustua käytettyihin ohjelmointirajapintoihin. Lisäksi esittelen työn tueksi tehtyjä työkaluja ja käyn läpi millaisia sosiaalisen median palveluita on ohjelmoijien avuksi.
 }
 
 % The following can be used to specify keywords and classification of the paper:
@@ -145,7 +145,7 @@ Tässä tutkielmassa esittelen uusien ohjelmointitehtävien aloittamisen etenemi
 
 Ohjelmistot ovat keskeisessä asemassa ihmisen elämässä ja liiketoiminnassa. Ihmisten arki on muuttunut älypuhelinten ja tablettien yleistyttyä ja niissä toimivia sovelluksia käytetään yhä enemmän. Harva liiketoiminta on mahdollista ilman tietojärjestelmiä ja esimerkiksi sähkökatkon sattuessa usean yrityksen toiminta vaiheutuu tai jopa estyy kokonaan.
 
-Tietojärjestelmissä olevat virheet haittaavat liiketoimintaa ja ihmisten elämää. Järjestelmiin päätyvien virheiden syntymistä pyritään estämään ohjelmiston kehitysprosessin eri vaiheissa erilaisin menetelmin. Määrittelydokumenttien katselmointi on hyväksi havaittu keino estämään tilannetta, jossa ohjelmoija ohjelmoi virheettömän toiminnon, mutta toiminto ei vastaa loppukäyttäjän tarvetta. Ohjelmakoodiin päätyviä virheitä pyritään välttämään muun muassa pariohjelmoinnilla ja erilaisilla koodianalyyseillä. Jotta tuotantoon päätyisi mahdollisimman vähän virheitä, niitä pyritään havaitsemaan ja korjaamaan kattavalla testaamisella.
+Tietojärjestelmissä olevat virheet haittaavat liiketoimintaa ja ihmisten elämää. Järjestelmiin päätyvien virheiden syntymistä pyritään estämään ohjelmiston kehitysprosessin eri vaiheissa erilaisin menetelmin. Määrittelydokumenttien katselmointi on hyväksi havaittu keino estämään tilannetta, jossa ohjelmoija ohjelmoi virheettömän toiminnon, mutta toiminto ei vastaa loppukäyttäjän tarvetta. Ohjelmakoodiin päätyviä virheitä pyritään välttämään muun muassa pariohjelmoinnilla ja erilaisilla koodianalyyseillä.
 
 Testauksella pyritään ehkäisemään koodiin muutoksen yhteydessä syntyviä sivuvaikutuksia, mutta erityisesti monimutkaisissa ja laajoissa ohjelmistokokonaisuuksissa on mahdotonta tunnistaa kaikki virhetilanteet. Muiden käyttöön tarkoitettujen kirjastojen kohdalla mahdollisten sivuvaikutusten riski kasvaa, mikäli muutos koodiin muuttaa ohjelman toimintaa tai korjaa pitkäaikaisen virheen. Kaikista toimista huolimatta sovelluksia ei kuitenkaan saada täysin virheettömiksi, sillä kattavaan virheiden etsintään ei ole aina varaa.
 
@@ -155,10 +155,9 @@ Virhekorjausten lisäksi ohjelmistoja muutetaan tekemällä niihin
   \item käyttöliittymämuutoksia käyttäjäkokemuksen parantamiseksi tai
   \item ohjelmoimalla niihin uusia toiminnallisuuksia.
 \end{itemize}
-
 Paitsi järjestelmissä olevat ohjelmointivirheet myös järjestelmien tekniseen ylläpitoon liittyvät ongelmatilanteet saavat helposti liiketoiminnan ja ihmisen arjen sekaisin. Hiljattain Facebook oli jonkun aikaa pois käytöstä ja ihmiset soittivat hädissään hätäkeskukseen~\cite{facebook-down}.
 
-IT-alalla kaikille on tuttu sanonta: ``Jos se toimii, älä koske siihen'', sillä jos ohjelmistokokonaisuutta ja siinä käytettyä logiikkaa ei tunne, saattaa ohjelmakoodin saada sekaisin tekemällä pieneltä tuntuvan muutoksen: muutos itsessään on virheetön, mutta se aiheuttaa uuden virheen johonkin toiseen, ennalta-arvaamattomaan paikkaan.
+IT-alalla kaikille on tuttu sanonta: ``Jos se toimii, älä koske siihen'', sillä jos ohjelmistokokonaisuutta ja siinä käytettyä logiikkaa ei tunne, saattaa ohjelmakoodin saada sekaisin tekemällä pieneltä tuntuvan muutoksen: muutos itsessään on virheetön, mutta se aiheuttaa ennalta arvaamattomia sivuvaikutuksia muualle koodiin.
 
 %Erilaisista, yllämainituista syistä johtuen tuotantokäytössä oleviin järjestelmiin joudutaan usein tekemään korjauksia tai täydennyksiä ja tuon työn tekee ohjelmoija.
 
@@ -216,11 +215,7 @@ Kolmanteen tutkimuskysymykseen vastaan luvussa~\ref{section:kolmastk}, jossa esi
 
 Vaikka ohjelmoijan käytössä olisi tekninen dokumentaatio, se ei välttämättä yksin riitä ohjelmointitehtävän aloittamisen tueksi. Dokumentaation lukemisen lisäksi ohjelmoija ryhtyy yleensä selvittämään ohjelmiston rakennetta esittämällä itselleen erilaisia loogisia kysymyksiä ohjelmakoodin toiminnasta ja toimimattomuudesta. Kysymyksillä pyritään luomaan kuvaa siitä, miten ohjelma toimii ja mistä osista se rakentuu \cite{g_search_code, questions-during-software-evolution-tasks,asking-and-answering-api-questions}. Usein ongelmaa ratkaistaessa tulee esiin uusia kysymykseen liittyviä, alkuperäistä kysymystä tarkentavia kysymyksiä, joihin vastaaminen lopulta edesauttaa alkuperäiseen kysymykseen vastaamista~\cite{questions-during-software-evolution-tasks}. Näihin kysymyksiin vastaaminen ei ole aina helppoa saati nopeaa: vastausten löytymiseen saattaa kulua jopa puolet ohjelmointiin käytetystä ajasta~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
 
-Selvitystyötä tehdään erityisesti silloin, kun ohjelmoija työskentelee uuden ominaisuuden tai muutostyön parissa tai kun työstettävä ohjelmakoodi on ohjelmoijalle entuudestaan tuntematonta. Ohjelmoija ei voi tehdä tehokkaasti haluttua muutosta perehtymättä ensin riittävässä määrin ohjelmakoodin toimintaan.
-
-Riskinä on, että ohjelmoija ei löydä ongelmakohtaa vaan päätyy tuottamaan uutta koodia olemassaolevan koodin uusiokäytön sijaan. Jotkut ohjelmoijat haluavat myös mieluummin tuottaa kaiken koodin itse sen sijaan, että käyttäisivät aikaa tutustuakseen muiden tuottamaan koodiin ja jatkojalostaakseen sitä. Ohjelmoijat muistuttavat tässä pienimuotoisesti taiteilijoita ~\cite{hackers-and-painters}.
-
-Ohjelmoitaessa on kuitenkin tärkeää uusiokäyttää mahdollisimman paljon olemassaolevaa koodia ja kirjoittaa uutta koodia vain, mikäli valmista toteutusta ei ole olemassa. Koodia uusiokäyttämällä säästyy olemassaolevan koodin uudelleen kirjoittamiselta ja samalla riski uusien virheiden tuottamisesta pienenee. Ohjelmakoodin uusiokäyttämisessä on kuitenkin myös riskinsä; ohjelmakoodissa voi olla tuntemattomia ohjelmointivirheitä, tietoturvariskejä tai käytössä oleva algoritmi saattaa olla aivan liian tehoton.
+Selvitystyötä tehdään erityisesti silloin, kun ohjelmoija työskentelee uuden ominaisuuden tai muutostyön parissa tai kun työstettävä ohjelmakoodi on ohjelmoijalle tuntematonta. Ohjelmoija ei voi tehdä tehokkaasti haluttua muutosta perehtymättä ensin riittävässä määrin ohjelmakoodin toimintaan.
 
 Tarkastelen ohjelmointitehtävän aloittamisen etenemistä, jonka mukaisesti ohjelmoija etenee tehdessään muutoksia ohjelmakoodiin. Hänen tulee ensin priorisoida tehtävät, etsiä sopiva aloituskohta, hahmottaa ohjelman riippuvuudet, selvittää koodin rakenne ja tutustua ohjelmointirajapintoihin. Sen jälkeen tarkastelen muutamia työn tueksi tarkoitettuja työkaluja sekä ohjelmistoja ja sosiaalisen median käyttöä. Tarkastelussa mukailen artikkeleissa Eliciting Design Requirements for Maintenance-oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks~\cite{eliciting-design-requirements-for-maintenance-oriented-ides} ja Questions Programmers Ask During Software Evolution Tasks~\cite{questions-during-software-evolution-tasks} käytettyä, hyväksi kokemaani, rakennetta.
 
@@ -252,15 +247,16 @@ Virheen luokittelun lisäksi oleellista on määritellä virheen korjauksen kiir
 
 Uuden ohjelmointitehtävän aloittaminen on usein haastavaa~\cite{questions-during-software-evolution-tasks}, vaikka tiedossa olisi suurinpiirtein se toiminnallisuus tai korjaus, joka on tarkoitus tehdä. Tilanne on sama, oli sitten kyseessä olemassaolevan ohjelmiston toimintavirheen korjaaminen tai uuden ominaisuuden lisääminen ohjelmaan. Erityisen haastavaksi aloittamisen tekee se, jos ohjelman koodi ei ole ohjelmoijalle ennalta tuttua. Tällöin ennen tehtävän aloittamista ohjelmoijan tulee selvittää ohjelman rakennetta ja toimintaa sekä selvittää, mitkä ovat oleellisia kohtia tehtävän muutoksen kannalta.
 
-Eräs tapa aloituskohdan löytämiseen on arvata sopivia aiheeseen liittyviä avainsanoja, joiden perusteella voi hakea kohtia ohjelmakoodista. Koska oikeiden avainsanojen keksiminen~\cite{what-to-search-for} on vaikeaa, on haasteena epäoleellisten tulosten suuri määrä, mikä hidastaa prosessia entisestään. Haku saattaa joskus johdatella jopa kokonaan väärään suuntaan hidastaen entisestään oleellisen kohdan paikantamista.
+Eräs tapa aloituskohdan löytämiseen on arvata sopivia aiheeseen liittyviä avainsanoja, joiden perusteella voi hakea kohtia ohjelmakoodista. Koska oikeiden avainsanojen keksiminen~\cite{what-to-search-for} on vaikeaa, on haasteena epäoleellisten tulosten suuri määrä, mikä hidastaa prosessia entisestään. Haku saattaa joskus johdatella kokonaan väärään suuntaan hidastaen entisestään oleellisen kohdan paikantamista.
 
-Toinen tapa sopivan aloituskohdan löytämiseen ovat ohjelmistoympäristöjen tarjoamat luokka- ja pakkauskaaviotyökalut. Nämä saattavat nopeuttaa hakua, mutta myös näiden käytön haasteena on sopivien avainsanojen löytäminen~\cite{what-to-search-for}. Kaikki ohjelmoijat eivät myöskään osaa tehokkaasti käyttää tarjolla olevia luokka- ja pakkauskaaviotyökaluja.
+Toinen tapa sopivan aloituskohdan löytämiseen ovat ohjelmistoympäristöjen tarjoamat luokka- ja pakkauskaaviotyökalut. Kaikki ohjelmoijat eivät kuitenkaan osaa tehokkaasti käyttää tarjolla olevia luokka- ja pakkauskaaviotyökaluja.
 
-Myös virheenjäljitintä (debugger) voidaan käyttää sopivan aloituskohdan paikantamiseen merkitsemällä ohjelmakoodiin pysähdyskohtia (break point) sellaisiin kohtiin, joiden ohjelmoija arvioi olevan oleellisia.
-Seuraamalla ohjelman suoritusta virheenjäljittimellä näkee helposti, pysähtyykö ohjelman suoritus merkittyihin pysähdyskohtiin eli eteneekö koodin logiikka ohjelmoijan ajattelemalla tavalla.
-Tässäkin, kuten aiemmassakin aloituskohtien paikantamiseen käytetyissä tavoissa, on haasteena sopivien pysähdyskohtien löytäminen. Virheenjäljittimen käyttö on tutkimuksen mukaan hidasta ja siten se on yksi kalleimmista ohjelmoijan käyttämistä työkaluista~\cite{debugging-is-expensive}.
+Myös virheenjäljitintä (debugger) voidaan käyttää sopivaksi arvellun aloituskohdan paikantamiseen merkitsemällä ohjelmakoodiin pysähdyskohtia (break point) sellaisiin kohtiin, joiden ohjelmoija arvioi olevan oleellisia.
+Seuraamalla ohjelman suoritusta virheenjäljittimellä näkee helposti, pysähtyykö ohjelman suoritus merkittyihin pysähdyskohtiin eli eteneekö koodin logiikka ohjelmoijan ajattelemalla tavalla~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
+Tässäkin, kuten aiemmassakin aloituskohtien paikantamiseen käytetyissä tavoissa, on haasteena sopivien pysähdyskohtien löytäminen~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}.
+% emt toi on tylsä TODO
+Virheenjäljittimen käyttö on tutkimuksen mukaan hidasta ja siten se on yksi kalleimmista ohjelmoijan käyttämistä työkaluista~\cite{debugging-is-expensive}.
 
-Virheenjäljitintä voidaan käyttää myös toisella tapaa: varmistetaan oleellinen kohta~\cite{eliciting-design-requirements-for-maintenance-oriented-ides} käyttämällä muilla tavoilla saatuja arvauksia aloituskohdasta pysähdyspisteiden kohtana, jolloin virheenjäljittimellä tarkistetaan, suoritetaanko ohjelmakoodia oikeasti näistä kohdista.
 
 Haasteeksi kaikissa edellä mainituissa tavoissa muodostuu suhteellisen suuri määrä täysin epäolennaisia tuloksia~\cite{eliciting-design-requirements-for-maintenance-oriented-ides}, jotka vievät ohjelmoijan aikaa ja saattavat pahimmillaan johdatella ohjelmoijan pitkäksi aikaa tarkastelemaan väärää aluetta ohjelmakoodista ennen kuin kohdan epäolennaisuus selviää hänelle.
 
@@ -287,13 +283,13 @@ Uuteen ohjelmointirajapintaan tutustuminen aloitetaan usein varmistamalla ensin,
 
 Vastaavasti, kuten uuteen ohjelmistoon tutustuttaessa, pyritään aluksi paikantamaan ne luokat ja metodit, jotka ovat tarpeen. Niiden löydyttyä ryhdytään selvittämään löydettyjen luokkien ja metodien suhteita muihin ohjelmointirajapinnan käyttämiin tyyppeihin. Myös dokumentaation lukeminen auttaa, mutta se harvoin tarjoaa riittävää yleiskuvaa siitä, mihin luokka yleiskuvassa asettuu tai minkä muiden luokkien kanssa sitä tyypillisesti käytetään~\cite{asking-and-answering-api-questions}.
 
-Ohjelmointiympäristöt tarjoavat heikosti apua uusien ohjelmointirajapintojen käytöönotossa~\cite{jungloid-mining}. Ohjelmistoympäristöt tarjoavat automaattista täydennystä vasta silloin, kun ohjelmoija tietää, mitä luokkia ja rajapintoja tarvitaan ja on mahdollisesti käynyt itse lisäämässä käytetyt riippuvuudet projektiin. Niinpä useimmiten ohjelmointirajapinnan käytön sisäistämiseen käytetään vain ohjelmointirajapinnan tarjoamaa sisäistä dokumentaatiota, mikä harvoin auttaa kattavan yleiskuvan luomisessa ohjelmointirajapinnasta. Myös tästä dokumentaatiosta oleellisien kohtien löytäminen on vaikeaa, sillä sopivan avainsanan keksiminen on useasti haastavaa~\cite{what-to-search-for}.
+Ohjelmointiympäristöt tarjoavat heikosti apua uusien ohjelmointirajapintojen käytöönotossa~\cite{jungloid-mining}. Ohjelmistoympäristöt tarjoavat automaattista täydennystä vasta silloin, kun ohjelmoija tietää, mitä luokkia ja rajapintoja tarvitaan ja on mahdollisesti käynyt itse lisäämässä käytetyt riippuvuudet projektiin. Useimmiten ohjelmointirajapinnan käytön sisäistämiseen käytetään vain ohjelmointirajapinnan tarjoamaa sisäistä dokumentaatiota, mikä harvoin auttaa kattavan yleiskuvan luomisessa ohjelmointirajapinnasta. Myös tästä dokumentaatiosta oleellisien kohtien löytäminen on vaikeaa, sillä sopivan avainsanan keksiminen on useasti haastavaa~\cite{what-to-search-for}.
 
-Toinen tapa tutustua ohjelmointirajapinnan käyttöön on etsiä omaan käyttötarkoitukseen sopivia esimerkkejä kyseisen ohjelmointirajapinnan käytöstä. Esittelen kappaleessa~\ref{ch:exampleoverflow} ExampleOverflow'n~\cite{example-overflow-social-media-for-code-recommendations}, joka pyrkii tekemään esimerkkien etsimisestä helpompaa.
+% Toinen tapa tutustua ohjelmointirajapinnan käyttöön on etsiä omaan käyttötarkoitukseen sopivia esimerkkejä kyseisen ohjelmointirajapinnan käytöstä. Esittelen kappaleessa~\ref{ch:exampleoverflow} ExampleOverflow'n~\cite{example-overflow-social-media-for-code-recommendations}, joka pyrkii tekemään esimerkkien etsimisestä helpompaa.
 
 \section{Työkaluja ohjelmointitehtävän tueksi}
 \label{section:tokatk}
-Ohjelmoijalla on käytössään ohjelmointiympäristö (IDE, Integrated Development Environment), kts. NetBeans\footnote{\url{https://netbeans.org}}. Ohjelmoijien tueksi on myös luotu työkaluja ja apuvälineitä auttamaan ohjelmointitehtävässä kohdattujen ongelmien ratkaisussa.
+Ohjelmoijalla on käytössään ohjelmointiympäristö (IDE, Integrated Development Environment), kts. NetBeans\footnote{\url{https://netbeans.org}}. Ohjelmoijien tueksi on myös luotu muita työkaluja ja apuvälineitä auttamaan ohjelmointitehtävässä kohdattujen ongelmien ratkaisussa.
 Yksi haasteista on sopivan työkalun valinta kulloinkin kyseessä olevaan tehtävään: kaikki ohjelmoijan avuksi tehdyt työkalut eivät osaa auttaa kaikissa ongelmissa. Toinen haaste on se, että vaikka ohjelmoija valitsee sopivan työkalun, käyttää hän todennäköisesti vain osaa tarkoitukseen luoduista ominaisuuksista~\cite{whyline}.
 
 Alla esittelen tyypillisiä ohjelmoijan elämän helpottamiseksi luotuja työkaluja. Osa työkaluista on tarkoitettu auttamaan yleisellä tasolla, kun taas toiset auttavat vain pienessä, mutta sitäkin haastavammassa osassa.
@@ -304,7 +300,7 @@ Ohjelmointiympäristö on ohjelmisto, joka pyrkii tukemaan ohjelmoijan arkea tar
 
 Ohjelmointiympäristö tarjoaa myös joko hyvän integraation ulkoiseen kääntäjään tai sisäänrakennetun kääntäjän, jonka avulla editori kertoo ohjelmoijalle ohjelmakoodin syntaksivirheistä ohjelmakoodia kirjoitettaessa.
 
-Näin ohjelmoija tunnistaa ja pystyy korjaamaan syntaksivirheet heti virheen havaittuaan eikä erillistä aikaa vievää käännösaskelta enää tarvita, sillä ohjelmointiympäristö kääntää ohjelmakoodin sitä tahtia kuin sitä kirjoitetaan. Tämä säästää myös ohjelmoijan aikaa.
+Näin ohjelmoija tunnistaa ja pystyy korjaamaan syntaksivirheet heti virheen havaittuaan. Erillistä aikaa vievää käännösaskelta usein myöskään tarvita, sillä ohjelmointiympäristö kääntää usein ohjelmakoodin sitä tahtia kuin sitä kirjoitetaan. Tämä säästää ohjelmoijan aikaa.
 
 Ohjelmointiympäristöt eivät kuitenkaan ratkaise kaikkia ohjelmoijien ongelmia. Vaikka ohjelmointiympäristöt ovat usein erikoistuneet vain muutamiin kieliin, tarjoavat ne usein jonkinasteisen tuen hyvin monille muille kielille. Riippuen käytetystä ohjelmointiympäristöstä ja kielestä ohjelmointiympäristön ohjelmoijalle tarjoavat ominaisuudet saattavat siis olla erilaiset.
 
@@ -313,7 +309,6 @@ Useissa ohjelmointiympäristöissä on myös sisäänrakennettu virheenetsin kie
 Ohjelmointiympäristöjä voi usein laajentaa lisäohjelmilla (plugin), joiden avulla ohjelmointiympäristöön voi tuoda lisäominaisuuksia~\cite{eclipse-ide}, kuten uuden työkalun auttamaan ongelmanratkaisussa tai tuen kielelle, jota ohjelmointiympäristö ei valmiiksi tue. Kuitenkaan kaikkia ohjelmoijan työtä helpottavia työkaluja ei ole sisäänrakennettu tai saatavissa lisäohjelmana ohjelmointiympäristöön. Esimerkiksi harva ohjelmointiympäristö osaa automaattisesti ottaa käyttöön ja ehdottaa ohjelmoijan tarvitsemaa ulkoista kirjastoa ja sen luokkia~\cite{jungloid-mining}. Siksi on tärkeää, että ohjelmoija osaa käyttää myös muita työkaluja.
 
 \subsection{Dokumentaatio}
-
 Isompien ohjelmistoprojektien ja muiden käyttöön tarkoitettujen ohjelmistokirjastojen kohdalla dokumentaation merkitys kasvaa, sillä koodin katselmointipohjainen omaksuminen ei onnistu enää nopeasti eikä ole kirjaston käyttäjän näkökulmasta järkevää. Ulkoisten ohjelmistojen tarkoituksena on se, että niiden käyttö onnistuu tuntematta tarkalleen kyseisen ohjelmakoodin toimintaa, vaan riittää, että ohjelmoija lukee tarvittavan dokumentaation ohjelmistokirjaston julkiseen käyttöön tarkoitetuista rajapinnoista.
 
 Ohjelmakoodin yhteydessä olevan dokumentaation tarkoituksena on selventää kyseisen luokan käyttötarkoitusta ja toimintaa. Vastaavasti metodien yhteydessä oleva dokumentaatio avaa kyseisen metodin toiminnallisuutta~\cite{javadoc}.
@@ -323,7 +318,7 @@ Osa dokumentaatiosta on usein suunnattu erityisesti jatkokehittäjille ja osa oh
 Projektien dokumentaatiota on ohjelmakoodin seassa olevan dokumentaation lisäksi erillisissä tiedostoissa. Tällaiset dokumentit ovat projektissa ohjelmoineiden ohjelmoijien tekemiä sekä projektin tuotoksen käyttäjien luomia~\cite{using-wikis-in-sw}.
 Ohjelmakoodista irrallaan oleva dokumentaatio tarjoaa useasti ohjeita ohjelmiston käyttöönottamiseen ja konfiguroimiseen sekä korjaa yleisiä väärinymmärryksiä ohjelmistosta ja sisältää muita projektiin sopivia ohjeita. Tämä dokumentaatio on tyypillisesti omassa kansiossaan ja readme-tiedostoissa tai ohjelmiston käytössä olevassa wiki-palvelussa~\cite{using-wikis-in-sw}. Wikipohjaisesta dokumentaatiosta kerron kappaleessa~\ref{ch:wiki}.
 
-Ohjelmistojen dokumentaatio muodostuu siis sekä ohjelmakoodin yhteyteen kirjoitetusta ohjelmakoodin dokumentaatiosta että ohjelmiston wikiin~\cite{using-wikis-in-sw} tai muualle koodista irralleen kirjotetuista ohjelmiston käytön ohjeista ja neuvoista.
+Ohjelmistojen dokumentaatio muodostuu siis sekä ohjelmakoodin yhteyteen kirjoitetusta dokumentaatiosta että ohjelmiston wikiin~\cite{using-wikis-in-sw} tai muualle koodista irralleen kirjotetuista ohjelmiston käytön ohjeista ja neuvoista.
 
 Dokumentaation saatavuus on kuitenkin usein heikkoa ja ajantasaisen version löytäminen vaikeaa. \href{https://readthedocs.org/}{Read the Docs}\footnote{\url{https://readthedocs.org/}} pyrkii helpottamaan ohjelman dokumentaation julkaisua. Tavoitteena on, että yhä useampi projekti julkaisisi dokumentaationsa selkeästi kaikkien löydettäväksi ja luettavaksi. Read the Docs on myös loppukäyttäjien näkökulmasta muodostumassa luotettavaksi paikaksi hakea dokumentaatiota avoimen lähdekoodin ohjelmistoihin.
 
@@ -346,12 +341,16 @@ pyrkii auttamaan ohjelmistokehittäjiä vastaamaalla seuraaviin kysymyksiin:
   \item Miksi jotain tapahtuu?
   \item Miksi jotain ei tapahdu?
 \end{itemize}
-
 Whyline ei kerro suoraan oikeaa vastausta, vaan ohjaa ja opastaa ongelmanratkaisuprosessissa työkalujen tehokkaaseen käyttöön ja siten vähentää ohjelmointiongelman ratkaisuun käytettyä aikaa~\cite{whyline}.
 
 \subsection{Sopivan kirjaston löytäminen}
 \label{ch:jungloid}
-Vaikka avointa lähdekoodia ja erilaisia ohjelmistokirjastoja on tarjolla paljon, ei niiden uudelleenkäyttäminen ole kuitenkaan aina helppoa. Erityisen vaikeaa on sopivan kirjaston löytäminen omaan käyttötarkoitukseen. Ohjelmoijan avuksi on luotu S\raise0.5ex\hbox{6}-projekti ja Jungloid-louhinta, jotka helpottavat sopivan kirjaston löytämistä ja käyttöönottoa.
+Vaikka avointa lähdekoodia ja erilaisia ohjelmistokirjastoja on tarjolla paljon, ei niiden uudelleenkäyttäminen ole kuitenkaan aina helppoa. Erityisen vaikeaa on sopivan kirjaston löytäminen omaan käyttötarkoitukseen.
+
+Riskinä on, että ohjelmoija ei löydä ongelmakohtaa vaan päätyy tuottamaan uutta koodia olemassaolevan koodin uusiokäytön sijaan. Jotkut ohjelmoijat haluavat myös mieluummin tuottaa kaiken koodin itse sen sijaan, että käyttäisivät aikaa tutustuakseen muiden tuottamaan koodiin ja jatkojalostaakseen sitä. Ohjelmoijat muistuttavat tässä pienimuotoisesti taiteilijoita~\cite{hackers-and-painters}.
+Uutta koodia kannattaa kuitenkin kirjottaa vain, mikäli valmista toteutusta ei ole olemassa. Koodia uusiokäyttämällä säästyy olemassaolevan koodin uudelleen kirjoittamiselta ja samalla riski uusien virheiden tuottamisesta pienenee. Ohjelmakoodin uusiokäyttämisessä on kuitenkin riskinsä; ohjelmakoodissa voi olla tuntemattomia ohjelmointivirheitä, tietoturvariskejä tai käytössä oleva algoritmi saattaa olla aivan liian tehoton.
+
+Ohjelmoijan avuksi on luotu S\raise0.5ex\hbox{6}-projekti ja Jungloid-louhinta, jotka helpottavat sopivan kirjaston löytämistä ja käyttöönottoa.
 
 S\raise0.5ex\hbox{6}-projekti pyrkii helpottamaan sopivan koodin hakemista ja siten auttaa koodin uudelleenkäyttöä sekä erilaisten ohjelmistokirjastojen löytämistä. S\raise0.5ex\hbox{6}-projekti mahdollistaa sopivien luokkien ja metodien haun siten, että ohjelmoija tarjoaa testitapauksia, joiden rakennetta ja semantiikkaa automatisoidusti tarkastelemalla S\raise0.5ex\hbox{6}-projekti pystyy rajaamaan sen tuntemista ohjelmistokirjastoista testitapauksiin sopivat. S\raise0.5ex\hbox{6}-projekti pyrkii myös automatisoimaan tarvittavat muunnokset eri tyyppien välillä, jotta eriävät tyypit eivät rajoittaisi järjestelmän tarjoamia hakutuloksia liikaa~\cite{what-to-search-for}. Haku ei kuitenkaan tarjoa ainoastaan juuri ohjelmoijan tarjoamaan esimerkkiin sopivaa vastausta, vaan näyttää myös suurin piirtein siihen sopivia ratkaisuja. Tämä ominaisuus on kehitetty S\raise0.5ex\hbox{6}-projektiin siksi, että ohjelmoija tietää usein vain suuntaa-antavasti, mitä hän oikeasti tarvitsee.
 
@@ -364,7 +363,6 @@ Jungloid-louhinnan avulla ohjelmoijalle voidaan automatisoidusti tarjota erilais
 \section{Sosiaalinen media ohjelmoijan apuna}
 \label{section:kolmastk}
 Sosiaalisesta mediasta on tullut arkipäivää kaikille internetin käyttäjille: esimerkiksi Facebookissa seurataan, mitä tuttavat ja lähipiiri tekevät parhaillaan ja Imdb:stä saa  suosituksia, mitä elokuvia kannattaisi katsoa.
-
 Myös ammattilaisille on omia sosiaalisia medioita, kuten esimerkiksi StackOverflow ja GitHub, jotka ovat erityisesti ohjelmoijille suunnattuja sosiaalisia medioita. Niistä löytyy muun muassa esimerkkejä, joiden haku on oleellinen osa nykyaikaista ohjelmistokehitystä \cite{example-overflow-social-media-for-code-recommendations}.
 
 \subsection{GitHub}
