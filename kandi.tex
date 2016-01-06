@@ -222,15 +222,27 @@ Tarkastelen ohjelmointitehtävän aloittamisen etenemistä, jonka mukaisesti ohj
 \subsection{Ohjelmointitehtävän valinta}
 
 % Tylsä lähde, mutta oikeestaan en löytänyt mitään super luotettavaa lähdettä... vaikka moni sivu tuki tätä lajittelua
-Ohjelmoijalla on usein työlistalla useita virhekorjauksia, jotka hänen täytyy laittaa tärkeysjärjestykseen, koska kaikki järjestelmissä olevat virheet eivät ole samanarvoisia. Lönnroth ja Törmälä luokittelevat virheet neljään luokkaan~\cite{testaus-kriittisyys}:
-\begin{enumerate}
-  \item Kriittinen virhe, joka estää järjestelmän käytön.
-  \item Virhe, joka vaikeuttaa järjestelmän käyttöä.
-  \item Virhe, joka voidaan ohittaa tekemällä toiminto tilapäisesti eri tavalla.
-  \item Kosmeettinen haitta, joka ei estä järjestelmän käyttöä.
-\end{enumerate}
+Ohjelmoijalla on usein työlistalla useita virhekorjauksia, jotka hänen täytyy laittaa tärkeysjärjestykseen, koska kaikki ohjelmistossa olevat virheet eivät ole samanarvoisia.
+Jenkins suosittelee luokittelemaan virheet kiireellisyyden mukaan kolmeen luokkaan~\cite{testing-primer}:
+\begin{description}
+  \item[Korkea] \hfill \\
+  Vaatii välittömän korjauksen. Ohittaa kaikki muut jonossa olevat työt. Tällainen virhe estää järjestelmän käytön tai vaikeuttaa sitä huomattavasti.
+  \item[Normaali] \hfill \\
+  Korjaus kannattaa tehdä pian. Tällainen virhe vaikeuttaa järjestelmän käyttöä, estämättä sitä kokonaan. Virhe on usein kierrettävissä.
+  \item[Alhainen] \hfill \\
+  Korjauksella ei ole kiire. Tällainen virhe on esimerkiksi kosmeettinen haitta.
+\end{description}
+Korjauksen kiireellisyyteen vaikuttavat virheen luokittelun lisäksi virheen laajuus sekä se, moneenko käyttäjään virhe vaikuttaa.
 
-Virheen luokittelun lisäksi oleellista on määritellä virheen korjauksen kiireellisyys. Korjauksen kiireellisyyteen vaikuttavat virheen luokittelun lisäksi virheen laajuus sekä se, moneenko käyttäjään virhe vaikuttaa.
+
+%Lönnroth ja Törmälä luokittelevat virheet neljään luokkaan~\cite{testaus-kriittisyys}:
+%\begin{enumerate}
+%  \item Kriittinen virhe, joka estää järjestelmän käytön.
+%  \item Virhe, joka vaikeuttaa järjestelmän käyttöä.
+%  \item Virhe, joka voidaan ohittaa tekemällä toiminto tilapäisesti eri tavalla.
+%  \item Kosmeettinen haitta, joka ei estä järjestelmän käyttöä.
+%\end{enumerate}
+
 
 %\begin{description}
 %  \item[Välitön] \hfill \\
